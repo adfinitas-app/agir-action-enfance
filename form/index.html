@@ -1,0 +1,46 @@
+---
+layout: form
+title: "Formulaire"
+source: "Formulaire de test"
+formulaire :
+ - champ_libre_court :
+   requis: true
+   actif: true
+   placeholder: "Email *"
+   controle: email
+   message_erreur: "Message d'erreur"
+---
+
+<div class="row">
+  <div class="large-12 columns">
+    <h1>adfinitas.cx - Formulaire</h1>
+  </div>
+</div>
+
+<form class="form-to-db">
+
+  <div class="row">
+    <div class="large-12 columns">
+      <input type="email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p>Optin :</p>
+      <input type="radio" id="optin-oui" value="oui" name="optin">
+      <label for="optin-oui">
+	Oui
+      </label>
+      <input type="radio" id="optin-non" value="non" name="optin">
+      <label for="optin-non">
+	Non
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <input type="submit" value="Envoyer">
+    </div>
+  </div>
+
+</form>
