@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/foundation.css">
-    {% for source in layout.css%}
+    {% for source in page.css%}
     <link rel="stylesheet" href="{{ source }}">
     {% endfor %}
   </head>
@@ -16,5 +16,8 @@
     <script src="/assets/js/vendor/what-input.js"></script>
     <script src="/assets/js/vendor/foundation.js"></script>
     <script src="/assets/js/app.js"></script>
+    {% for source in page.javascript %}
+    <script src="{{ source }}"></script>
+    {% endfor %}
   </body>
 </html>
