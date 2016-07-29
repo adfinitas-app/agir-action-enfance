@@ -9,3 +9,11 @@ woopra_config:
 controles:
   - email
   - telephone
+types:
+  - champ_libre_court
+  - champ_libre_long
+  - liste_deroulante
+  - choix_unique
+  - choix_multiple
+  - champ_caché
+  - scoring

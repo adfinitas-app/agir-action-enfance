@@ -2,13 +2,36 @@
 layout: form
 title: "Formulaire"
 source: "Formulaire de test"
-formulaire :
- - champ_libre_court :
-   requis: true
+champs :
+ - type: champ_libre_court
+   nom: "email"
    actif: true
+   requis: true
+   texte: "Veuillez entrer votre email"
+   message_erreur: "Email invalide"
    placeholder: "Email *"
    controle: email
-   message_erreur: "Message d'erreur"
+   reponses:
+    - valeur: 
+ - type: choix_unique
+   nom: "optin"
+   actif: true
+   requis: true
+   texte: "Optin :"
+   message_erreur: "Vous devez faire un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Oui
+    - valeur: Non
+bouton_de_soumission: "Envoyer"
+
+_comments:
+  nom: "Obligatoire et unique. Description courte du champ"
+  texte: Ce champ peut etre vide
+  placeholder: Complétez ce champ seulement pour les champs de type "champ libre"
+  controle: Complétez ce champ seulement pour les champs de type "champ libre"
+  reponses: Complétez ce champ seulement pour les champs de type "choix"
 ---
 
 <div class="row">
@@ -19,24 +42,63 @@ formulaire :
 
 <form class="form-to-db">
 
-  <div class="row">
-    <div class="large-12 columns">
-      <input type="email" placeholder="Email" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <p>Optin :</p>
-      <input type="radio" id="optin-oui" value="oui" name="optin">
-      <label for="optin-oui">
-	Oui
-      </label>
-      <input type="radio" id="optin-non" value="non" name="optin">
-      <label for="optin-non">
-	Non
-      </label>
-    </div>
-  </div>
+  {% assign inputId=0 %}
+  {% for champ in page.champs %}
+    {% if champ.actif == true %}
+      <div class="row">
+        <div class="large-12 columns">
+        {% case champ.type %}
+        {% when 'champ_libre_court' %}
+	  {% if champ.text != nill and champ.text != empty %}
+	    <label class="label-champ_libre_court" for="input-{{ inputId }}">
+	      {{ champ.texte }}
+	    </label>
+	  {% endif %}
+          <input class="input-champ_libre_court"
+		 id="input-{{ inputId }}"
+                 type="{{ champ.controle }}"
+                 placeholder="{{ champ.placeholder }}"
+		 name="{{ champ.nom }}"
+                 {% if champ.requis == true %}
+		 required
+		 {% endif %}
+          />
+	  {% assign inputId=inputId | plus:1 %}
+          <p class="error-message">{{ champ.message_erreur }}</p>
+        {% when 'champ_libre_long' %}
+	  <p>TODO</p>
+        {% when 'liste_deroulante' %}
+	  <p>TODO</p>
+        {% when 'choix_unique' %}
+	  {% if champ.text != nill and champ.text != empty %}
+	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
+	  {% endif %}
+	  {% for reponse in champ.reponses %}
+	    <input class="input-choix_multiple" type="radio" id="input-{{ inputId }}"
+	           value="{{ reponse.valeur}}"
+	           name="{{ champ.nom }}"
+                   {% if champ.requis == true %}
+	           required
+	           {% endif %}
+	    />
+	    {% assign inputId=inputId | plus:1 %}
+	    <label class="label-choix_multiple" for="input-{{ inputId }}">
+	      {{ reponse.valeur}}
+      	    </label>
+	    <p class="error-message">{{ champ.message_erreur }}</p>
+	  {% endfor %}
+        {% when 'choix_multiple' %}
+	  <p>TODO</p>
+        {% when 'champ_caché' %}
+	  <p>TODO</p>
+	{% else %}
+	  <p style="color: red">[Erreur]: Type de champ inconnu: {{ champ.type }}</p>
+        {% endcase %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
   <div class="row">
     <div class="large-12 columns">
       <input type="submit" value="Envoyer">
