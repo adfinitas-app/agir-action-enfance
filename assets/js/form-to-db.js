@@ -1,13 +1,7 @@
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1);
-    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-  }
-  return "";
-}
+---
+layout: blank
+---
+
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -24,27 +18,24 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-function makeCorsRequest(data) {
+function makeCorsRequest(data, success) {
   var url = 'https://form-to-db.herokuapp.com/';
   var body = JSON.stringify(data);
 
   var xhr = createCORSRequest('POST', url);
   if (!xhr) {
-    alert('CORS non supporté. Merci d\'envoyer un message à tech@adfinitas.fr');
+    alert("{{ site.message_erreur}}" + ' : CORS non supporté');
     return;
   }
 
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   // Response handlers.
-  xhr.onload = function() {
-    var text = xhr.responseText;
-    window.location.href = "merci.html";
-  };
+  xhr.onload = success;
 
   // Error Handler
   xhr.onerror = function() {
-    alert('Woops, there was an error making the request.');
+    alert("{{ site.message_erreur}}" + ' : Erreur inconnue');
   };
 
   xhr.send(body);

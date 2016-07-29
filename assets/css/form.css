@@ -1,4 +1,9 @@
 .error-message {
-  display: none;
   color: red;
+}
+.error-message {
+  display: none;
+}
+.error .error-message {
+  display: initial;
 }

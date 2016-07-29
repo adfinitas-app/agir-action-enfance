@@ -7,6 +7,10 @@ defaults:
 woopra_config:
   domain: "adfinitas.fr"
   cookie_domain: ".adfinitas.fr"
+form-to-db_config:
+  schema: "adfinitas_cx"
+  envoi_base_de_donnée: true
+  message_erreur: "Une erreur est survenue, veuillez envoyer un mail à lghionna@adfinitas.fr"
 controles:
   - email
   - telephone

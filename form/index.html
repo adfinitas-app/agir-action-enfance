@@ -7,16 +7,57 @@ champs :
    nom: "email"
    actif: true
    requis: true
-   texte: "Veuillez entrer votre email"
+   texte: "Veuillez entrer votre email (Obligatoire)"
    message_erreur: "Email invalide"
    placeholder: "Email *"
    controle: email
    reponses:
-    - valeur: 
+    - valeur:
+ - type: champ_libre_court
+   nom: "email-non-requis"
+   actif: true
+   requis: false
+   texte: "Veuillez entrer votre email"
+   message_erreur: "Email invalide"
+   placeholder: "Email"
+   controle: email
+   reponses:
+    - valeur:
+ - type: champ_libre_court
+   nom: "phone"
+   actif: true
+   requis: true
+   texte: "Veuillez entrer votre numéro de téléphone (Obligatoire)"
+   message_erreur: "Numéro de téléphone invalide"
+   placeholder: "Téléphone *"
+   controle: telephone
+   reponses:
+    - valeur:
+ - type: champ_libre_court
+   nom: "phone-non-requis"
+   actif: true
+   requis: false
+   texte: "Veuillez entrer votre numéro de téléphone"
+   message_erreur: "Numéro de téléphone invalide"
+   placeholder: "Téléphone"
+   controle: telephone
+   reponses:
+    - valeur:
  - type: choix_unique
    nom: "optin"
    actif: true
    requis: true
+   texte: "Optin (Obligatoire) :"
+   message_erreur: "Vous devez faire un choix"
+   placeholder:
+   controle:
+   reponses:
+    - valeur: Oui
+    - valeur: Non
+ - type: choix_unique
+   nom: "optin-non-requis"
+   actif: true
+   requis: false
    texte: "Optin :"
    message_erreur: "Vous devez faire un choix"
    placeholder:
@@ -29,9 +70,9 @@ bouton_de_soumission: "Envoyer"
 _comments:
   nom: "Obligatoire et unique. Description courte du champ"
   texte: Ce champ peut etre vide
-  placeholder: Complétez ce champ seulement pour les champs de type "champ libre"
-  controle: Complétez ce champ seulement pour les champs de type "champ libre"
-  reponses: Complétez ce champ seulement pour les champs de type "choix"
+  placeholder: Seulement pour les champs de type "champ libre"
+  controle: Seulement pour les champs de type "champ libre"
+  reponses: Seulement pour les champs de type "choix"
 ---
 
 <div class="row">
@@ -40,7 +81,7 @@ _comments:
   </div>
 </div>
 
-<form class="form-to-db">
+<form class="adfinitas-cx" novalidate data-source="{{ page.source }}">
 
   {% assign inputId=0 %}
   {% for champ in page.champs %}
@@ -54,9 +95,18 @@ _comments:
 	      {{ champ.texte }}
 	    </label>
 	  {% endif %}
-          <input class="input-champ_libre_court"
-		 id="input-{{ inputId }}"
-                 type="{{ champ.controle }}"
+          <input id="input-{{ inputId }}"
+		 {% if champ.controle == nill or
+		    champ.controle == empty or
+		    champ.controle == "email" %}
+		 class="input-champ_libre_court"
+		 {% endif %}
+		 {% if champ.controle == "email" %}
+                 type="email"
+		 {% elsif champ.controle == "telephone" %}
+                 type="text"
+		 class="input-champ_libre_court intl-tel-input"
+		 {% endif %}
                  placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
                  {% if champ.requis == true %}
@@ -81,12 +131,12 @@ _comments:
 	           required
 	           {% endif %}
 	    />
-	    {% assign inputId=inputId | plus:1 %}
 	    <label class="label-choix_multiple" for="input-{{ inputId }}">
 	      {{ reponse.valeur}}
       	    </label>
-	    <p class="error-message">{{ champ.message_erreur }}</p>
+	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
+	  <p class="error-message">{{ champ.message_erreur }}</p>
         {% when 'choix_multiple' %}
 	  <p>TODO</p>
         {% when 'champ_caché' %}
