@@ -49,7 +49,7 @@ _comments:
         <div class="large-12 columns">
         {% case champ.type %}
         {% when 'champ_libre_court' %}
-	  {% if champ.text != nill and champ.text != empty %}
+	  {% if champ.texte != nill and champ.texte != empty %}
 	    <label class="label-champ_libre_court" for="input-{{ inputId }}">
 	      {{ champ.texte }}
 	    </label>
@@ -70,7 +70,7 @@ _comments:
         {% when 'liste_deroulante' %}
 	  <p>TODO</p>
         {% when 'choix_unique' %}
-	  {% if champ.text != nill and champ.text != empty %}
+	  {% if champ.texte != nill and champ.texte != empty %}
 	    <p class="texte-choix_multiple">{{ champ.texte }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
