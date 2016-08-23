@@ -33,24 +33,32 @@ function showError(elem) {
   }
 }
 
-function isValid(jqueryFormSelector) {
+function isValidField(jqueryFieldSelector) {
+  var field = jqueryFieldSelector;
+  var status = true;
+  if (field.attr("type") == "radio" || field.attr("type") == "checkbox") {
+    if ($("input[name=" + field.attr("name") + "]:checked").length == 0) {
+      status = false;
+    }
+  } else {
+    if (field.val() == "" || field.val() == null ||
+	(field.attr("type") == "email" &&
+	 isValidEmail(field.val()) == false) ||
+	(field.attr("name") == "phone" &&
+	 field.intlTelInput("isValidNumber") == false)) {
+      status = false;
+    }
+  }
+  return (status);
+}
+
+function isValidForm(jqueryFormSelector) {
   var status = true;
   $(".error").removeClass("error");
   jqueryFormSelector.find("input:not([type=submit])[required]").each(function() {
-    if ($(this).attr("type") == "radio" || $(this).attr("type") == "checkbox") {
-      if ($("input[name=" + $(this).attr("name") + "]:checked").length == 0) {
-	showError($(this));
-	status = false;
-      }
-    } else {
-      if ($(this).val() == "" || $(this).val() == null ||
-	  ($(this).attr("type") == "email" &&
-	   isValidEmail($(this).val()) == false) ||
-	  ($(this).attr("name") == "phone" &&
-	   $(this).intlTelInput("isValidNumber") == false)) {
-	showError($(this));
-	status = false;
-      }
+    if (isValidField($(this)) == false) {
+      showError($(this));
+      status = false;
     }
   });
   return (status);

@@ -11,6 +11,7 @@ woopra.config({
   cookie_domain: '{{ site.woopra_config.cookie_domain }}'
 });
 
+// Function located in assets/js/app.js
 var p = extractUrlParams();
 if ('email' in p) {
   if ('lastname' in p && 'firstname' in p) {
