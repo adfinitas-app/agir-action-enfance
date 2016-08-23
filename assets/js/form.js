@@ -35,7 +35,26 @@ function submitForm(jqForm) {
   makeCorsRequest(dbData, success);
 }
 
+// Pre-filled inputs from query parameter in URL.
+// Example : https://example.com?name=test&email=test@test.com
+// will fill the field name and email
+function preFill() {
+  // Function located in assets/js/app.js
+  var params = extractUrlParams();
+  Object.keys(params).forEach(function(key) {
+    console.log(key);
+    if (params[key] && params[key] != 'undefined') {
+      if ($("input[name=" + key + "]").length > 0) {
+	$("input[name=" + key + "]").val(params[key]);
+      } else if ($("select[name=" + key + "]").length > 0) {
+	$("select[name=" + key + "]").val(params[key]);
+      }
+    }
+  });
+}
+
 $(document).ready(function() {
+  preFill();
   $(".intl-tel-input").intlTelInput({
     utilsScript: "/assets/js/vendor/intl-tel-input/lib/libphonenumber/build/utils.js",
     "initialCountry": "fr",
@@ -52,29 +71,6 @@ $(document).ready(function() {
 
 /*
  * TODO
- * Pre-filled fields from URL ?
-
-//function fillFieldsFromUrl() {
-  //p = extractUrlParams();
-
-  //if (p['email'] && p['email'] != "undefined") {
-    //$("input[name=email]").val(p['email']);
-  //}
-
-  //if (p['firstname'] && p['firstname'] != "undefined") {
-    //$("input[name=firstname]").val(p['firstname']);
-  //}
-
-  //if (p['lastname'] && p['lastname'] != "undefined") {
-    //$("input[name=lastname]").val(p['lastname']);
-  //}
-
-  //if (p['phone'] && p['phone'] != "undefined") {
-    //$("input[name=phone]").val(p['phone']);
-  //}
-//}
-
-
  * champ_libre_long
  * choix_multiple
  * champ_caché
