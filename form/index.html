@@ -96,22 +96,26 @@ _comments:
 	    </label>
 	  {% endif %}
           <input id="input-{{ inputId }}"
-		 {% if champ.controle == nill or
-		    champ.controle == empty or
-		    champ.controle == "email" %}
-		 class="input-champ_libre_court"
-		 {% endif %}
+		 {% assign inputClasses = site.array %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'input-champ_libre_court ' %}
 		 {% if champ.controle == "email" %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'check-email ' %}
                  type="email"
 		 {% elsif champ.controle == "telephone" %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'check-phone ' %}
+		 type="text"
+		 {% else %}
                  type="text"
-		 class="input-champ_libre_court intl-tel-input"
 		 {% endif %}
                  placeholder="{{ champ.placeholder }}"
 		 name="{{ champ.nom }}"
                  {% if champ.requis == true %}
 		 required
 		 {% endif %}
+		 class="{{ inputClasses }}"
           />
 	  {% assign inputId=inputId | plus:1 %}
           <p class="error-message">{{ champ.message_erreur }}</p>

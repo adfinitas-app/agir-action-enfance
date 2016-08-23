@@ -5,11 +5,11 @@ function isValidEmail(email) {
 
 function hideError()
 {
-  if ($(this).attr("type") == "radio" || $(this).attr("type") == "checkbox") {
+  if ($(this).attr("type") === "radio" || $(this).attr("type") === "checkbox") {
     $("input[name=" + $(this).attr("name") + "]").parent().removeClass("error");
-  } else if ($(this).hasClass("intl-tel-input")) {
+  } else if ($(this).hasClass("check-phone")) {
     $(this).parent().parent().removeClass("error");
-  } else if ($(this).prop("tagName") == "SELECT") {
+  } else if ($(this).prop("tagName") === "SELECT") {
     $(this).parent().parent().removeClass("error");
   } else {
     $(this).parent().removeClass("error");
@@ -18,13 +18,13 @@ function hideError()
 }
 
 function showError(elem) {
-  if (elem.attr("type") == "radio" || elem.attr("type") == "checkbox") {
+  if (elem.attr("type") === "radio" || elem.attr("type") === "checkbox") {
     $("input[name=" + elem.attr("name") + "]").parent().addClass("error");
     $("input[name=" + elem.attr("name") + "]").on("change", hideError);
-  } else if (elem.prop("tagName") == "SELECT") {
+  } else if (elem.prop("tagName") === "SELECT") {
     elem.parent().parent().addClass("error");
     elem.on("change", hideError);
-  } else if (elem.hasClass("intl-tel-input")) {
+  } else if (elem.hasClass("check-phone")) {
     elem.parent().parent().addClass("error");
     elem.on("change", hideError);
   } else {
@@ -33,20 +33,28 @@ function showError(elem) {
   }
 }
 
-function isValidField(jqueryFieldSelector) {
+function isValidField(jqueryFieldSelector, allowEmpty = true) {
   var field = jqueryFieldSelector;
-  var status = true;
-  if (field.attr("type") == "radio" || field.attr("type") == "checkbox") {
-    if ($("input[name=" + field.attr("name") + "]:checked").length == 0) {
-      status = false;
+  var status = false;
+  if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
+    if (allowEmpty === true || 
+	$("input[name=" + field.attr("name") + "]:checked").length > 0) {
+      status = true;
     }
   } else {
-    if (field.val() == "" || field.val() == null ||
-	(field.attr("type") == "email" &&
-	 isValidEmail(field.val()) == false) ||
-	(field.attr("name") == "phone" &&
-	 field.intlTelInput("isValidNumber") == false)) {
-      status = false;
+    if (allowEmpty && (field.val() === "" || field.val() === null)) {
+      status = true;
+    }
+    else {
+      if (field.hasClass("check-email")) {
+	status = (isValidEmail(field.val()) === true);
+      }
+      else if (field.hasClass("check-phone")) {
+	status = (field.intlTelInput("isValidNumber") === true);
+      }
+      else {
+	status = true;
+      }
     }
   }
   return (status);
@@ -55,8 +63,8 @@ function isValidField(jqueryFieldSelector) {
 function isValidForm(jqueryFormSelector) {
   var status = true;
   $(".error").removeClass("error");
-  jqueryFormSelector.find("input:not([type=submit])[required]").each(function() {
-    if (isValidField($(this)) == false) {
+  jqueryFormSelector.find("input:not([type=submit])").each(function() {
+    if (isValidField($(this), !$(this).prop("required")) == false) {
       showError($(this));
       status = false;
     }

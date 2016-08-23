@@ -62,7 +62,7 @@ function preFill() {
     }
     selector.val(value);
     if (toHide == true) {
-      if (selector.prop("required") && isValidField(selector) == false) {
+      if (isValidField(selector, !selector.prop("required")) == false) {
 	selector.val("");
       } else {
 	selector.closest(".field-row").css("display", "none")
@@ -73,7 +73,7 @@ function preFill() {
 
 $(document).ready(function() {
   preFill();
-  $(".intl-tel-input").intlTelInput({
+  $(".check-phone").intlTelInput({
     utilsScript: "/assets/js/vendor/intl-tel-input/lib/libphonenumber/build/utils.js",
     "initialCountry": "fr",
     "autoFormat": true
