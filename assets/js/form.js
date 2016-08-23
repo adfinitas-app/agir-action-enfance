@@ -42,7 +42,6 @@ function preFill() {
   // Function located in assets/js/app.js
   var params = extractUrlParams();
   Object.keys(params).forEach(function(key) {
-    console.log(key);
     if (params[key] && params[key] != 'undefined') {
       if ($("input[name=" + key + "]").length > 0) {
 	$("input[name=" + key + "]").val(params[key]);
