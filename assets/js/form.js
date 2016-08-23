@@ -30,7 +30,7 @@ function submitForm(jqForm) {
     dbData.db[attrname] = pureField(FormData[attrname]);
   }
   var success = function() {
-    alert("Formulaire envoyé !"); // TODO: Page de remerciement ?
+    window.location = jqForm.data("success");
   };
   makeCorsRequest(dbData, success);
 }
