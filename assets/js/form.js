@@ -13,12 +13,20 @@ function submitForm(jqForm) {
     FormData[$(this).attr("name")] = $(this).val();
   });
   today = new Date();
-  woopra.track('inscription', {
+  /*
+  woopra.track("inscription", {
     url: document.URL,
     title: document.title,
     origine: jqForm.data("source"),
-    optin: "non" // TODO: Champ "Optin Woopra" oui/non ?
+    optin: "non" // Champ "Optin Woopra" oui/non ?
   });
+  */
+  var visitorProperties = {};
+  jqForm.find("input:not([type=submit]).visitor_property").each(function() {
+    // TODO: Check that it works with every types
+    visitorProperties[$(this).attr("name")] = $(this).val();
+  });
+  woopra.identify(visitorProperties);
   woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
@@ -32,7 +40,9 @@ function submitForm(jqForm) {
   var success = function() {
     window.location = jqForm.data("success");
   };
-  makeCorsRequest(dbData, success);
+  // TODO: DEBUG ONLY
+  console.log(dbData);
+  //makeCorsRequest(dbData, success);
 }
 
 // Pre-filled inputs from query parameter in URL.
@@ -88,36 +98,23 @@ function preFill() {
 
 $(document).ready(function() {
   $(".check-phone").intlTelInput({
+    "utilsScript": "/assets/js/vendor/intl-tel-input/build/js/utils.js",
     "initialCountry": "fr",
     "autoFormat": true
-  });
-  $.fn.intlTelInput.loadUtils("/assets/js/vendor/intl-tel-input/build/js/utils.js");
-  var jqForm = $("form.adfinitas-cx");
-  jqForm.on("submit", function(e) {
-    e.preventDefault();
-    if (isValidForm(jqForm) == true) {
-      submitForm(jqForm);
-    }
+  }).done(function() {
+    var jqForm = $("form.adfinitas-cx");
+    jqForm.on("submit", function(e) {
+      e.preventDefault();
+      if (isValidForm(jqForm) == true) {
+	submitForm(jqForm);
+      }
+    });
+    preFill();
   });
 });
 
-// Trick to let intl-tel-input time to load itself
-// (between document.ready and window.onload)
-// If not using that, you will
-// - get a invalid number (isValidNumber return false)
-// - get a -99 error code with getValidationError
-//
-// Usisng anonymous function to avoid polluting the namespace
-window.onload = (function(oldLoad) {
-  return function() {
-    oldLoad && oldLoad();
-    preFill();
-  }
-})(window.onload)
-
 /*
  * TODO
- * Woopra optin
  * Image de fond par champ
  * Reponse libre pour choix unique / choix caché
  * champ_libre_long
