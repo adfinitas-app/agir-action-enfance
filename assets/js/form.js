@@ -53,17 +53,32 @@ function preFill() {
       toHide = true;
       var name = key.substring(0, key.length - hideKeyword.length);
     }
-    if ($("input[name=" + name + "]").length > 0) {
+    if ($("select[name=" + name + "]").length > 0) {
+      var selector = $("select[name=" + name + "][value=" + value + "]");
+      selector.prop("selected", true);
+    } else if ($("input:radio[name=" + name + "]").length > 0) {
+      var selector = $("input:radio[name=" + name + "][value=" + value + "]");
+      selector.prop("checked", true);
+    } else if ($("input:checkbox[name=" + name + "]").length > 0) {
+      var selector = $("input:checkbox[name=" + name + "][value=" + value + "]");
+      selector.prop("checked", true);
+    } else if ($("input[name=" + name + "]").length > 0 &&
+	       $("input[name=" + name + "]").hasClass("check-phone")) {
       var selector = $("input[name=" + name + "]");
-    } else if ($("select[name=" + name + "]").length > 0) {
-      var selector = $("select[name=" + name + "]");
+      selector.intlTelInput("setNumber", value);
+    } else if ($("input[name=" + name + "]").length > 0) {
+      var selector = $("input[name=" + name + "]");
+      selector.val(value);
     } else {
       return;
     }
-    selector.val(value);
     if (toHide == true) {
-      if (isValidField(selector, !selector.prop("required")) == false) {
-	selector.val("");
+      if (isValidField(selector, !selector.prop("required")) === false) {
+	// Only un-fill the wrong value if this is an text/email input.
+	// However nothing happens
+	if (selector.attr('type') === 'text' || selector.attr('type') === 'email') {
+	  selector.val("");
+	}
       } else {
 	selector.closest(".field-row").css("display", "none")
       }
@@ -72,12 +87,11 @@ function preFill() {
 }
 
 $(document).ready(function() {
-  preFill();
   $(".check-phone").intlTelInput({
-    utilsScript: "/assets/js/vendor/intl-tel-input/lib/libphonenumber/build/utils.js",
     "initialCountry": "fr",
     "autoFormat": true
   });
+  $.fn.intlTelInput.loadUtils("/assets/js/vendor/intl-tel-input/build/js/utils.js");
   var jqForm = $("form.adfinitas-cx");
   jqForm.on("submit", function(e) {
     e.preventDefault();
@@ -87,8 +101,25 @@ $(document).ready(function() {
   });
 });
 
+// Trick to let intl-tel-input time to load itself
+// (between document.ready and window.onload)
+// If not using that, you will
+// - get a invalid number (isValidNumber return false)
+// - get a -99 error code with getValidationError
+//
+// Usisng anonymous function to avoid polluting the namespace
+window.onload = (function(oldLoad) {
+  return function() {
+    oldLoad && oldLoad();
+    preFill();
+  }
+})(window.onload)
+
 /*
  * TODO
+ * Woopra optin
+ * Image de fond par champ
+ * Reponse libre pour choix unique / choix caché
  * champ_libre_long
  * choix_multiple
  * champ_caché
@@ -96,4 +127,9 @@ $(document).ready(function() {
  * liste_deroulante
  * Responsive Design
  * Docs
+ *
+ * CSS / JS Statique :
+ * - Radio court
+ *   - Checkbox sur une demi-ligne (à la fin)
+ *   - Placement du label (avant ou au-dessus)
  */
