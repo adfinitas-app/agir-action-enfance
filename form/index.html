@@ -4,6 +4,8 @@ title: Formulaire
 source: Formulaire de test
 champs:
   - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
     nom: email
     actif: true
     requis: true
@@ -14,6 +16,8 @@ champs:
     reponses:
       - valeur:
   - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond:
     nom: email-non-requis
     actif: true
     requis: false
@@ -24,6 +28,8 @@ champs:
     reponses:
       - valeur:
   - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond:
     nom: phone
     actif: true
     requis: true
@@ -34,6 +40,8 @@ champs:
     reponses:
       - valeur:
   - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond:
     nom: phone-non-requis
     actif: true
     requis: false
@@ -44,6 +52,8 @@ champs:
     reponses:
       - valeur:
   - type: choix_unique
+    propriété_visiteur: true
+    image_de_fond:
     nom: optin
     actif: true
     requis: true
@@ -63,6 +73,9 @@ _comments:
   controle: 'Seulement pour les champs de type "champ libre"'
   reponses: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriété_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
+  source: Permet de personnaliser le nom de l'evenement sur Woopra
+  image_de_fond: Image de fond du champ
 ---
 
 <div class="row">

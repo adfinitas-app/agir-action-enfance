@@ -115,7 +115,6 @@ $(document).ready(function() {
 
 /*
  * TODO
- * Image de fond par champ
  * Reponse libre pour choix unique / choix caché
  * champ_libre_long
  * choix_multiple
