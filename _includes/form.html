@@ -4,7 +4,7 @@
   {% assign lineId=0 %}
   {% for champ in page.champs %}
     {% if champ.actif == true %}
-    <div class="container"
+    <div class="input-container"
 	{% if champ.image_de_fond != nill and champ.image_de_fond != empty %}
 	style="background-image: url('{{ champ.image_de_fond }}')"
 	{% endif %}
@@ -75,6 +75,23 @@
       	    </label>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
+	  {% if champ.autre_reponse %}
+	    <input type="radio" id="input-{{ inputId }}"
+		   value="Autre réponse"
+		   name="{{ champ.nom }}"
+                   {% if champ.requis == true %}
+	           required
+	           {% endif %}
+		   {% if champ.propriété_visiteur %}
+		   class="input-choix_multiple other visitor_property" %}
+		   {% else %}
+		   class="input-choix_multiple other"
+   		   {% endif %}
+	    />
+	    <input type="text" class="other-choice-text no-send"
+		   id="other-{{ inputId }}"/>
+	    {% assign inputId=inputId | plus:1 %}
+	  {% endif %}
 	  <p class="error-message">{{ champ.message_erreur }}</p>
         {% when 'choix_multiple' %}
 	  <p>TODO</p>

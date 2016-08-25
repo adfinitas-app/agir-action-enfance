@@ -3,3 +3,9 @@
 #slide-0 label {
   color: white;
 }
+
+.other-choice-text {
+  display: inline-block;
+  width: auto;
+  margin-left: 10px;
+}

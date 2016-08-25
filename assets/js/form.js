@@ -8,7 +8,7 @@ function pureField(string) {
 
 function submitForm(jqForm) {
   var FormData = {};
-  jqForm.find("input:not([type=submit])").each(function() {
+  jqForm.find("input:not([type=submit]):not(.no-send)").each(function() {
     // TODO: Check that it works with every types
     FormData[$(this).attr("name")] = $(this).val();
   });
@@ -22,7 +22,7 @@ function submitForm(jqForm) {
   });
   */
   var visitorProperties = {};
-  jqForm.find("input:not([type=submit]).visitor_property").each(function() {
+  jqForm.find("input:not([type=submit]):not(.no-send).visitor_property").each(function() {
     // TODO: Check that it works with every types
     visitorProperties[$(this).attr("name")] = $(this).val();
   });
@@ -96,26 +96,45 @@ function preFill() {
   });
 }
 
+function otherChoice() {
+  $(".other-choice-text").each(function() {
+    $(this).on("keydown", function() {
+      var elemId = $(this).attr("id");
+      var id = elemId.substr("other-".length);
+      if ($(this).val() === "") {
+	$("#input-" + id).prop("checked", false);
+      } else {
+	$("#input-" + id).prop("checked", true);
+      }
+    });
+  });
+}
+
 $(document).ready(function() {
   $(".check-phone").intlTelInput({
     "utilsScript": "/assets/js/vendor/intl-tel-input/build/js/utils.js",
     "initialCountry": "fr",
     "autoFormat": true
   }).done(function() {
-    var jqForm = $("form.adfinitas-cx");
-    jqForm.on("submit", function(e) {
-      e.preventDefault();
-      if (isValidForm(jqForm) == true) {
-	submitForm(jqForm);
-      }
-    });
     preFill();
   });
+  var jqForm = $("form.adfinitas-cx");
+  jqForm.on("submit", function(e) {
+    e.preventDefault();
+    $(".other-choice-text").each(function() {
+      var elemId = $(this).attr("id");
+      var id = elemId.substr("other-".length);
+      $("#input-" + id).val($(this).val());
+    });
+    if (isValidForm(jqForm) == true) {
+      submitForm(jqForm);
+    }
+  });
+  otherChoice();
 });
 
 /*
  * TODO
- * Reponse libre pour choix unique / choix caché
  * champ_libre_long
  * choix_multiple
  * champ_caché
