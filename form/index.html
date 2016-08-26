@@ -95,7 +95,7 @@ champs:
     actif: true
     requis: true
     texte: 'Ça va ?'
-    message_erreur: Vous devez faire un choix
+    message_erreur: Vous devez sélectionner au moins une valeur
     placeholder:
     controle:
     reponses:
@@ -117,6 +117,23 @@ champs:
       - valeur: 
     autre_reponse: true
     valeur_champ_cache: Test
+  - type: liste_deroulante
+    propriété_visiteur: true
+    image_de_fond:
+    nom: birth_date
+    actif: true
+    requis: true
+    texte: 'Date de naisssance'
+    message_erreur: Vous devez sélectionner une valeur
+    placeholder: "Date de naissance"
+    controle:
+    reponses:
+      - valeur: 2000
+      - valeur: 1990
+      - valeur: 1980
+      - valeur: 1970
+    autre_reponse: false
+    valeur_champ_cache: 
 bouton_de_soumission: Envoyer
 page_de_remerciement_path: /index.html
 _comments:
