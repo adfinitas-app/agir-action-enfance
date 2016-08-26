@@ -16,6 +16,7 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+    valeur_champ_cache:
   - type: champ_libre_court
     propriété_visiteur: true
     image_de_fond:
@@ -29,6 +30,7 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+    valeur_champ_cache:
   - type: champ_libre_court
     propriété_visiteur: true
     image_de_fond:
@@ -42,6 +44,7 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+    valeur_champ_cache:
   - type: champ_libre_court
     propriété_visiteur: true
     image_de_fond:
@@ -55,6 +58,7 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+    valeur_champ_cache:
   - type: champ_libre_long
     propriété_visiteur: true
     image_de_fond: ""
@@ -68,6 +72,7 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+    valeur_champ_cache:
   - type: choix_unique
     propriété_visiteur: true
     image_de_fond:
@@ -82,6 +87,7 @@ champs:
       - valeur: Oui
       - valeur: Non
     autre_reponse: true
+    valeur_champ_cache:
   - type: choix_multiple
     propriété_visiteur: true
     image_de_fond:
@@ -96,6 +102,21 @@ champs:
       - valeur: Oui
       - valeur: Non
     autre_reponse: true
+    valeur_champ_cache:
+  - type: champ_caché
+    propriété_visiteur: true
+    image_de_fond:
+    nom: hidden
+    actif: true
+    requis: true
+    texte: 'Texte random'
+    message_erreur: 
+    placeholder:
+    controle:
+    reponses:
+      - valeur: 
+    autre_reponse: true
+    valeur_champ_cache: Test
 bouton_de_soumission: Envoyer
 page_de_remerciement_path: /index.html
 _comments:
@@ -109,6 +130,7 @@ _comments:
   propriété_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
   source: Permet de personnaliser le nom de l'evenement sur Woopra
   image_de_fond: Image de fond du champ
+  valeur_champ_cache: 'Seulement pour les champs de type "champ_cache". Définit la valeur du champ'
 ---
 
 <div class="row">
