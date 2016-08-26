@@ -55,6 +55,19 @@ champs:
     reponses:
       - valeur:
     autre_reponse: false
+  - type: champ_libre_long
+    propriété_visiteur: true
+    image_de_fond: ""
+    nom: nom
+    actif: true
+    requis: true
+    texte: Veuillez entrer votre nom
+    message_erreur: Nom manquant
+    placeholder: 'Nom *'
+    controle: 
+    reponses:
+      - valeur:
+    autre_reponse: false
   - type: choix_unique
     propriété_visiteur: true
     image_de_fond:
@@ -62,6 +75,20 @@ champs:
     actif: true
     requis: true
     texte: 'Optin (Obligatoire) :'
+    message_erreur: Vous devez faire un choix
+    placeholder:
+    controle:
+    reponses:
+      - valeur: Oui
+      - valeur: Non
+    autre_reponse: true
+  - type: choix_multiple
+    propriété_visiteur: true
+    image_de_fond:
+    nom: good
+    actif: true
+    requis: true
+    texte: 'Ça va ?'
     message_erreur: Vous devez faire un choix
     placeholder:
     controle:
