@@ -6,6 +6,23 @@ champs:
   - type: champ_libre_court
     propriété_visiteur: true
     image_de_fond:
+    nom: firstname
+    actif: true
+    requis: true
+    texte: Votre prenom
+    message_erreur: Vous devez indiquer un prénom
+    placeholder: John
+    controle:
+    reponses:
+      - valeur: 2000
+      - valeur: 1990
+      - valeur: 1980
+      - valeur: 1970
+    autre_reponse: false
+    valeur_champ_cache:
+  - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond:
     nom: lastname
     actif: true
     requis: true
@@ -20,18 +37,15 @@ champs:
   - type: champ_libre_court
     propriété_visiteur: true
     image_de_fond:
-    nom: firstname
+    nom: email
     actif: true
     requis: true
-    texte: Votre prenom
-    message_erreur: Vous devez indiquer un prénom
-    placeholder: John
-    controle:
+    texte: Votre email
+    message_erreur: Vous devez renseigner un email correct
+    placeholder: johndoe@doe.com
+    controle: email
     reponses:
-      - valeur: 2000
-      - valeur: 1990
-      - valeur: 1980
-      - valeur: 1970
+      - valeur:
     autre_reponse: false
     valeur_champ_cache:
 bouton_de_soumission: Je signe la pétition
