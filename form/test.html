@@ -1,131 +1,17 @@
 ---
 layout: form
 title: Formulaire
-source: Formulaire de test
+source: recettage
 champs:
-  - type: champ_libre_court
-    propriété_visiteur: true
-    image_de_fond: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
-    nom: email
-    actif: true
-    requis: true
-    texte: Veuillez entrer votre email (Obligatoire)
-    message_erreur: Email invalide
-    placeholder: 'Email *'
-    controle: email
-    reponses:
-      - valeur:
-    autre_reponse: false
-    valeur_champ_cache:
-  - type: champ_libre_court
-    propriété_visiteur: true
-    image_de_fond:
-    nom: email-non-requis
-    actif: true
-    requis: false
-    texte: Veuillez entrer votre email
-    message_erreur: Email invalide
-    placeholder: Email
-    controle: email
-    reponses:
-      - valeur:
-    autre_reponse: false
-    valeur_champ_cache:
-  - type: champ_libre_court
-    propriété_visiteur: true
-    image_de_fond:
-    nom: phone
-    actif: true
-    requis: true
-    texte: Veuillez entrer votre numéro de téléphone (Obligatoire)
-    message_erreur: Numéro de téléphone invalide
-    placeholder: 'Téléphone *'
-    controle: telephone
-    reponses:
-      - valeur:
-    autre_reponse: false
-    valeur_champ_cache:
-  - type: champ_libre_court
-    propriété_visiteur: true
-    image_de_fond:
-    nom: phone-non-requis
-    actif: true
-    requis: false
-    texte: Veuillez entrer votre numéro de téléphone
-    message_erreur: Numéro de téléphone invalide
-    placeholder: Téléphone
-    controle: telephone
-    reponses:
-      - valeur:
-    autre_reponse: false
-    valeur_champ_cache:
-  - type: champ_libre_long
-    propriété_visiteur: true
-    image_de_fond: ""
-    nom: nom
-    actif: true
-    requis: true
-    texte: Veuillez entrer votre nom
-    message_erreur: Nom manquant
-    placeholder: 'Nom *'
-    controle: 
-    reponses:
-      - valeur:
-    autre_reponse: false
-    valeur_champ_cache:
-  - type: choix_unique
-    propriété_visiteur: true
-    image_de_fond:
-    nom: optin
-    actif: true
-    requis: true
-    texte: 'Optin (Obligatoire) :'
-    message_erreur: Vous devez faire un choix
-    placeholder:
-    controle:
-    reponses:
-      - valeur: Oui
-      - valeur: Non
-    autre_reponse: true
-    valeur_champ_cache:
-  - type: choix_multiple
-    propriété_visiteur: true
-    image_de_fond:
-    nom: good
-    actif: true
-    requis: true
-    texte: 'Ça va ?'
-    message_erreur: Vous devez sélectionner au moins une valeur
-    placeholder:
-    controle:
-    reponses:
-      - valeur: Oui
-      - valeur: Non
-    autre_reponse: true
-    valeur_champ_cache:
   - type: champ_caché
-    propriété_visiteur: true
-    image_de_fond:
-    nom: hidden
-    actif: true
-    requis: true
-    texte: 'Texte random'
-    message_erreur: 
-    placeholder:
-    controle:
-    reponses:
-      - valeur: 
-    autre_reponse: true
-    valeur_champ_cache: Test
-  - type: liste_deroulante
-    propriété_visiteur: true
+    propriété_visiteur: false
     image_de_fond:
     nom: birth_date
     actif: true
     requis: true
-    texte: 'Date de naisssance'
+    texte: Date de naisssance
     message_erreur: Vous devez sélectionner une valeur
-    placeholder: "Date de naissance"
+    placeholder: Date de naissance
     controle:
     reponses:
       - valeur: 2000
@@ -133,8 +19,8 @@ champs:
       - valeur: 1980
       - valeur: 1970
     autre_reponse: false
-    valeur_champ_cache: 
-bouton_de_soumission: Envoyer
+    valeur_champ_cache:
+bouton_de_soumission: Je signe la pétition
 page_de_remerciement_path: /index.html
 _comments:
   nom: Obligatoire et unique. Description courte du champ
@@ -145,7 +31,7 @@ _comments:
   autre_reponse: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriété_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
-  source: Permet de personnaliser le nom de l'evenement sur Woopra
+  source: "Permet de personnaliser le nom de l'evenement sur Woopra"
   image_de_fond: Image de fond du champ
   valeur_champ_cache: 'Seulement pour les champs de type "champ_cache". Définit la valeur du champ'
 ---
