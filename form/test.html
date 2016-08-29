@@ -3,21 +3,35 @@ layout: form
 title: Formulaire
 source: recettage
 champs:
-  - type: champ_caché
-    propriété_visiteur: false
+  - type: champ_libre_court
+    propriété_visiteur: true
     image_de_fond:
-    nom: birth_date
-    actif: true
+    nom: firstname
+    actif: false
     requis: true
-    texte: Date de naisssance
-    message_erreur: Vous devez sélectionner une valeur
-    placeholder: Date de naissance
+    texte: Votre prénom
+    message_erreur: Vous devez indiquer un prénom
+    placeholder: John
     controle:
     reponses:
       - valeur: 2000
       - valeur: 1990
       - valeur: 1980
       - valeur: 1970
+    autre_reponse: false
+    valeur_champ_cache:
+  - type: champ_libre_court
+    propriété_visiteur: true
+    image_de_fond:
+    nom: lastname
+    actif: true
+    requis: true
+    texte: Nom de famille
+    message_erreur: Vous devez indiquer un nom de famille
+    placeholder: Votre nom
+    controle:
+    reponses:
+      - valeur:
     autre_reponse: false
     valeur_champ_cache:
 bouton_de_soumission: Je signe la pétition
