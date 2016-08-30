@@ -145,6 +145,7 @@
    		   {% endif %}
 	    />
 	    <label class="label-choix_unique label-other" for="input-{{ inputId }}">
+	      <span>Autre :</span>
 	      <input type="text" class="other-choice-text no-send"
 	  	   id="other-{{ inputId }}"/>
 	    </label>
@@ -175,7 +176,7 @@
 		/>
 		<label class="label-choix_multiple" for="input-{{ inputId }}">
 		{{ reponse.valeur}}
-			</label>
+		</label>
 	    </div>
 	    {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
@@ -193,6 +194,7 @@
    		   {% endif %}
 	    />
 	    <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
+	      <span>Autre :</span>
 	      <input type="text" class="other-choice-text no-send"
 	  	   id="other-{{ inputId }}"/>
 	    </label>
