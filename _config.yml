@@ -21,5 +21,4 @@ types:
   - liste_deroulante
   - choix_unique
   - choix_multiple
-  - champ_caché
   - scoring
