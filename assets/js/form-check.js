@@ -42,7 +42,13 @@ function showError(elem) {
 function isValidField(jqueryFieldSelector, allowEmpty = true) {
   var field = jqueryFieldSelector;
   var status = false;
-  if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
+  if (field.hasClass("other") && (field.hasClass("input-choix_multiple") ||
+      field.hasClass("input-choix_unique"))) {
+    if (field.is(":checked") && field.val() !== "") {
+      status = true;
+    }
+  }
+  else if (field.attr("type") === "radio" || field.attr("type") === "checkbox") {
     if (allowEmpty === true ||
 	$("input[name=" + field.attr("name") + "]:checked").length > 0) {
       status = true;

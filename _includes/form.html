@@ -133,7 +133,7 @@
 	  {% endfor %}
 	  {% if champ.autre_reponse %}
 	    <input type="radio" id="input-{{ inputId }}"
-		   value="Autre réponse"
+		   value=""
 		   name="{{ champ.nom }}"
 		   {% if champ.requis == true %}
 		   required
@@ -182,7 +182,7 @@
 	  {% endfor %}
 	  {% if champ.autre_reponse %}
 	    <input type="checkbox" id="input-{{ inputId }}"
-		   value="Autre réponse"
+		   value=""
 		   name="{{ champ.nom }}"
 		   {% if champ.requis == true %}
 		   required
