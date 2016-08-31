@@ -1,0 +1,166 @@
+---
+layout: form
+title: Formulaire
+event_woopra: Formulaire de test
+panneau_introduction:
+  fond_image_path:
+  texte_html:
+panneau_question:
+  texte_html:
+  champs:
+    - type: champ_libre_court
+      propriete_visiteur: true
+      nom_machine: email
+      label: Veuillez entrer votre email (Obligatoire)
+      placeholder: 'Email *'
+      requis: true
+      message_erreur: Email invalide
+      controle: email
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: champ_libre_court
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: email-non-requis
+      requis: false
+      label: Veuillez entrer votre email
+      message_erreur: Email invalide
+      placeholder: Email
+      controle: email
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: champ_libre_court
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: phone
+      requis: true
+      label: Veuillez entrer votre numéro de téléphone (Obligatoire)
+      message_erreur: Numéro de téléphone invalide
+      placeholder: 'Téléphone *'
+      controle: telephone
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: champ_libre_court
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: phone-non-requis
+      requis: false
+      label: Veuillez entrer votre numéro de téléphone
+      message_erreur: Numéro de téléphone invalide
+      placeholder: Téléphone
+      controle: telephone
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: champ_libre_long
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: nom
+      requis: true
+      label: Veuillez entrer votre nom
+      message_erreur: Nom manquant
+      placeholder: 'Nom *'
+      controle:
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: choix_unique
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: optin
+      requis: true
+      label: 'Optin (Obligatoire) :'
+      message_erreur: Vous devez faire un choix
+      placeholder:
+      controle:
+      reponses:
+        - valeur: Oui
+        - valeur: Non
+      autre_reponse: true
+    - type: choix_multiple
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: good
+      requis: true
+      label: Ça va ?
+      message_erreur: Vous devez sélectionner au moins une valeur
+      placeholder:
+      controle:
+      reponses:
+        - valeur: Oui
+        - valeur: Non
+      autre_reponse: true
+    - type: liste_deroulante
+      propriete_visiteur: true
+      fond_image_path:
+      nom_machine: birth_date
+      requis: true
+      label: Date de naisssance
+      message_erreur: Vous devez sélectionner une valeur
+      placeholder: Date de naissance
+      controle:
+      reponses:
+        - valeur: 2000
+        - valeur: 1990
+        - valeur: 1980
+        - valeur: 1970
+      autre_reponse: false
+panneau_informations_personnelles:
+  texte_html:
+  champs:
+    - type: champ_libre_court
+      propriete_visiteur: true
+      nom_machine: email
+      label: Veuillez entrer votre email (Obligatoire)
+      placeholder: 'Email *'
+      requis: true
+      message_erreur: Email invalide
+      controle: email
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+      reponses:
+        - valeur:
+      autre_reponse: false
+    - type: scoring
+      propriete_visiteur: true
+      nom_machine: scoring
+      label: Avez-vous apprécié ce formulaire ?
+      placeholder:
+      requis: true
+      message_erreur: Vous devez faire un choix
+      controle:
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+      reponses:
+        - valeur:
+      autre_reponse: false
+options:
+  champs_caches:
+    - nom: hidden
+      valeur: test-ok
+      dynamique: true
+      propriete_visiteur: true
+bouton_de_soumission: "Signer l'a pétiton"
+page_de_remerciement_path: /index.html
+_comments:
+  nom: Obligatoire et unique. Description courte du champ
+  texte: Ce champ peut etre vide
+  placeholder: 'Seulement pour les champs de type "champ libre"'
+  controle: 'Seulement pour les champs de type "champ libre"'
+  reponses: 'Seulement pour les champs de type "choix"'
+  autre_reponse: 'Seulement pour les champs de type "choix"'
+  page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
+  propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
+  event_woopra: "Permet de personnaliser le nom de l'evenement sur Woopra"
+  fond_image_path: Image de fond du champ
+---
+
+<div class="row">
+  <div class="large-12 columns">
+    <h1>adfinitas.cx - Formulaire</h1>
+  </div>
+</div>
+
+{% include form.html %}
