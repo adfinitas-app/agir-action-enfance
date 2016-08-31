@@ -47,6 +47,19 @@ panneau_informations_personnelles:
       reponses:
         - valeur:
       autre_reponse: false
+    - type: choix_unique
+      propriete_visiteur: false
+      nom_machine: oui-non
+      label: go
+      placeholder:
+      requis: true
+      message_erreur: 'controle !'
+      controle:
+      fond_image_path:
+      reponses:
+        - valeur: oui
+        - valeur: non
+      autre_reponse: true
 options:
   champs_caches:
     - nom: test-champ-cache
