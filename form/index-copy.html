@@ -1,113 +1,24 @@
 ---
 layout: form
 title: Formulaire
-event_woopra: Formulaire de test
+event_woopra: form
 panneau_introduction:
-  fond_image_path:
-  texte_html:
+  fond_image_path: 'http://www.unicef.ch/sites/default/files/styles/node_detail/public/media/071364e_ruanda.jpg?itok=7TPKq-5A'
+  texte_html: '<h1>Bonjour et bienvenu sur le site de la super app adfinitas</h1><h2>ca work ici ou pas</h2><p>blabla</p>'
 panneau_question:
-  texte_html:
+  texte_html: '<h2>R&eacute;pondez &agrave; ces quelques questions, nous sommes sympas</h2><h3>et on vous offre des petits pains</h3>'
   champs:
-    - type: champ_libre_court
-      propriete_visiteur: true
-      nom_machine: email
-      label: Veuillez entrer votre email (Obligatoire)
+    - type: scoring
+      propriete_visiteur: false
+      nom_machine: asso-prefere
+      label: "L'unicef est votre association préféré"
       placeholder: 'Email *'
       requis: true
-      message_erreur: Email invalide
+      message_erreur: Vous devez faire un choix
       controle: email
       fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
       reponses:
         - valeur:
-      autre_reponse: false
-    - type: champ_libre_court
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: email-non-requis
-      requis: false
-      label: Veuillez entrer votre email
-      message_erreur: Email invalide
-      placeholder: Email
-      controle: email
-      reponses:
-        - valeur:
-      autre_reponse: false
-    - type: champ_libre_court
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: phone
-      requis: true
-      label: Veuillez entrer votre numéro de téléphone (Obligatoire)
-      message_erreur: Numéro de téléphone invalide
-      placeholder: 'Téléphone *'
-      controle: telephone
-      reponses:
-        - valeur:
-      autre_reponse: false
-    - type: champ_libre_court
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: phone-non-requis
-      requis: false
-      label: Veuillez entrer votre numéro de téléphone
-      message_erreur: Numéro de téléphone invalide
-      placeholder: Téléphone
-      controle: telephone
-      reponses:
-        - valeur:
-      autre_reponse: false
-    - type: champ_libre_long
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: nom
-      requis: true
-      label: Veuillez entrer votre nom
-      message_erreur: Nom manquant
-      placeholder: 'Nom *'
-      controle:
-      reponses:
-        - valeur:
-      autre_reponse: false
-    - type: choix_unique
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: optin
-      requis: true
-      label: 'Optin (Obligatoire) :'
-      message_erreur: Vous devez faire un choix
-      placeholder:
-      controle:
-      reponses:
-        - valeur: Oui
-        - valeur: Non
-      autre_reponse: true
-    - type: choix_multiple
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: good
-      requis: true
-      label: Ça va ?
-      message_erreur: Vous devez sélectionner au moins une valeur
-      placeholder:
-      controle:
-      reponses:
-        - valeur: Oui
-        - valeur: Non
-      autre_reponse: true
-    - type: liste_deroulante
-      propriete_visiteur: true
-      fond_image_path:
-      nom_machine: birth_date
-      requis: true
-      label: Date de naisssance
-      message_erreur: Vous devez sélectionner une valeur
-      placeholder: Date de naissance
-      controle:
-      reponses:
-        - valeur: 2000
-        - valeur: 1990
-        - valeur: 1980
-        - valeur: 1970
       autre_reponse: false
 panneau_informations_personnelles:
   texte_html:
