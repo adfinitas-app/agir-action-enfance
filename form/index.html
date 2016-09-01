@@ -6,7 +6,7 @@ panneau_introduction:
   fond_image_path:
   texte_html:
 panneau_question:
-  texte_html: 
+  texte_html:
   champs:
     - type: champ_libre_court
       propriete_visiteur: true
@@ -16,7 +16,7 @@ panneau_question:
       requis: true
       message_erreur: Email invalide
       controle: email
-      fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
       reponses:
         - valeur:
     - type: champ_libre_court
@@ -54,13 +54,13 @@ panneau_question:
         - valeur:
     - type: champ_libre_long
       propriete_visiteur: true
-      fond_image_path: ""
+      fond_image_path:
       nom_machine: nom
       requis: true
       label: Veuillez entrer votre nom
       message_erreur: Nom manquant
       placeholder: 'Nom *'
-      controle: 
+      controle:
       reponses:
         - valeur:
     - type: choix_unique
@@ -81,7 +81,7 @@ panneau_question:
       fond_image_path:
       nom_machine: good
       requis: true
-      label: 'Ça va ?'
+      label: Ça va ?
       message_erreur: Vous devez sélectionner au moins une valeur
       placeholder:
       controle:
@@ -94,9 +94,9 @@ panneau_question:
       fond_image_path:
       nom_machine: birth_date
       requis: true
-      label: 'Date de naisssance'
+      label: Date de naisssance
       message_erreur: Vous devez sélectionner une valeur
-      placeholder: "Date de naissance"
+      placeholder: Date de naissance
       controle:
       reponses:
         - valeur: 2000
@@ -114,7 +114,7 @@ panneau_informations_personnelles:
       requis: true
       message_erreur: Email invalide
       controle: email
-      fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
       reponses:
         - valeur:
     - type: scoring
@@ -124,8 +124,8 @@ panneau_informations_personnelles:
       placeholder:
       requis: true
       message_erreur: Vous devez faire un choix
-      controle: 
-      fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
+      controle:
+      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
       reponses:
         - valeur:
 options:
@@ -134,9 +134,10 @@ options:
       valeur: test-ok
       dynamique: true
       propriete_visiteur: true
-bouton_de_soumission: Envoyer
+bouton_de_soumission: "Signer l'a pétiton"
 page_de_remerciement_path: /index.html
 _comments:
+  layout: "permet de choisir le type d'affichage souhaité"
   nom: Obligatoire et unique. Description courte du champ
   texte: Ce champ peut etre vide
   placeholder: 'Seulement pour les champs de type "champ libre"'
@@ -144,7 +145,7 @@ _comments:
   reponses: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
-  event_woopra: Permet de personnaliser le nom de l'evenement sur Woopra
+  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
   fond_image_path: Image de fond du champ
 ---
 
