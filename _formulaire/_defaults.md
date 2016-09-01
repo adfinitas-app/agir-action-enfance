@@ -41,12 +41,12 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
 options:
+  bouton_de_soumission: "Envoyer"
+  page_de_remerciement_path: /index.html
   champs_caches:
     - nom:
       valeur:
       propriete_visiteur: false
-  bouton_de_soumission: "Envoyer"
-  page_de_remerciement_path: /index.html
   meta:
     title:
     description:
