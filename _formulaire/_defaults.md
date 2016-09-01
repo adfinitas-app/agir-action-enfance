@@ -61,11 +61,4 @@ _comments:
   event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
   fond_image_path: Image de fond du champ
 ---
-
-<div class="row">
-  <div class="large-12 columns">
-    <h1>adfinitas.cx - {{ page.title }}</h1>
-  </div>
-</div>
-
 {% include form.html %}
