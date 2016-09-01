@@ -1,5 +1,5 @@
 ---
-event_woopra: Formulaire de test
+event_woopra: formulaire
 panneau_introduction:
   fond_image_path:
   fond_color:
