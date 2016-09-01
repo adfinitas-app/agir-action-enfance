@@ -1,5 +1,5 @@
 ---
-title: customer-1
+title: customer-2
 event_woopra: Formulaire de test
 panneau_introduction:
   fond_image_path:
@@ -59,3 +59,5 @@ _comments:
   event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
   fond_image_path: Image de fond du champ
 ---
+
+
