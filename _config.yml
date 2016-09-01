@@ -1,10 +1,5 @@
 array: []
-version: 3.0.3
-defaults:
-  - scope:
-      path: ''
-    values:
-      layout: default
+version: 3.2.1
 woopra_config:
   domain: "adfinitas.fr"
   cookie_domain: ".adfinitas.fr"
@@ -22,3 +17,25 @@ types:
   - choix_unique
   - choix_multiple
   - scoring
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: formulaire
+    values:
+      layout: formulaire
+  - scope:
+      path: ''
+      type: petition
+    values:
+      layout: petition
+collections:
+  formulaire:
+    output: true
+    permalink: /:collection/:title/
+  petition:
+    output: true
+    permalink: /:collection/:title/
