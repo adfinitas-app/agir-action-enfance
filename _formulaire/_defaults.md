@@ -47,6 +47,9 @@ options:
       propriete_visiteur: false
   bouton_de_soumission: "Envoyer"
   page_de_remerciement_path: /index.html
+  meta:
+    title:
+    description:
 _comments:
   nom: Obligatoire et unique. Description courte du champ
   texte: Ce champ peut etre vide
