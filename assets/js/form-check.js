@@ -68,7 +68,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
       else if (field.hasClass("check-phone")) {
 	status = (field.intlTelInput("isValidNumber") === true);
       }
-      else if (field.val() !== "" || field.val() !== null) {
+      else if (field.val() !== "" && field.val() !== null) {
 	status = true;
       }
     }
