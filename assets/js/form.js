@@ -150,12 +150,6 @@ $(document).ready(function() {
 
 /*
  * TODO
- * scoring (radio de 1 à 10 en presentation horizontale)
- * Responsive Design
+ * Test responsive Design
  * Docs
- *
- * CSS / JS Statique :
- * - Radio court
- *   - Checkbox sur une demi-ligne (à la fin)
- *   - Placement du label (avant ou au-dessus)
  */
