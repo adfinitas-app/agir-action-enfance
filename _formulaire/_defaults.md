@@ -45,7 +45,7 @@ options:
     - nom:
       valeur:
       propriete_visiteur: false
-  bouton_de_soumission: "Signer la pétiton"
+  bouton_de_soumission: "Envoyer"
   page_de_remerciement_path: /index.html
 _comments:
   nom: Obligatoire et unique. Description courte du champ
