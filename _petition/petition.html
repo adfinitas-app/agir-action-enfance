@@ -7,17 +7,19 @@ panneau_introduction:
 panneau_informations_personnelles:
   texte_html:
   champs:
-    - type: scoring
-      propriete_visiteur: true
-      nom_machine: scoring
-      label: Avez-vous apprécié ce formulaire ?
-      placeholder:
-      requis: true
-      message_erreur: Vous devez faire un choix
-      controle:
-      fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+    - type: champ_libre_court
+      nom_machine: phone
       reponses:
         - valeur:
+      options:
+        propriete_visiteur: true
+        label: Veuillez entrer votre numéro de téléphone (Obligatoire)
+        placeholder: 'Téléphone *'
+        requis: true
+        message_erreur: Numéro de téléphone invalide
+        controle: telephone
+        fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+        fond_color:
 options:
   champs_caches:
     - nom: hidden

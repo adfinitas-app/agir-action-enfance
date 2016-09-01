@@ -15,10 +15,16 @@
     input-container-champ_cache
     {% endcase %}
     "
-	{% if champ.fond_image_path != nill and
-	 champ.fond_image_path != empty %}
-	style="background-image: url('{{ champ.fond_image_path }}')"
+	style="
+	{% if champ.options.fond_image_path != nill and
+	 champ.options.fond_image_path != empty %}
+	background-image: url('{{ champ.options.fond_image_path }}');
 	{% endif %}
+	{% if champ.options.fond_color != nill and
+	 champ.options.fond_color != empty %}
+	background-color: {{ champ.options.fond_color }};
+	{% endif %}
+	"
 	id="slide-{{ lineId }}"
 	{% assign lineId=lineId | plus:1 %}
 	>
@@ -30,67 +36,68 @@
 	  {% elsif champ.type == 'champ_libre_long' %}
 	    <div class="large-12 columns champ_libre_long">
 	  {% endif %}
-	  {% if champ.label != nill and champ.label != empty %}
+	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.label }}
+		{{ champ.options.label }}
 	    </label>
 	  {% endif %}
 	  <input id="input-{{ inputId }}"
 		 {% assign inputClasses = site.array %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'input-champ_libre ' %}
-		 {% if champ.controle == "email" %}
+		 {% if champ.options.controle == "email" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-email ' %}
 		 type="email"
-		 {% elsif champ.controle == "telephone" %}
+		 {% elsif champ.options.controle == "telephone" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-phone ' %}
 		 type="text"
 		 {% else %}
 		 type="text"
 		 {% endif %}
-		 placeholder="{{ champ.placeholder }}"
+		 placeholder="{{ champ.options.placeholder }}"
 		 name="{{ champ.nom_machine }}"
-		 {% if champ.propriete_visiteur %}
+		 {% if champ.options.propriete_visiteur %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'visitor_property' %}
    		 {% endif %}
-		 {% if champ.requis == true %}
+		 {% if champ.options.requis == true %}
 		 required
 		 {% endif %}
 		 class="{{ inputClasses }}"
 	  />
 	  {% assign inputId=inputId | plus:1 %}
-	  <p class="error-message">{{ champ.message_erreur }}</p>
+	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	  </div>
 	</div>
 	{% when 'liste_deroulante' %}
 	<div class="row field-row">
 	  <div class="large-12 columns">
-	  {% if champ.label != nill and champ.label != empty %}
+	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.label }}
+		{{ champ.options.label }}
 	    </label>
 	  {% endif %}
 	    <select
 	      {% assign inputClasses = site.array %}
 	      {% assign inputClasses = inputClasses
 	                | push: 'input-liste_deroulante ' %}
-	      {% if champ.propriete_visiteur %}
+	      {% if champ.options.propriete_visiteur %}
 	      {% assign inputClasses = inputClasses
 	                | push: 'visitor_property' %}
    	      {% endif %}
-	      {% if champ.requis == true %}
+	      {% if champ.options.requis == true %}
 	      required
 	      {% endif %}
 	      name="{{ champ.nom_machine }}"
 	      id="input-{{ inputId }}"
 	      class="{{ inputClasses }}"
 	      >
-	      {% if champ.placeholder != nill and champ.placeholder != empty %}
+	      {% if champ.options.placeholder != nill and
+		 champ.options.placeholder != empty %}
 	      <option selected="selected" disabled="disabled">
-		{{ champ.placeholder }}
+		{{ champ.options.placeholder }}
 	      </option>
 	      {% endif %}
 	      {% for reponse in champ.reponses %}
@@ -98,24 +105,24 @@
 	      {% endfor %}
 	    </select>
 	    {% assign inputId=inputId | plus:1 %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
+	    <p class="error-message">{{ champ.options.message_erreur }}</p>
 	  </div>
 	</div>
 	{% when 'choix_unique' %}
 	<div class="row field-row">
 	    <div class="large-12 columns">
-	  {% if champ.label != nill and champ.label != empty %}
-	    <p class="label-choix_unique">{{ champ.label }}</p>
+	  {% if champ.options.label != nill and champ.options.label != empty %}
+	    <p class="label-choix_unique">{{ champ.options.label }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
 	      <input type="radio" id="input-{{ inputId }}"
 	             value=""
 	             name="{{ champ.nom_machine }}"
-	             {% if champ.requis == true %}
+	             {% if champ.options.requis == true %}
 	             required
 	             {% endif %}
-	             {% if champ.propriete_visiteur %}
+	             {% if champ.options.propriete_visiteur %}
 	             class="input-choix_unique other visitor_property" %}
 	             {% else %}
 	             class="input-choix_unique other"
@@ -132,10 +139,10 @@
 	          <input type="radio" id="input-{{ inputId }}"
 	               value="{{ reponse.valeur}}"
 	               name="{{ champ.nom_machine }}"
-	               {% if champ.requis == true %}
+	               {% if champ.options.requis == true %}
 	               required
 	               {% endif %}
-	               {% if champ.propriete_visiteur %}
+	               {% if champ.options.propriete_visiteur %}
 	               class="input-choix_unique visitor_property" %}
 	               {% else %}
 	               class="input-choix_unique"
@@ -148,24 +155,24 @@
 	      {% assign inputId=inputId | plus:1 %}
 	    {% endif %}
 	  {% endfor %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
+	    <p class="error-message">{{ champ.options.message_erreur }}</p>
 	  </div>
 	</div>
 	{% when 'choix_multiple' %}
 	<div class="row field-row">
 	  <div class="large-12 columns">
-	  {% if champ.label != nill and champ.label != empty %}
-	    <p class="label-choix_multiple">{{ champ.label }}</p>
+	  {% if champ.options.label != nill and champ.options.label != empty %}
+	    <p class="label-choix_multiple">{{ champ.options.label }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
 	      <input type="checkbox" id="input-{{ inputId }}"
 	             value=""
 	             name="{{ champ.nom_machine }}"
-	             {% if champ.requis == true %}
+	             {% if champ.options.requis == true %}
 	             required
 	             {% endif %}
-	             {% if champ.propriete_visiteur %}
+	             {% if champ.options.propriete_visiteur %}
 	             class="input-choix_multiple other visitor_property" %}
 	             {% else %}
 	             class="input-choix_multiple other"
@@ -182,10 +189,10 @@
 	          <input type="checkbox" id="input-{{ inputId }}"
 	               value="{{ reponse.valeur}}"
 	               name="{{ champ.nom_machine }}"
-	               {% if champ.requis == true %}
+	               {% if champ.options.requis == true %}
 	               required
 	               {% endif %}
-	               {% if champ.propriete_visiteur %}
+	               {% if champ.options.propriete_visiteur %}
 	               class="input-choix_multiple visitor_property" %}
 	               {% else %}
 	               class="input-choix_multiple"
@@ -210,10 +217,10 @@
 	  {% for i in (1..10) %}
 	  <input type="radio" id="input-{{ inputId }}" value="{{ i }}"
 	  	   name="{{ champ.nom_machine }}"
-	  	   {% if champ.requis %}
+	  	   {% if champ.options.requis %}
 	  	   required
 	  	   {% endif %}
-	  	   {% if champ.propriete_visiteur %}
+	  	   {% if champ.options.propriete_visiteur %}
 	  	   class="input-scoring other visitor_property" %}
 	  	   {% else %}
 	  	   class="input-scoring other"

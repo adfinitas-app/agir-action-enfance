@@ -1,29 +1,75 @@
-<div class="panneau-introduction" style="background-image: url('{{ page.panneau_introduction.fond_image_path }}')">
-  <div class="row">
-    <div class="large-12 columns">
-      {{ page.panneau_introduction.texte_html }}
+<div class="panneau-introduction"
+     style="
+     {% if page.panneau_introduction.fond_image_path != nill  and 
+	page.panneau_introduction.fond_image_path != empty %}
+      background-image: url('{{ page.panneau_introduction.fond_image_path }}');
+     {% endif %}
+     {% if page.panneau_introduction.fond_color != nill and 
+     page.panneau_introduction.fond_color != empty %}
+     background-color: {{ page.panneau_introduction.fond_color }};
+     {% endif %}
+     "
+  >
+  {% if page.panneau_introduction.texte_html != nill and
+     page.panneau_introduction != empty %}
+    <div class="panneau-introduction-texte">
+      <div class="row">
+        <div class="large-12 columns">
+          {{ page.panneau_introduction.texte_html }}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panneau-question">
-  <div class="row">
-    <div class="large-12 columns">
-      {{ page.panneau_question.texte_html }}
-    </div>
-  </div>
+  {% endif %}
 </div>
 <form class="adfinitas-cx" novalidate data-source="{{ page.event_woopra }}" data-success="{{ page.page_de_remerciement_path }}">
   {% assign inputId=0 %}
   {% assign lineId=0 %}
-  {% include form-fields.html champs=page.panneau_question.champs %}
-  <div class="panneau-question">
-    <div class="row">
-      <div class="large-12 columns">
-	{{ page.panneau_informations_personnelles.texte_html }}
+  <div class="container-panneau_question"
+       style="
+       {% if page.panneau_question.fond_image_path != nill  and 
+  	page.panneau_question.fond_image_path != empty %}
+        background-image: url('{{ page.panneau_question.fond_image_path }}');
+       {% endif %}
+       {% if page.panneau_question.fond_color != nill and 
+       page.panneau_question.fond_color != empty %}
+       background-color: {{ page.panneau_question.fond_color }};
+       {% endif %}
+       "
+    >
+    {% if page.panneau_question.texte_html != nill and
+       page.panneau_question != empty %}
+      <div class="panneau-question-texte">
+        <div class="row">
+          <div class="large-12 columns">
+            {{ page.panneau_question.texte_html }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% include form-fields.html champs=page.panneau_question.champs %}
+  </div>
+  <div class="container-panneau_informations_personnelles"
+       style="
+       {% if page.panneau_informations_personnelles.fond_image_path != nill  and 
+  	page.panneau_informations_personnelles.fond_image_path != empty %}
+        background-image: url('{{ page.panneau_informations_personnelles.fond_image_path }}');
+       {% endif %}
+       {% if page.panneau_informations_personnelles.fond_color != nill and 
+       page.panneau_informations_personnelles.fond_color != empty %}
+       background-color: {{ page.panneau_informations_personnelles.fond_color }};
+       {% endif %}
+       "
+    >
+  {% if page.panneau_informations_personnelles.texte_html != nill and
+     page.panneau_informations_personnelles != empty %}
+    <div class="panneau-informations_personnelles-texte">
+      <div class="row">
+        <div class="large-12 columns">
+          {{ page.panneau_informations_personnelles.texte_html }}
+        </div>
       </div>
     </div>
-  </div>
-  <div >
+    {% endif %}
     <div class="input-container input-container-champ_libre_long">
       <div class="row field-row">
         <div class="large-12 columns champ_libre_long">
@@ -42,23 +88,26 @@
       </div>
     </div>
     {% assign inputId=inputId | plus:1 %}
-  {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
-  {% for champ in page.options.champs_caches %}
-    <input id="input-{{ inputId }}"
-           type="hidden"
-           value="{{ champ.valeur }}"
-           {% assign inputClasses = site.array %}
-           {% assign inputClasses = inputClasses
-          	   | push: 'input-champ_cache ' %}
-           name="{{ champ.nom }}"
-           {% if champ.propriete_visiteur %}
-           {% assign inputClasses = inputClasses
-          	   | push: 'visitor_property' %}
-           {% endif %}
-           class="{{ inputClasses }}"
-    />
-    {% assign inputId=inputId | plus:1 %}
-  {% endfor %}
+    {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
+  </div>
+  <div class="hidden_fields" style="display: none;">
+    {% for champ in page.options.champs_caches %}
+      <input id="input-{{ inputId }}"
+             type="hidden"
+             value="{{ champ.valeur }}"
+             {% assign inputClasses = site.array %}
+             {% assign inputClasses = inputClasses
+            	   | push: 'input-champ_cache ' %}
+             name="{{ champ.nom }}"
+             {% if champ.propriete_visiteur %}
+             {% assign inputClasses = inputClasses
+            	   | push: 'visitor_property' %}
+             {% endif %}
+             class="{{ inputClasses }}"
+      />
+      {% assign inputId=inputId | plus:1 %}
+    {% endfor %}
+  </div>
 
   <div class="row field-row">
     <div class="large-12 columns">
