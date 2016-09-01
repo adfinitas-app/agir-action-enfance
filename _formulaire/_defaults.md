@@ -1,5 +1,4 @@
 ---
-title: Formulaire
 event_woopra: Formulaire de test
 panneau_introduction:
   fond_image_path:
