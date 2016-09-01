@@ -23,22 +23,41 @@
       </div>
     </div>
   </div>
+  <div >
+    <div class="input-container input-container-champ_libre_long">
+      <div class="row field-row">
+        <div class="large-12 columns champ_libre_long">
+          <label class="label-champ_libre" for="input-{{ inputId }}">
+            Email* :
+          </label>
+          <input id="input-{{ inputId }}"
+                 class="input-champ_libre check-email visitor_property"
+                 type="email"
+                 placeholder=""
+                 name="email"
+                 required
+          />
+          <p class="error-message">Vous devez indiquer votre email</p>
+        </div>
+      </div>
+    </div>
+    {% assign inputId=inputId | plus:1 %}
   {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
   {% for champ in page.options.champs_caches %}
-	  <input id="input-{{ inputId }}"
-		 type="hidden"
-		 value="{{ champ.valeur }}"
-		 {% assign inputClasses = site.array %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'input-champ_cache ' %}
-		 name="{{ champ.nom }}"
-		 {% if champ.propriete_visiteur %}
-		 {% assign inputClasses = inputClasses
-			   | push: 'visitor_property' %}
-   		 {% endif %}
-		 class="{{ inputClasses }}"
-	  />
-	  {% assign inputId=inputId | plus:1 %}
+    <input id="input-{{ inputId }}"
+           type="hidden"
+           value="{{ champ.valeur }}"
+           {% assign inputClasses = site.array %}
+           {% assign inputClasses = inputClasses
+          	   | push: 'input-champ_cache ' %}
+           name="{{ champ.nom }}"
+           {% if champ.propriete_visiteur %}
+           {% assign inputClasses = inputClasses
+          	   | push: 'visitor_property' %}
+           {% endif %}
+           class="{{ inputClasses }}"
+    />
+    {% assign inputId=inputId | plus:1 %}
   {% endfor %}
 
   <div class="row field-row">
