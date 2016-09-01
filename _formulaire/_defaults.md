@@ -14,13 +14,13 @@ panneau_question:
       reponses:
         - valeur:
       options:
-        propriete_visiteur: true
-        label: Veuillez entrer votre numéro de téléphone (Obligatoire)
-        placeholder: 'Téléphone *'
-        requis: true
-        message_erreur: Numéro de téléphone invalide
-        controle: telephone
-        fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+        propriete_visiteur: false
+        label:
+        placeholder:
+        requis: false
+        message_erreur:
+        controle:
+        fond_image_path:
         fond_color:
 panneau_informations_personnelles:
   fond_image_path:
@@ -32,21 +32,21 @@ panneau_informations_personnelles:
       reponses:
         - valeur:
       options:
-        propriete_visiteur: true
-        label: Veuillez entrer votre numéro de téléphone (Obligatoire)
-        placeholder: 'Téléphone *'
-        requis: true
-        message_erreur: Numéro de téléphone invalide
-        controle: telephone
-        fond_image_path: 'http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg'
+        propriete_visiteur: false
+        label:
+        placeholder:
+        requis: false
+        message_erreur:
+        controle:
+        fond_image_path:
         fond_color:
 options:
   champs_caches:
-    - nom: hidden
-      valeur: test-ok
-      propriete_visiteur: true
-bouton_de_soumission: "Signer la pétiton"
-page_de_remerciement_path: /index.html
+    - nom:
+      valeur:
+      propriete_visiteur: false
+  bouton_de_soumission: "Signer la pétiton"
+  page_de_remerciement_path: /index.html
 _comments:
   nom: Obligatoire et unique. Description courte du champ
   texte: Ce champ peut etre vide
