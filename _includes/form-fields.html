@@ -108,45 +108,46 @@
 	    <p class="label-choix_unique">{{ champ.label }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
-	    <div class="reponse-container-choix_multiple">
-		<input type="radio" id="input-{{ inputId }}"
-		     value="{{ reponse.valeur}}"
-		     name="{{ champ.nom_machine }}"
-		     {% if champ.requis == true %}
-		     required
-		     {% endif %}
-		     {% if champ.propriete_visiteur %}
-		     class="input-choix_unique visitor_property" %}
-		     {% else %}
-		     class="input-choix_unique"
-   		     {% endif %}
-		/>
-		<label class="label-choix_unique" for="input-{{ inputId }}">
-		{{ reponse.valeur}}
-		</label>
-	    </div>
-	    {% assign inputId=inputId | plus:1 %}
+	    {% if reponse.valeur == "Autre" %}
+	      <input type="radio" id="input-{{ inputId }}"
+	             value=""
+	             name="{{ champ.nom_machine }}"
+	             {% if champ.requis == true %}
+	             required
+	             {% endif %}
+	             {% if champ.propriete_visiteur %}
+	             class="input-choix_unique other visitor_property" %}
+	             {% else %}
+	             class="input-choix_unique other"
+   	             {% endif %}
+	      />
+	      <label class="label-choix_unique label-other" for="input-{{ inputId }}">
+	        <span class="text-other">Autre :</span>
+	        <input type="text" class="other-choice-text no-send"
+	    	   id="other-{{ inputId }}"/>
+	      </label>
+	      {% assign inputId=inputId | plus:1 %}
+	    {% else %}
+	      <div class="reponse-container-choix_multiple">
+	          <input type="radio" id="input-{{ inputId }}"
+	               value="{{ reponse.valeur}}"
+	               name="{{ champ.nom_machine }}"
+	               {% if champ.requis == true %}
+	               required
+	               {% endif %}
+	               {% if champ.propriete_visiteur %}
+	               class="input-choix_unique visitor_property" %}
+	               {% else %}
+	               class="input-choix_unique"
+   	               {% endif %}
+	          />
+	          <label class="label-choix_unique" for="input-{{ inputId }}">
+	          {{ reponse.valeur}}
+	          </label>
+	      </div>
+	      {% assign inputId=inputId | plus:1 %}
+	    {% endif %}
 	  {% endfor %}
-	  {% if champ.autre_reponse %}
-	    <input type="radio" id="input-{{ inputId }}"
-		   value=""
-		   name="{{ champ.nom_machine }}"
-		   {% if champ.requis == true %}
-		   required
-		   {% endif %}
-		   {% if champ.propriete_visiteur %}
-		   class="input-choix_unique other visitor_property" %}
-		   {% else %}
-		   class="input-choix_unique other"
-   		   {% endif %}
-	    />
-	    <label class="label-choix_unique label-other" for="input-{{ inputId }}">
-	      <span class="text-other">Autre :</span>
-	      <input type="text" class="other-choice-text no-send"
-	  	   id="other-{{ inputId }}"/>
-	    </label>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endif %}
 	    <p class="error-message">{{ champ.message_erreur }}</p>
 	  </div>
 	</div>
@@ -157,45 +158,46 @@
 	    <p class="label-choix_multiple">{{ champ.label }}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
-	    <div class="reponse-container-choix_multiple">
-		<input type="checkbox" id="input-{{ inputId }}"
-		     value="{{ reponse.valeur}}"
-		     name="{{ champ.nom_machine }}"
-		     {% if champ.requis == true %}
-		     required
-		     {% endif %}
-		     {% if champ.propriete_visiteur %}
-		     class="input-choix_multiple visitor_property" %}
-		     {% else %}
-		     class="input-choix_multiple"
-   		     {% endif %}
-		/>
-		<label class="label-choix_multiple" for="input-{{ inputId }}">
-		{{ reponse.valeur}}
-		</label>
-	    </div>
-	    {% assign inputId=inputId | plus:1 %}
+	    {% if reponse.valeur == "Autre" %}
+	      <input type="checkbox" id="input-{{ inputId }}"
+	             value=""
+	             name="{{ champ.nom_machine }}"
+	             {% if champ.requis == true %}
+	             required
+	             {% endif %}
+	             {% if champ.propriete_visiteur %}
+	             class="input-choix_multiple other visitor_property" %}
+	             {% else %}
+	             class="input-choix_multiple other"
+   	             {% endif %}
+	      />
+	      <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
+	        <span class="text-other">Autre :</span>
+	        <input type="text" class="other-choice-text no-send"
+	             id="other-{{ inputId }}"/>
+	      </label>
+	      {% assign inputId=inputId | plus:1 %}
+	    {% else %}
+	      <div class="reponse-container-choix_multiple">
+	          <input type="checkbox" id="input-{{ inputId }}"
+	               value="{{ reponse.valeur}}"
+	               name="{{ champ.nom_machine }}"
+	               {% if champ.requis == true %}
+	               required
+	               {% endif %}
+	               {% if champ.propriete_visiteur %}
+	               class="input-choix_multiple visitor_property" %}
+	               {% else %}
+	               class="input-choix_multiple"
+   	               {% endif %}
+	          />
+	          <label class="label-choix_multiple" for="input-{{ inputId }}">
+	          {{ reponse.valeur}}
+	          </label>
+	      </div>
+	      {% assign inputId=inputId | plus:1 %}
+	    {% endif %}
 	  {% endfor %}
-	  {% if champ.autre_reponse %}
-	    <input type="checkbox" id="input-{{ inputId }}"
-		   value=""
-		   name="{{ champ.nom_machine }}"
-		   {% if champ.requis == true %}
-		   required
-		   {% endif %}
-		   {% if champ.propriete_visiteur %}
-		   class="input-choix_multiple other visitor_property" %}
-		   {% else %}
-		   class="input-choix_multiple other"
-   		   {% endif %}
-	    />
-	    <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
-	      <span class="text-other">Autre :</span>
-	      <input type="text" class="other-choice-text no-send"
-	  	   id="other-{{ inputId }}"/>
-	    </label>
-	    {% assign inputId=inputId | plus:1 %}
-	  {% endif %}
 	    <p class="error-message">{{ champ.message_erreur }}</p>
 	  </div>
 	</div>

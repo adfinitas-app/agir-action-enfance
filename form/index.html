@@ -19,7 +19,6 @@ panneau_question:
       fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
       reponses:
         - valeur:
-      autre_reponse: false
     - type: champ_libre_court
       propriete_visiteur: true
       fond_image_path:
@@ -31,7 +30,6 @@ panneau_question:
       controle: email
       reponses:
         - valeur:
-      autre_reponse: false
     - type: champ_libre_court
       propriete_visiteur: true
       fond_image_path:
@@ -43,7 +41,6 @@ panneau_question:
       controle: telephone
       reponses:
         - valeur:
-      autre_reponse: false
     - type: champ_libre_court
       propriete_visiteur: true
       fond_image_path:
@@ -55,7 +52,6 @@ panneau_question:
       controle: telephone
       reponses:
         - valeur:
-      autre_reponse: false
     - type: champ_libre_long
       propriete_visiteur: true
       fond_image_path: ""
@@ -67,7 +63,6 @@ panneau_question:
       controle: 
       reponses:
         - valeur:
-      autre_reponse: false
     - type: choix_unique
       propriete_visiteur: true
       fond_image_path:
@@ -80,7 +75,7 @@ panneau_question:
       reponses:
         - valeur: Oui
         - valeur: Non
-      autre_reponse: true
+        - valeur: Autre
     - type: choix_multiple
       propriete_visiteur: true
       fond_image_path:
@@ -93,7 +88,7 @@ panneau_question:
       reponses:
         - valeur: Oui
         - valeur: Non
-      autre_reponse: true
+        - valeur: Autre
     - type: liste_deroulante
       propriete_visiteur: true
       fond_image_path:
@@ -108,7 +103,6 @@ panneau_question:
         - valeur: 1990
         - valeur: 1980
         - valeur: 1970
-      autre_reponse: false
 panneau_informations_personnelles:
   texte_html:
   champs:
@@ -123,7 +117,6 @@ panneau_informations_personnelles:
       fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
       reponses:
         - valeur:
-      autre_reponse: false
     - type: scoring
       propriete_visiteur: true
       nom_machine: scoring
@@ -135,7 +128,6 @@ panneau_informations_personnelles:
       fond_image_path: "http://www.unesourisetmoi.info/data/medias/photos/134/changer-fond-ecran-windows_01.jpg"
       reponses:
         - valeur:
-      autre_reponse: false
 options:
   champs_caches:
     - nom: hidden
@@ -150,7 +142,6 @@ _comments:
   placeholder: 'Seulement pour les champs de type "champ libre"'
   controle: 'Seulement pour les champs de type "champ libre"'
   reponses: 'Seulement pour les champs de type "choix"'
-  autre_reponse: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
   event_woopra: Permet de personnaliser le nom de l'evenement sur Woopra
