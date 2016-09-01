@@ -10,12 +10,12 @@ panneau_question:
   texte_html:
   champs:
     - type: champ_libre_court
-      nom_machine: phone
+      nom_machine: exemple
       reponses:
         - valeur:
       options:
         propriete_visiteur: false
-        label:
+        label: Exemple de champ libre
         placeholder:
         requis: false
         message_erreur:
@@ -28,12 +28,12 @@ panneau_informations_personnelles:
   texte_html:
   champs:
     - type: champ_libre_court
-      nom_machine: phone2
+      nom_machine: firstname
       reponses:
         - valeur:
       options:
         propriete_visiteur: false
-        label:
+        label: Prénom
         placeholder:
         requis: false
         message_erreur:
