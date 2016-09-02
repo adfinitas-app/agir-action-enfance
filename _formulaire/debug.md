@@ -66,7 +66,7 @@ panneau_informations_personnelles:
         placeholder:
         requis: true
         message_erreur: vous devez saisir un numéro de téléphone
-        controle: telephone
+        controle:
         fond_image_path:
         fond_color:
 options:
