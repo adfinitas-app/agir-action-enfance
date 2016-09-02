@@ -25,6 +25,19 @@ panneau_question:
         controle:
         fond_image_path:
         fond_color:
+    - type: champ_libre_long
+      nom_machine: textarea
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: false
+        label: Champ long
+        placeholder: test
+        requis: true
+        message_erreur: vous devez saisir un message
+        controle:
+        fond_image_path:
+        fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
