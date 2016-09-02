@@ -51,9 +51,9 @@ panneau_informations_personnelles:
         propriete_visiteur: false
         label: Prénom
         placeholder:
-        requis: false
-        message_erreur:
-        controle:
+        requis: true
+        message_erreur: vous devez saisir un numéro de téléphone
+        controle: telephone
         fond_image_path:
         fond_color:
 options:
