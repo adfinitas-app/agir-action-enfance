@@ -19,5 +19,5 @@
   display: none;
 }
 .error .error-message {
-  display: initial;
+  display: block;
 }
