@@ -78,21 +78,24 @@ function preFill() {
       toHide = true;
       var name = key.substring(0, key.length - hideKeyword.length);
     }
-    if ($("select[name=" + name + "]").length > 0) {
-      var selector = $("select[name=" + name + "] option[value=" + value + "]");
+    if ($("select[name='" + name + "']").length > 0) {
+      var selector = $("select[name='" + name + "'] option[value='" + value + "']");
       selector.prop("selected", true);
-    } else if ($("input:radio[name=" + name + "]").length > 0) {
-      var selector = $("input:radio[name=" + name + "][value=" + value + "]");
+    } else if ($("input:radio[name='" + name + "']").length > 0) {
+      var selector = $("input:radio[name='" + name + "'][value='" + value + "']");
       selector.prop("checked", true);
-    } else if ($("input:checkbox[name=" + name + "]").length > 0) {
-      var selector = $("input:checkbox[name=" + name + "][value=" + value + "]");
+    } else if ($("input:checkbox[name='" + name + "']").length > 0) {
+      var selector = $("input:checkbox[name='" + name + "'][value='" + value + "']");
       selector.prop("checked", true);
-    } else if ($("input[name=" + name + "]").length > 0 &&
-	       $("input[name=" + name + "]").hasClass("check-phone")) {
-      var selector = $("input[name=" + name + "]");
+    } else if ($("input[name='" + name + "']").length > 0 &&
+	       $("input[name='" + name + "']").hasClass("check-phone")) {
+      var selector = $("input[name='" + name + "']");
       selector.intlTelInput("setNumber", value);
-    } else if ($("input[name=" + name + "]").length > 0) {
-      var selector = $("input[name=" + name + "]");
+    } else if ($("input[name='" + name + "']").length > 0) {
+      var selector = $("input[name='" + name + "']");
+      selector.val(value);
+    } else if ($("textarea[name='" + name + "']").length > 0) {
+      var selector = $("textarea[name='" + name + "']");
       selector.val(value);
     } else {
       return;
