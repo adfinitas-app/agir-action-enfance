@@ -9,7 +9,7 @@ panneau_question:
   fond_color: '#cfe041'
   texte_html: '<h2>Hello World niveau 2</h2>'
   champs:
-    - type: choix_unique
+    - type: choix_multiple
       nom_machine: choix-multiple
       reponses:
         - valeur: choix 1
