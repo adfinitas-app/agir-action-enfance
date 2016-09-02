@@ -38,7 +38,7 @@
 	{% when 'champ_libre_long' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.options.label }}
+	      {{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}
 	    </label>
 	  {% endif %}
 	  <textarea rows="2" id="input-{{ inputId }}"
@@ -72,7 +72,7 @@
 	{% when 'champ_libre_court' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.options.label }}
+	      {{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}
 	    </label>
 	  {% endif %}
 	  <input id="input-{{ inputId }}"
@@ -106,7 +106,7 @@
 	{% when 'liste_deroulante' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
-		{{ champ.options.label }}
+	      {{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}
 	    </label>
 	  {% endif %}
 	    <select
@@ -138,7 +138,7 @@
 	    <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% when 'choix_unique' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
-	    <p class="label-choix_unique">{{ champ.options.label }}</p>
+	    <p class="label-choix_unique">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
@@ -184,7 +184,7 @@
 	    <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% when 'choix_multiple' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
-	    <p class="label-choix_multiple">{{ champ.options.label }}</p>
+	    <p class="label-choix_multiple">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
 	  {% endif %}
 	  {% for reponse in champ.reponses %}
 	    {% if reponse.valeur == "Autre" %}
@@ -230,7 +230,7 @@
 	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% when 'scoring' %}
 	  {% if champ.options.label != nill and champ.options.label != empty %}
-	    <p class="text-scoring">{{ champ.options.label }}</p>
+	    <p class="text-scoring">{{ champ.options.label }}{% if champ.options.requis == true %} *{% endif %}</p>
 	  {% endif %}
 	  {% for i in (1..10) %}
 	  <input type="radio" id="input-{{ inputId }}" value="{{ i }}"
