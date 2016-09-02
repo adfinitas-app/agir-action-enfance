@@ -14,7 +14,11 @@
      page.panneau_introduction != empty %}
     <div class="panneau-introduction-texte">
       <div class="row">
-        <div class="large-12 columns">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
           {{ page.panneau_introduction.texte_html }}
         </div>
       </div>
@@ -42,7 +46,11 @@
        page.panneau_question != empty %}
       <div class="panneau-question-texte">
         <div class="row">
-          <div class="large-12 columns">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
             {{ page.panneau_question.texte_html }}
           </div>
         </div>
@@ -66,7 +74,11 @@
      page.panneau_informations_personnelles != empty %}
     <div class="panneau-informations_personnelles-texte">
       <div class="row">
-        <div class="large-12 columns">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
           {{ page.panneau_informations_personnelles.texte_html }}
         </div>
       </div>
@@ -116,7 +128,11 @@
   </div>
 
   <div class="row field-row">
-    <div class="large-12 columns">
+    {% if page.options.largeur_champs == "50% centré" %}
+      <div class="large-6 medium-12 small-12 large-centered columns">
+    {% else %}
+      <div class="large-12 medium-12 small-12 columns">
+    {% endif %}
       <input type="submit" value="{{ page.options.bouton_de_soumission }}">
     </div>
   </div>
