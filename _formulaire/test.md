@@ -90,7 +90,7 @@ panneau_question:
         label: score ta vie
         placeholder:
         requis: true
-        message_erreur: "tu n'as pas scoré ta life"
+        message_erreur: tu nas pas scoré ta life
         controle:
         fond_image_path:
         fond_color:
