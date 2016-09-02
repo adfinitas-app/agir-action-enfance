@@ -38,6 +38,19 @@ panneau_question:
         controle:
         fond_image_path:
         fond_color:
+    - type: scoring
+      nom_machine: score
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: false
+        label: score
+        placeholder:
+        requis: true
+        message_erreur: chsoir
+        controle:
+        fond_image_path:
+        fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
