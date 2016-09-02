@@ -2,23 +2,26 @@
 event_woopra: formulaire
 panneau_introduction:
   fond_image_path:
-  fond_color:
-  texte_html:
+  fond_color: '#6dd26b'
+  texte_html: '<h1>Bonjour the world</h1><h2>un titre de niveau 2 un peu plus long que le titre principal</h2>'
 panneau_question:
   fond_image_path:
-  fond_color:
-  texte_html:
+  fond_color: '#cfe041'
+  texte_html: '<h2>Hello World niveau 2</h2>'
   champs:
-    - type: champ_libre_court
-      nom_machine: exemple
+    - type: choix_multiple
+      nom_machine: choix-multiple
       reponses:
-        - valeur:
+        - valeur: choix 1
+        - valeur: choix 2
+        - valeur: choix 3
+        - valeur: Autre
       options:
         propriete_visiteur: false
-        label: Exemple de champ libre
+        label: Exemple de champ choix multiple
         placeholder:
-        requis: false
-        message_erreur:
+        requis: true
+        message_erreur: Vous devez choisir
         controle:
         fond_image_path:
         fond_color:
@@ -43,7 +46,7 @@ panneau_informations_personnelles:
 options:
   bouton_de_soumission: Envoyer
   page_de_remerciement_path: /index.html
-  largeur_champs: '100%'
+  largeur_champs:
   champs_caches:
     - nom:
       valeur:
