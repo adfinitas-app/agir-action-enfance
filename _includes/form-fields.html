@@ -205,14 +205,14 @@
 	      {% assign inputId=inputId | plus:1 %}
 	    {% endif %}
 	  {% endfor %}
-	    <p class="error-message">{{ champ.message_erreur }}</p>
+	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	  </div>
 	</div>
 	{% when 'scoring' %}
 	<div class="row field-row">
 	  <div class="large-12 columns">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
-	    <p class="label-choix_multiple">{{ champ.options.label }}</p>
+	    <p class="text-scoring">{{ champ.options.label }}</p>
 	  {% endif %}
 	  {% for i in (1..10) %}
 	  <input type="radio" id="input-{{ inputId }}" value="{{ i }}"
@@ -226,10 +226,11 @@
 	  	   class="input-scoring other"
    	  	   {% endif %}
 	  />
-	  <label class="label-choix_multiple label-other" for="input-{{ inputId }}">
+	  <label class="label-scoring" for="input-{{ inputId }}">
 	    {{ i }}
 	  </label>
 	  {% endfor %}
+	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	  </div>
 	</div>
 	{% else %}
