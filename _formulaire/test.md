@@ -141,6 +141,7 @@ panneau_informations_personnelles:
 options:
   bouton_de_soumission: Envoyer le formulaire
   page_de_remerciement_path: /index.html
+  largeur_champs: "50% centré"
   champs_caches:
     - nom: campagne
       valeur: U45678
@@ -161,5 +162,6 @@ _comments:
   propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
   event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
   fond_image_path: Image de fond du champ
+  largeur_champs: "Définit la taille des champs"
 ---
 {% include form.html %}

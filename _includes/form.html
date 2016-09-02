@@ -21,7 +21,9 @@
     </div>
   {% endif %}
 </div>
-<form class="adfinitas-cx" novalidate data-source="{{ page.event_woopra }}" data-success="{{ page.options.page_de_remerciement_path }}">
+<form class="adfinitas-cx" novalidate
+			   data-source="{{ page.event_woopra }}"
+			   data-success="{{ page.options.page_de_remerciement_path }}">
   {% assign inputId=0 %}
   {% assign lineId=0 %}
   <div class="container-panneau_question"
@@ -70,9 +72,13 @@
       </div>
     </div>
     {% endif %}
-    <div class="input-container input-container-champ_libre_long">
+    <div class="input-container input-container-champ_libre_court">
       <div class="row field-row">
-        <div class="large-12 columns champ_libre_long">
+	{% if page.options.largeur_champs == "50% centré" %}
+	  <div class="large-6 medium-12 small-12 large-centered columns">
+	{% else %}
+	  <div class="large-12 medium-12 small-12 columns">
+	{% endif %}
           <label class="label-champ_libre" for="input-{{ inputId }}">
             Email*
           </label>
