@@ -40,7 +40,7 @@ panneau_question:
       reponses:
         - valeur: "j'aime"
         - valeur: "j'aime un peu"
-        - valeur: autre
+        - valeur: Autre
       options:
         propriete_visiteur: false
         label: Choisis ta life
