@@ -32,7 +32,7 @@ function getFields(jqForm, selector) {
 }
 
 function submitForm(jqForm) {
-  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select");
+  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select, textarea");
   /*
   woopra.track("inscription", {
     url: document.URL,
@@ -41,7 +41,7 @@ function submitForm(jqForm) {
     optin: "non" // Champ "Optin Woopra" oui/non ?
   });
   */
-  var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property");
+  var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property, textarea.visitor_property");
   woopra.identify(visitorProperties);
   woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
   var now = new Date();

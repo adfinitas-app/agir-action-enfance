@@ -29,22 +29,18 @@
 	{% assign lineId=lineId | plus:1 %}
 	>
 	{% case champ.type %}
-	{% when 'champ_libre_court' or 'champ_libre_long' %}
+	{% when 'champ_libre_long' %}
 	<div class="row field-row">
-	  {% if champ.type == 'champ_libre_court' %}
-	    <div class="large-6 columns large-centered champ_libre_court">
-	  {% elsif champ.type == 'champ_libre_long' %}
-	    <div class="large-12 columns champ_libre_long">
-	  {% endif %}
+	  <div class="large-12 columns champ_libre_long">
 	  {% if champ.options.label != nill and champ.options.label != empty %}
 	    <label class="label-champ_libre" for="input-{{ inputId }}">
 		{{ champ.options.label }}
 	    </label>
 	  {% endif %}
-	  <input id="input-{{ inputId }}"
+	  <textarea rows="2" id="input-{{ inputId }}"
 		 {% assign inputClasses = site.array %}
 		 {% assign inputClasses = inputClasses
-			   | push: 'input-champ_libre ' %}
+			   | push: 'input-champ_libre-long ' %}
 		 {% if champ.options.controle == "email" %}
 		 {% assign inputClasses = inputClasses
 			   | push: 'check-email ' %}
@@ -60,7 +56,45 @@
 		 name="{{ champ.nom_machine }}"
 		 {% if champ.options.propriete_visiteur %}
 		 {% assign inputClasses = inputClasses
-			   | push: 'visitor_property' %}
+			   | push: 'visitor_property ' %}
+   		 {% endif %}
+		 {% if champ.options.requis == true %}
+		 required
+		 {% endif %}
+		 class="{{ inputClasses }}"
+	  ></textarea>
+	  {% assign inputId=inputId | plus:1 %}
+	  <p class="error-message">{{ champ.options.message_erreur }}</p>
+	  </div>
+	</div>
+	{% when 'champ_libre_court' %}
+	<div class="row field-row">
+	  <div class="large-12 columns champ_libre_court">
+	  {% if champ.options.label != nill and champ.options.label != empty %}
+	    <label class="label-champ_libre" for="input-{{ inputId }}">
+		{{ champ.options.label }}
+	    </label>
+	  {% endif %}
+	  <input id="input-{{ inputId }}"
+		 {% assign inputClasses = site.array %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'input-champ_libre-court ' %}
+		 {% if champ.options.controle == "email" %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'check-email ' %}
+		 type="email"
+		 {% elsif champ.options.controle == "telephone" %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'check-phone ' %}
+		 type="text"
+		 {% else %}
+		 type="text"
+		 {% endif %}
+		 placeholder="{{ champ.options.placeholder }}"
+		 name="{{ champ.nom_machine }}"
+		 {% if champ.options.propriete_visiteur %}
+		 {% assign inputClasses = inputClasses
+			   | push: 'visitor_property ' %}
    		 {% endif %}
 		 {% if champ.options.requis == true %}
 		 required

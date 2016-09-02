@@ -79,7 +79,7 @@ function isValidField(jqueryFieldSelector, allowEmpty = true) {
 function isValidForm(jqueryFormSelector) {
   var status = true;
   $(".error").removeClass("error");
-  jqueryFormSelector.find("input:not([type=submit]), select").each(function() {
+  jqueryFormSelector.find("input:not([type=submit]), select, textarea").each(function() {
     if (isValidField($(this), !$(this).prop("required")) == false) {
       showError($(this));
       status = false;
