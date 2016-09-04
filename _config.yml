@@ -16,7 +16,7 @@ types:
   - choix_unique
   - choix_multiple
   - scoring
-largeur_champss:
+largeur_champs:
   - "100%"
   - "50% centré"
 defaults:
