@@ -90,6 +90,6 @@ _comments:
   propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
   event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
   fond_image_path: Image de fond du champ
-  largeur_champs: Définit la taille des champs
+  largeur_champ: Définit la taille des champs
 ---
 {% include form.html %}
