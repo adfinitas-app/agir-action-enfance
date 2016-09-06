@@ -25,6 +25,21 @@ panneau_question:
         controle:
         fond_image_path:
         fond_color:
+    - type: choix_unique
+      nom_machine: choix-unique
+      reponses:
+        - valeur: Homme
+        - valeur: Femme
+        - valeur: Autre
+      options:
+        propriete_visiteur: false
+        label: Choix unique
+        placeholder:
+        requis: true
+        message_erreur: Vous devez faire un choix
+        controle:
+        fond_image_path:
+        fond_color:
     - type: champ_libre_long
       nom_machine: textarea
       reponses:
@@ -51,6 +66,22 @@ panneau_question:
         controle:
         fond_image_path:
         fond_color:
+    - type: liste_deroulante
+      nom_machine: liste-deroulante
+      reponses:
+        - valeur: Choix numéro 1
+        - valeur: Choix numéro 2
+        - valeur: Choix numéro 3
+        - valeur: Autre
+      options:
+        propriete_visiteur: false
+        label: Liste déroulante
+        placeholder:
+        requis: true
+        message_erreur: Vous devez faire un choix
+        controle:
+        fond_image_path:
+        fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
@@ -66,6 +97,103 @@ panneau_informations_personnelles:
         placeholder:
         requis: true
         message_erreur: vous devez saisir un numéro de téléphone
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: lastname
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label: Votre nom
+        placeholder: Masselin
+        requis: true
+        message_erreur: Vous devez indiquer votre nom
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: choix_unique
+      nom_machine: sexe
+      reponses:
+        - valeur: Homme
+        - valeur: Femme
+      options:
+        propriete_visiteur: true
+        label: Vous êtes ?
+        placeholder:
+        requis: true
+        message_erreur: Vous devez faire un choix
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_court
+      nom_machine: telephone
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label: Téléphone mobile
+        placeholder:
+        requis: true
+        message_erreur: Vous devez indiquer un téléphone
+        controle: telephone
+        fond_image_path:
+        fond_color:
+    - type: champ_libre_long
+      nom_machine: profil
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label: 'Si vous deviez vous décrire, que diriez-vous ?'
+        placeholder: Faites votre description
+        requis: true
+        message_erreur: Vous devez vous décrire
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: choix_multiple
+      nom_machine: mode communication émail
+      reponses:
+        - valeur: email
+        - valeur: téléphone
+        - valeur: papier
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder:
+        requis: true
+        message_erreur:
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: liste_deroulante
+      nom_machine: choix
+      reponses:
+        - valeur: liste 1
+        - valeur: liste 2
+        - valeur: liste 3
+        - valeur: Autre
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder:
+        requis: true
+        message_erreur:
+        controle:
+        fond_image_path:
+        fond_color:
+    - type: scoring
+      nom_machine: score-bis
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label: Je connais depuis longtemps la SPA
+        placeholder:
+        requis: true
+        message_erreur: Vous devez faire un choix
         controle:
         fond_image_path:
         fond_color:
