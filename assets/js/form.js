@@ -43,7 +43,7 @@ function submitForm(jqForm) {
   */
   var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property, textarea.visitor_property");
   woopra.identify(visitorProperties);
-  woopra.track('adfinitascx-' + jqForm.data("source"), FormData);
+  woopra.track('adfinitas-' + jqForm.data("source"), FormData);
   var now = new Date();
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
