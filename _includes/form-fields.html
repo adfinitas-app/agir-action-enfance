@@ -115,7 +115,7 @@
 	                | push: 'input-liste_deroulante ' %}
 	      {% if champ.options.propriete_visiteur %}
 	      {% assign inputClasses = inputClasses
-	                | push: 'visitor_property' %}
+	                | push: 'visitor_property ' %}
    	      {% endif %}
 	      {% if champ.options.requis == true %}
 	      required
@@ -149,7 +149,7 @@
 	             required
 	             {% endif %}
 	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_unique other visitor_property" %}
+	             class="input-choix_unique other visitor_property"
 	             {% else %}
 	             class="input-choix_unique other"
    	             {% endif %}
@@ -169,7 +169,7 @@
 	               required
 	               {% endif %}
 	               {% if champ.options.propriete_visiteur %}
-	               class="input-choix_unique visitor_property" %}
+	               class="input-choix_unique visitor_property"
 	               {% else %}
 	               class="input-choix_unique"
    	               {% endif %}
@@ -195,7 +195,7 @@
 	             required
 	             {% endif %}
 	             {% if champ.options.propriete_visiteur %}
-	             class="input-choix_multiple other visitor_property" %}
+	             class="input-choix_multiple other visitor_property"
 	             {% else %}
 	             class="input-choix_multiple other"
    	             {% endif %}
@@ -215,7 +215,7 @@
 	               required
 	               {% endif %}
 	               {% if champ.options.propriete_visiteur %}
-	               class="input-choix_multiple visitor_property" %}
+	               class="input-choix_multiple visitor_property"
 	               {% else %}
 	               class="input-choix_multiple"
    	               {% endif %}
@@ -239,7 +239,7 @@
 	  	   required
 	  	   {% endif %}
 	  	   {% if champ.options.propriete_visiteur %}
-	  	   class="input-scoring other visitor_property" %}
+	  	   class="input-scoring other visitor_property"
 	  	   {% else %}
 	  	   class="input-scoring other"
    	  	   {% endif %}
