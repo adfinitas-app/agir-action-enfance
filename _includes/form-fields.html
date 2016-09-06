@@ -247,6 +247,7 @@
 	  <label class="label-scoring" for="input-{{ inputId }}">
 	    {{ i }}
 	  </label>
+	  {% assign inputId=inputId | plus:1 %}
 	  {% endfor %}
 	  <p class="error-message">{{ champ.options.message_erreur }}</p>
 	{% else %}
