@@ -92,7 +92,7 @@ panneau_informations_personnelles:
       reponses:
         - valeur:
       options:
-        propriete_visiteur: false
+        propriete_visiteur: true
         label: Prénom
         placeholder:
         requis: true
