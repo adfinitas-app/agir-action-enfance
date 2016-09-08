@@ -11,24 +11,38 @@ function getFields(jqForm, selector) {
   jqForm.find(selector).each(function() {
     if ($(this).attr("type") === "radio") {
       if ($(this).is(":checked"))
-      FormData[$(this).attr("name")] = $(this).val();
+        FormData[$(this).attr("name")] = $(this).val();
     } else if ($(this).attr("type") === "checkbox") {
       if ($(this).is(":checked")) {
-	var concat = FormData[$(this).attr("name")] || "";
-	if (concat.length === 0) {
-	  FormData[$(this).attr("name")] = $(this).val();
-	} else {
-	  FormData[$(this).attr("name")] =
-	    concat + ", " + $(this).val();
-	}
-      }
-    } else if ($(this).prop("tagName") === "SELECT") {
-      FormData[$(this).attr("name")] = $(this).find("option:selected").val();
-    } else {
-      FormData[$(this).attr("name")] = $(this).val();
-    }
-  });
+       var concat = FormData[$(this).attr("name")] || "";
+       if (concat.length === 0) {
+         FormData[$(this).attr("name")] = $(this).val();
+       } else {
+         FormData[$(this).attr("name")] =
+         concat + ", " + $(this).val();
+       }
+     }
+   } else if ($(this).prop("tagName") === "SELECT") {
+    FormData[$(this).attr("name")] = $(this).find("option:selected").val();
+  } else {
+    FormData[$(this).attr("name")] = $(this).val();
+  }
+});
   return (FormData);
+}
+
+function calculScoring(jqForm) {
+  var moyenne = 0;
+  var i = 0;
+  var input = getFields(jqForm, "input.input-scoring");
+
+  for(var key in input) {
+    if(input.hasOwnProperty(key)){
+      moyenne += parseInt(input[key]);
+    }
+    i++;
+  }
+  return (moyenne / i).toFixed(1);
 }
 
 function submitForm(jqForm) {
@@ -45,6 +59,7 @@ function submitForm(jqForm) {
   if (visitorProperties['firstname'] && visitorProperties['lastname']) {
     visitorProperties['name'] = visitorProperties['firstname'] + ' ' + visitorProperties['lastname'];
   }
+  visitorProperties['nps'] = calculScoring(jqForm);
   woopra.identify(visitorProperties);
   woopra.track('adfinitas-' + jqForm.data("source"), FormData);
   var now = new Date();
@@ -55,6 +70,7 @@ function submitForm(jqForm) {
       "event_woopra": pureField(jqForm.data("source"))
     }
   }
+
   for (var attrname in FormData) {
     dbData.db[attrname] = pureField(FormData[attrname]);
   }
@@ -92,7 +108,7 @@ function preFill() {
       var selector = $("input:checkbox[name='" + name + "'][value='" + value + "']");
       selector.prop("checked", true);
     } else if ($("input[name='" + name + "']").length > 0 &&
-	       $("input[name='" + name + "']").hasClass("check-phone")) {
+      $("input[name='" + name + "']").hasClass("check-phone")) {
       var selector = $("input[name='" + name + "']");
       selector.intlTelInput("setNumber", value);
     } else if ($("input[name='" + name + "']").length > 0) {
@@ -109,13 +125,13 @@ function preFill() {
 	// Only un-fill the wrong value if this is an text/email input.
 	// However nothing happens
 	if (selector.attr('type') === 'text' || selector.attr('type') === 'email') {
-	  selector.val("");
-	}
-      } else {
+   selector.val("");
+ }
+} else {
 	selector.closest(".field-row").css("display", "none")
-      }
-    }
-  });
+}
+}
+});
 }
 
 function otherChoice() {
@@ -124,11 +140,11 @@ function otherChoice() {
       var elemId = $(this).attr("id");
       var id = elemId.substr("other-".length);
       if ($(this).val() === "") {
-	$("#input-" + id).prop("checked", false);
-      } else {
-	$("#input-" + id).prop("checked", true);
-      }
-    });
+       $("#input-" + id).prop("checked", false);
+     } else {
+       $("#input-" + id).prop("checked", true);
+     }
+   });
   });
 }
 
