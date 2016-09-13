@@ -17,7 +17,6 @@ input[type=submit] {
 .panneau-introduction-texte {
 	padding-top: 3%;
 	height: 100vh;
-	background-image: url("http://placehold.it/1245x800");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
