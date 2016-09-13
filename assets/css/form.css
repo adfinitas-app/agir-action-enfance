@@ -27,6 +27,19 @@
 	background: white;
 }
 
+h2, h3 {
+	color: #8a8a8a;
+}
+
+input[type=submit] {
+	padding: 10px 25px 10px 25px; 
+	background: #59afe1; 
+	border: 0 none;
+	cursor:pointer;
+	border-radius: 2px;
+	color: white;
+}
+
 .panneau-introduction-texte {
 	padding-top: 3%;
 	height: 100vh;
