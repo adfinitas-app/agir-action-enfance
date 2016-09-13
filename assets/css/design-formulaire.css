@@ -3,7 +3,9 @@ h2, h3 {
 	color: #8a8a8a;
 }
 
-
+h1 {
+    font-size: 62px;
+}
 
 input[type=submit] {
 	padding: 10px 25px 10px 25px; 
