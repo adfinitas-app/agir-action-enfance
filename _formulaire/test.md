@@ -22,6 +22,22 @@ panneau_question:
         controle:
         fond_image_path:
         fond_color:
+    - type: choix_multiple
+      nom_machine: hello
+      reponses:
+        - valeur: kjkgjekrgjkre
+        - valeur: egergrtghg
+        - valeur: geggegegegg
+        - valeur: grtgrthrthrthrtrthrt
+      options:
+        propriete_visiteur: false
+        label:
+        placeholder:
+        requis: false
+        message_erreur:
+        controle:
+        fond_image_path:
+        fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
