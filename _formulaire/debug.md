@@ -6,7 +6,7 @@ panneau_introduction:
   texte_html: '<h1>Bonjour the world</h1><h2>un titre de niveau 2 un peu plus long que le titre principal</h2>'
 panneau_question:
   fond_image_path:
-  fond_color: '#cfe041'
+  fond_color:
   texte_html: '<h2>Hello World niveau 2</h2>'
   champs:
     - type: choix_multiple
