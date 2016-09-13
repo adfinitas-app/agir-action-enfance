@@ -2,7 +2,7 @@
 event_woopra: formulaire
 panneau_introduction:
   fond_image_path:
-  fond_color: '#6dd26b'
+  fond_color:
   texte_html: '<h1>Bonjour the world</h1><h2>un titre de niveau 2 un peu plus long que le titre principal</h2>'
 panneau_question:
   fond_image_path:
