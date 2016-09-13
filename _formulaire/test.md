@@ -15,7 +15,7 @@ panneau_question:
         - valeur:
       options:
         propriete_visiteur: false
-        label: Exemple de champ libre
+        label: Vous aimez?
         placeholder:
         requis: false
         message_erreur:
