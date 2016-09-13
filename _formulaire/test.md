@@ -3,7 +3,7 @@ event_woopra: formulaire
 panneau_introduction:
   fond_image_path:
   fond_color:
-  texte_html:
+  texte_html: '<p>hellow&nbsp;</p>'
 panneau_question:
   fond_image_path:
   fond_color:
