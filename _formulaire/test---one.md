@@ -12,7 +12,10 @@ panneau_question:
     - type: champ_libre_court
       nom_machine: exemple
       reponses:
-        - valeur:
+        - valeur: Je fais des pompes.
+        - valeur: Je fais des tractions
+        - valeur: Je regarde la télé.
+        - valeur: Autres
       options:
         propriete_visiteur: false
         label: Exemple de champ libre
