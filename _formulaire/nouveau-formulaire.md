@@ -1,9 +1,9 @@
 ---
-event_woopra: formulaire
+event_woopra: formulaire_2016_sport
 panneau_introduction:
   fond_image_path:
-  fond_color:
-  texte_html:
+  fond_color: '#f70000'
+  texte_html: '<h1><strong>Text de test</strong></h1><h2>Sous-titre</h2>'
 panneau_question:
   fond_image_path:
   fond_color:
