@@ -59,7 +59,7 @@ _comments:
   reponses: 'Seulement pour les champs de type "choix"'
   page_de_remerciement_path: "URL de la page lorsque l'utilisateur valide le formulaire"
   propriete_visiteur: Cocher cette case si vous souhaitez que ce champs remonte dans les propriété du visiteur sur Woopra
-  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\"http://google.com\" target=\"_blank\">blabla</a>"
+  event_woopra: "Nom de l'evenement sur Woopra qui stockera les répondants <a href=\'http://google.com\' target=\'_blank\'>blabla</a>"
   fond_image_path: "Image de fond du champ"
   fond_image: "Couleur du fond (s'applique si fond_image_path est vide)"
   largeur_champ: "Définit la taille des champs"
