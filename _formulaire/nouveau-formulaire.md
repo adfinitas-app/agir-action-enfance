@@ -6,13 +6,15 @@ panneau_introduction:
   texte_html: '<h1><strong>Text de test</strong></h1><h2>Sous-titre</h2>'
 panneau_question:
   fond_image_path:
-  fond_color:
+  fond_color: '#2f8b00'
   texte_html:
   champs:
     - type: champ_libre_court
-      nom_machine: exemple
+      nom_machine: First_question
       reponses:
-        - valeur:
+        - valeur: Oui
+        - valeur: Non
+        - valeur: Autres
       options:
         propriete_visiteur: false
         label: Exemple de champ libre
