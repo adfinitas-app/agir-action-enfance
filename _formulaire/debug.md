@@ -1,7 +1,7 @@
 ---
 event_woopra: formulaire
 panneau_introduction:
-  fond_image_path:
+  fond_image_path: 'http://placehold.it/1245x800'
   fond_color:
   texte_html: '<h1>Bonjour the world</h1><h2>un titre de niveau 2 un peu plus long que le titre principal</h2>'
 panneau_question:
@@ -200,7 +200,7 @@ panneau_informations_personnelles:
 options:
   bouton_de_soumission: Envoyer
   page_de_remerciement_path: /index.html
-  largeur_champ: '100%'
+  largeur_champ: '50% centré'
   champs_caches:
     - nom:
       valeur:

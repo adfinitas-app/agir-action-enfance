@@ -3,6 +3,10 @@ h2, h3 {
 	color: #8a8a8a;
 }
 
+h1 {
+    font-size: 62px;
+}
+
 input[type=submit] {
 	padding: 10px 25px 10px 25px; 
 	background: #59afe1; 
@@ -15,7 +19,6 @@ input[type=submit] {
 .panneau-introduction-texte {
 	padding-top: 3%;
 	height: 100vh;
-	background-image: url("http://placehold.it/1245x800");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
