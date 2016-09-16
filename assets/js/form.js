@@ -74,8 +74,17 @@ function submitForm(jqForm) {
   for (var attrname in FormData) {
     dbData.db[attrname] = pureField(FormData[attrname]);
   }
+  var userData = getFields(jqForm, ".container-panneau_informations_personnelles input:not([type=submit]):not(.no-send), .container-panneau_informations_personnelles select, .container-panneau_informations_personnelles textarea");
+  formattedUserData = [];
+  for (var attrname in userData) {
+    formattedUserData.push({
+      name: attrname,
+      value: userData[attrname]
+    });
+  }
+  var encodedParams = $.param(userData);
   var success = function() {
-    window.location = jqForm.data("success");
+    window.location = jqForm.data("success") + "?" + encodedParams;
   };
   makeCorsRequest(dbData, success);
 }
@@ -109,29 +118,29 @@ function preFill() {
       selector.prop("checked", true);
     } else if ($("input[name='" + name + "']").length > 0 &&
       $("input[name='" + name + "']").hasClass("check-phone")) {
-      var selector = $("input[name='" + name + "']");
-      selector.intlTelInput("setNumber", value);
-    } else if ($("input[name='" + name + "']").length > 0) {
-      var selector = $("input[name='" + name + "']");
-      selector.val(value);
-    } else if ($("textarea[name='" + name + "']").length > 0) {
-      var selector = $("textarea[name='" + name + "']");
-      selector.val(value);
-    } else {
-      return;
-    }
+	var selector = $("input[name='" + name + "']");
+	selector.intlTelInput("setNumber", value);
+      } else if ($("input[name='" + name + "']").length > 0) {
+	var selector = $("input[name='" + name + "']");
+	selector.val(value);
+      } else if ($("textarea[name='" + name + "']").length > 0) {
+	var selector = $("textarea[name='" + name + "']");
+	selector.val(value);
+      } else {
+	return;
+      }
     if (toHide == true) {
       if (isValidField(selector, !selector.prop("required")) === false) {
 	// Only un-fill the wrong value if this is an text/email input.
 	// However nothing happens
 	if (selector.attr('type') === 'text' || selector.attr('type') === 'email') {
-   selector.val("");
- }
-} else {
+	  selector.val("");
+	}
+      } else {
 	selector.closest(".field-row").css("display", "none")
-}
-}
-});
+      }
+    }
+  });
 }
 
 function otherChoice() {
@@ -170,9 +179,3 @@ $(document).ready(function() {
   });
   otherChoice();
 });
-
-/*
- * TODO
- * Test responsive Design
- * Docs
- */
