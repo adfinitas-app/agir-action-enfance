@@ -201,7 +201,7 @@ options:
   bouton_de_soumission: Envoyer
   page_de_remerciement_path: /index.html
   largeur_champ: '50% centré'
-  champs_cachess:
+  champs_caches:
     - nom:
       valeur:
       propriete_visiteur: false
