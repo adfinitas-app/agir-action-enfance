@@ -60,8 +60,10 @@ function submitForm(jqForm) {
     visitorProperties['name'] = visitorProperties['firstname'] + ' ' + visitorProperties['lastname'];
   }
   visitorProperties['nps'] = calculScoring(jqForm);
-  woopra.identify(visitorProperties);
-  woopra.track('adfinitas-' + jqForm.data("source"), FormData);
+  if (typeof(woopra) != "undefined") {
+    woopra.identify(visitorProperties);
+    woopra.track('adfinitas-' + jqForm.data("source"), FormData);
+  }
   var now = new Date();
   var dbData = {
     "schema": "{{ site.form-to-db_config.schema }}",
