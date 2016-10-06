@@ -76,7 +76,7 @@ function submitForm(jqForm) {
   for (var attrname in FormData) {
     dbData.db[attrname] = pureField(FormData[attrname]);
   }
-  var userData = getFields(jqForm, ".container-panneau_informations_personnelles input:not([type=submit]):not(.no-send), .container-panneau_informations_personnelles select, .container-panneau_informations_personnelles textarea");
+  var userData = getFields(jqForm, ".container-panneau_informations_personnelles input:not([type=submit]):not(.no-send), .container-panneau_informations_personnelles select, .container-panneau_informations_personnelles textarea, .hidden_fields input");
   formattedUserData = [];
   for (var attrname in userData) {
     formattedUserData.push({

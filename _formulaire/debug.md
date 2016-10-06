@@ -202,8 +202,8 @@ options:
   page_de_remerciement_path: /index.html
   largeur_champ: '50% centré'
   champs_caches_liste:
-    - nom:
-      valeur:
+    - nom: "cid"
+      valeur: 2
       propriete_visiteur: false
   meta:
     title:
