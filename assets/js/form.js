@@ -42,7 +42,7 @@ function calculScoring(jqForm) {
     }
     i++;
   }
-  return (moyenne / i).toFixed(1);
+  return Math.round((moyenne / i).toFixed(1));
 }
 
 function submitForm(jqForm) {
@@ -120,29 +120,29 @@ function preFill() {
       selector.prop("checked", true);
     } else if ($("input[name='" + name + "']").length > 0 &&
       $("input[name='" + name + "']").hasClass("check-phone")) {
-	var selector = $("input[name='" + name + "']");
-	selector.intlTelInput("setNumber", value);
-      } else if ($("input[name='" + name + "']").length > 0) {
-	var selector = $("input[name='" + name + "']");
-	selector.val(value);
-      } else if ($("textarea[name='" + name + "']").length > 0) {
-	var selector = $("textarea[name='" + name + "']");
-	selector.val(value);
-      } else {
-	return;
-      }
-    if (toHide == true) {
-      if (isValidField(selector, !selector.prop("required")) === false) {
+     var selector = $("input[name='" + name + "']");
+     selector.intlTelInput("setNumber", value);
+   } else if ($("input[name='" + name + "']").length > 0) {
+     var selector = $("input[name='" + name + "']");
+     selector.val(value);
+   } else if ($("textarea[name='" + name + "']").length > 0) {
+     var selector = $("textarea[name='" + name + "']");
+     selector.val(value);
+   } else {
+     return;
+   }
+   if (toHide == true) {
+    if (isValidField(selector, !selector.prop("required")) === false) {
 	// Only un-fill the wrong value if this is an text/email input.
 	// However nothing happens
 	if (selector.attr('type') === 'text' || selector.attr('type') === 'email') {
-	  selector.val("");
-	}
-      } else {
+   selector.val("");
+ }
+} else {
 	selector.closest(".field-row").css("display", "none")
-      }
-    }
-  });
+}
+}
+});
 }
 
 function otherChoice() {
