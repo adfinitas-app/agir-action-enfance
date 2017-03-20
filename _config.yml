@@ -37,9 +37,5 @@ defaults:
 collections:
   formulaire:
     output: true
-    permalink: /:collection/:title/
-    _hide_content: true
-  petition:
-    output: true
-    permalink: /:collection/:title/
+    permalink: /grandeconsultation/:title/
     _hide_content: true
