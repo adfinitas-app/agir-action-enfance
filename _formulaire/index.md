@@ -11,7 +11,7 @@ panneau_question:
   texte_html: 
   champs:
     - type: choix_unique
-      nom_machine: solitude
+      nom_machine: question1
       reponses:
         - valeur: Oui, j’y pense souvent, ou je la vis moi-même
         - valeur: C’est une préoccupation, mais je n’y pense que de temps en temps
@@ -26,7 +26,7 @@ panneau_question:
         fond_image_path: /uploads/question-1-bg.png
         fond_color:
     - type: choix_unique
-      nom_machine: solitude
+      nom_machine: question2
       reponses:
         - valeur: Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.
         - valeur: Oui, pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.
@@ -40,8 +40,8 @@ panneau_question:
         controle:
         fond_image_path: /uploads/question-2-bg.png
         fond_color:
-    - type: choix_unique
-      nom_machine: solitude
+    - type: choix_multiple
+      nom_machine: question3
       reponses:
         - valeur: Visiter les personnes âgées, familles monoparentales, personnes hospitalisées et personnes sans logis…
         - valeur: Organiser des repas et des rencontres où sont conviées les personnes seules
@@ -85,19 +85,6 @@ panneau_informations_personnelles:
         requis: true
         message_erreur: Vous devez remplir ce champ
         controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
-      nom_machine: email
-      reponses:
-        - valeur: 
-      options:
-        propriete_visiteur: true
-        label: 
-        placeholder: Email*
-        requis: true
-        message_erreur: Vous devez remplir ce champ
-        controle: 
         fond_image_path:
         fond_color:
     - type: champ_libre_court

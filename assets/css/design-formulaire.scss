@@ -25,19 +25,33 @@ h1 {
   background-size: cover;
 }
 
+.container-panneau_question .field-row,
+.container-panneau_informations_personnelles {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-panneau_question .field-row {
+  min-height: calc(100vh - 100px - 71px);
+}
+
 header, .question-header {
   background-color: white;
-  height: 100px;
+  height: 120px;
   img.logo {
     display: inline-block;
     height: 100px;
+    margin-top: 10px;
   }
   h2 {
     font-size: 25px;
     display: inline-block;
   }
   .question-number {
-    height: 100px;
+    height: 120px;
+    padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
     display: inline-block;
@@ -56,14 +70,6 @@ header, .question-header {
   background-color: #30cedc;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.container-panneau_question .field-row {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  min-height: calc(100vh - 100px - 71px);
 }
 
 .button, input[type=submit] {
@@ -95,7 +101,7 @@ header, .question-header {
     margin-bottom: 0;
   }
   .pape {
-    width: 30px;
+    width: 60px;
     margin-right: 10px;
   }
   .pape-name {
@@ -114,7 +120,7 @@ header, .question-header {
 }
 
 .container-panneau_question .input-container  {
-  p.label-choix_unique {
+  p.label-choix_unique, p.label-choix_multiple {
     color: #2a6b9b;
     font-size: 30px;
     text-align: center;
@@ -124,17 +130,16 @@ header, .question-header {
       font-size: 14px;
     }
   }
-  label.label-choix_unique {
-    font-size: 20px;
-    display: inline;
-  }
   .field-row .columns {
     padding-left: 150px;
     padding-right: 150px;
   }
   .reponse-container-choix_multiple {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 150px;
+    padding-right: 150px;
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
   }
   label {
     color: #3c3c3c;
@@ -148,12 +153,16 @@ header, .question-header {
 }
 
 footer {
+  padding-top: 20px;
   background-color: #31353f;
   .logo {
     height: 100px;
   }
   .links {
     padding-top: 30px;
+    &, a, a:hover {
+      color: white;
+    }
   }
   .social-links {
     padding-top: 25px;
@@ -170,4 +179,241 @@ footer {
 
 form > .field-row .columns {
   text-align: center;
+}
+
+input[type=radio], input[type=checkbox] {
+  display: none;
+}
+
+input[type=radio] + label .radio-checkbox,
+input[type=checkbox] + label .radio-checkbox {
+  display:inline-block;
+  margin-top: 10px;
+  margin-right: 15px;
+  vertical-align: top;
+  width:23px;
+  height:23px;
+  background:url("/uploads/radio-1.png") left top no-repeat;
+  cursor:pointer;
+}
+
+input[type=checkbox]:checked + label .radio-checkbox,
+input[type=radio]:checked + label .radio-checkbox {
+  background-position: -23px top !important;
+}
+
+.label-container {
+  font-size: 20px;
+  display: inline-block;
+  width: calc(100% - 100px);
+}
+
+#slide-2 input[type=checkbox] + label .radio-checkbox {
+  background:url("/uploads/radio-2.png") left top no-repeat;
+}
+
+.container-panneau_informations_personnelles .label-container {
+  color: #73879c;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.reduced-width, #slide-6 .row, #slide-6 + .field-row {
+  width: 100%;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+#slide-6 + .field-row {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.intl-tel-input {
+  width: 100%;
+}
+
+#slide-6 {
+  margin-top: 30px;
+}
+
+.intro-infos-perso {
+  color: #506a85;
+  font-weight: 500;
+  font-size: 32px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+textarea, input[type=text], input[type=email] {
+  &, &:focus {
+    background: transparent;
+    border-radius: 3px;
+    border-color: #30cedc;
+    resize: none;
+    margin-top: 10px;
+    margin-bottom: 0;
+    box-shadow: none;
+    height: auto;
+    padding: 15px;
+    &, &::placeholder {
+      color: #2a6b9b;
+      opacity: 1;
+      font-size: 21px;
+    }
+  }
+}
+
+.intl-tel-input {
+  margin-top: 10px;
+}
+
+textarea {
+  &, &:focus {
+    &, &::placeholder {
+      border-radius: 0;
+      color: white;
+    }
+  }
+}
+
+section.merci, section.don {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.merci {
+  background-image: url("/uploads/intro-background.png");
+  background-size: cover;
+  text-align: center;
+  .arrow {
+    padding-top: 40px;
+  }
+  &, h2 {
+    color: white;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+  }
+  p {
+    font-size: 24px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+section.merci-inter {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  text-align: center;
+  color: #506a85;
+  .columns {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+  .arrow {
+    padding-top: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .first-part {
+  }
+  .second-part {
+    font-family: "museo",serif;
+    font-weight: 700;
+  }
+}
+
+section.don {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url("/uploads/bg-merci.png");
+  background-size: cover;
+  text-align: center;
+  &, h2 {
+    color: white;
+  }
+  h2, .subtitle {
+    font-family: "museo",serif;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    .second-line {
+      font-weight: 500;
+    }
+  }
+  .subtitle {
+    font-size: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
+    margin-bottom: 50px;
+  }
+  .bloc-container {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+    .price-container {
+      color: #6c5994;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .avec {
+	font-size: 24px;
+	text-transform: uppercase;
+	line-height: 1;
+	color: #8e7cb4;
+      }
+      .price {
+	font-size: 68px;
+	line-height: 1;
+      }
+      .deduction {
+	font-size: 12px;
+	line-height: 1;
+	display: block;
+	padding-left: 50px;
+	padding-right: 50px;
+      }
+    }
+    .middle-text {
+      text-align: left;
+      font-weight: 500;
+      color: #73879c;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .don-container {
+      padding-right: 1px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      .purple-container {
+	background-color: #6c5994;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+      }
+      p {
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	font-size: 21px;
+      }
+    }
+  }
 }
