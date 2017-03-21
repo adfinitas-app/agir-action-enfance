@@ -46,7 +46,7 @@ function calculScoring(jqForm) {
 }
 
 function submitForm(jqForm) {
-  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select, textarea");
+  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select:not(.no-send), textarea:not(.no-send)");
   woopra.track("validation", {
     url: document.location.href,
     title: document.title,
