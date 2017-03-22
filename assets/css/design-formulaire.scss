@@ -333,11 +333,11 @@ textarea {
 section.merci, section.don {
   @media screen and (min-width: 40em) {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
 }
 
 section.merci {
@@ -347,17 +347,26 @@ section.merci {
   .arrow {
     padding-top: 40px;
   }
+  @media screen and (max-width: 39.9375em) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   &, h2 {
     color: white;
   }
   h2 {
     text-transform: uppercase;
     font-size: 50px;
+    @media screen and (max-width: 39.9375em) {
+      font-size: 35px;
+    }
   }
   p {
     font-size: 24px;
-    padding-left: 150px;
-    padding-right: 150px;
+    @media screen and (min-width: 40em) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
   }
 }
 
@@ -366,9 +375,11 @@ section.merci-inter {
   padding-bottom: 70px;
   text-align: center;
   color: #506a85;
-  .columns {
-    padding-left: 200px;
-    padding-right: 200px;
+  @media screen and (min-width: 40em) {
+    .columns {
+      padding-left: 200px;
+      padding-right: 200px;
+    }
   }
   .arrow {
     padding-top: 40px;
@@ -406,21 +417,27 @@ section.don {
   }
   .subtitle {
     font-size: 20px;
-    padding-left: 250px;
-    padding-right: 250px;
+    @media screen and (min-width: 40em) {
+      padding-left: 250px;
+      padding-right: 250px;
+    }
     margin-bottom: 50px;
   }
   .bloc-container {
     &:not(:last-child) {
       margin-bottom: 25px;
     }
-    margin-left: 100px;
-    margin-right: 100px;
+    @media screen and (min-width: 40em) {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
     background-color: white;
     .price-container {
       color: #6c5994;
       padding-top: 30px;
-      padding-bottom: 30px;
+      @media screen and (min-width: 40em) {
+	padding-bottom: 30px;
+      }
       .avec {
 	font-size: 24px;
 	text-transform: uppercase;
@@ -452,6 +469,9 @@ section.don {
       padding-right: 1px;
       padding-top: 1px;
       padding-bottom: 1px;
+      @media screen and (max-width: 39.9375em) {
+	padding: 0;
+      }
       .purple-container {
 	background-color: #6c5994;
 	height: 100%;
