@@ -4,7 +4,7 @@ evenement_woopra: formulaire
 panneau_introduction:
   fond_image_path: /uploads/intro-background.png
   fond_color:
-  texte_html: "<p class='intro-title'>« La solitude est l’une des maladies  les plus répandues »</p><img class='pape' src='/uploads/pape.png' alt='Pape François'/><p class='pape-name'>Pape François</p><p class='description'>Aidez la Société Saint-Vincent-de-Paul à adapter ses actions aux nouvelles formes de solitude et à leurs conséquences. Prenez quelques instants pour répondre à cette consultation personnelle. Merci</p><a class='button' href='#slide-0'>Je donne mon avis</a>"
+  texte_html: "<p class='intro-title'>« La solitude est l’une des maladies  les plus répandues »</p><img class='pape' src='/uploads/pape.png' alt='Pape François'/><p class='pape-name'>Pape François</p><p class='description'>Aidez la Société de Saint-Vincent-de-Paul à adapter ses actions aux nouvelles formes de solitude et à leurs conséquences. Prenez quelques instants pour répondre à cette consultation personnelle. Merci</p><a class='button' href='#slide-0'>Je donne mon avis</a>"
 panneau_question:
   fond_image_path:
   fond_color:
