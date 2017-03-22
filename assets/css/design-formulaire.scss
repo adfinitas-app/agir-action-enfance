@@ -21,28 +21,43 @@ h1 {
 .panneau-introduction,
 .container-panneau_question > .input-container,
 .container-panneau_informations_personnelles {
-  min-height: 100vh;
+  @media screen and (min-width: 40em) {
+    min-height: 100vh;
+  }
   background-size: cover;
 }
 
 .container-panneau_question .field-row,
 .container-panneau_informations_personnelles {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  @media screen and (min-width: 40em) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .container-panneau_question .field-row {
-  min-height: calc(100vh - 100px - 71px);
+  @media screen and (min-width: 40em) {
+    min-height: calc(100vh - 100px - 71px);
+  }
+}
+
+.question-header {
+  @media screen and (max-width: 39.9375em) {
+    display: none;
+  }
 }
 
 header, .question-header {
+  @media screen and (max-width: 39.9375em) {
+    text-align: center;
+  }
   background-color: white;
-  height: 120px;
+  min-height: 120px;
   img.logo {
     display: inline-block;
-    height: 100px;
+    max-height: 100px;
     margin-top: 10px;
   }
   h2 {
@@ -85,16 +100,25 @@ header, .question-header {
 
 .panneau-introduction-texte {
   .columns {
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 200px;
-    padding-bottom: 50px;
+    @media screen and (max-width: 39.9375em) {
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+    @media screen and (min-width: 40em) {
+      padding-left: 150px;
+      padding-right: 150px;
+      padding-top: 200px;
+      padding-bottom: 50px;
+    }
   }
   color: white;
   background-repeat: no-repeat;
   text-align: center;
   .intro-title {
     font-size: 45px;
+    @media screen and (max-width: 39.9375em) {
+      font-size: 30px;
+    }
     text-transform: uppercase;
     font-weight: 500;
     line-height: 1.2;
@@ -112,8 +136,10 @@ header, .question-header {
   .description {
     font-size: 20px;
     line-height: 1.2;
-    padding-left: 150px;
-    padding-right: 150px;
+    @media screen and (min-width: 40em) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
     padding-top: 30px;
     padding-bottom: 20px;
   }
@@ -122,6 +148,10 @@ header, .question-header {
 .container-panneau_question .input-container  {
   p.label-choix_unique, p.label-choix_multiple {
     color: #2a6b9b;
+    @media screen and (max-width: 39.9375em) {
+      font-size: 26px;
+      margin-top: 20px;
+    }
     font-size: 30px;
     text-align: center;
     margin-bottom: 40px;
@@ -131,12 +161,16 @@ header, .question-header {
     }
   }
   .field-row .columns {
-    padding-left: 150px;
-    padding-right: 150px;
+    @media screen and (min-width: 40em) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
   }
   .reponse-container-choix_multiple {
-    padding-left: 150px;
-    padding-right: 150px;
+    @media screen and (min-width: 40em) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
     &:not(:last-child) {
       padding-bottom: 20px;
     }
@@ -156,7 +190,7 @@ footer {
   padding-top: 20px;
   background-color: #31353f;
   .logo {
-    height: 100px;
+    max-height: 100px;
   }
   .links {
     padding-top: 30px;
@@ -171,9 +205,15 @@ footer {
     display: inline-block;
   }
   .columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @media screen and (min-width: 40em) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 39.9375em) {
+      text-align: center;
+      padding-bottom: 40px;
+    }
   }
 }
 
@@ -205,11 +245,18 @@ input[type=radio]:checked + label .radio-checkbox {
 .label-container {
   font-size: 20px;
   display: inline-block;
-  width: calc(100% - 100px);
+  width: calc(100% - 40px);
 }
 
 #slide-2 input[type=checkbox] + label .radio-checkbox {
   background:url("/uploads/radio-2.png") left top no-repeat;
+}
+
+.container-panneau_informations_personnelles {
+  @media screen and (max-width: 39.9375em) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .container-panneau_informations_personnelles .label-container {
@@ -220,8 +267,10 @@ input[type=radio]:checked + label .radio-checkbox {
 
 .reduced-width, #slide-6 .row, #slide-6 + .field-row {
   width: 100%;
-  padding-left: 150px;
-  padding-right: 150px;
+  @media screen and (min-width: 40em) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
 }
 
 #slide-6 + .field-row {
@@ -241,8 +290,10 @@ input[type=radio]:checked + label .radio-checkbox {
   color: #506a85;
   font-weight: 500;
   font-size: 32px;
-  padding-left: 100px;
-  padding-right: 100px;
+  @media screen and (min-width: 40em) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   text-align: center;
   margin-bottom: 40px;
 }
@@ -280,7 +331,9 @@ textarea {
 }
 
 section.merci, section.don {
-  min-height: 100vh;
+  @media screen and (min-width: 40em) {
+    min-height: 100vh;
+  }
   display: flex;
   align-items: center;
   flex-direction: column;
