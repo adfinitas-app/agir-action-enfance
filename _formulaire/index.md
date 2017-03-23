@@ -18,7 +18,7 @@ panneau_question:
         - valeur: Non
       options:
         propriete_visiteur: false
-        label: La solitude est une préoccupation majeure pour 80% des français*. L’est-elle aussi pour vous ?
+        label: La solitude est une préoccupation majeure pour 80% des français. L’est-elle aussi pour vous ?
         placeholder:
         requis: true
         message_erreur: Vous devez choisir

@@ -167,7 +167,7 @@ function changeLabel() {
 
 $(document).on('ready', function() {
   changeLabel();
-  $('#slide-0 p.label-choix_unique').append('<span class="source">* Source : chiffre publié par la SSVP sur FB</span>');
+  //$('#slide-0 p.label-choix_unique').append('<span class="source">* Source : chiffre publié par la SSVP sur FB</span>');
   insertHeader();
   insertFooter();
   insertQuestionHeader();
