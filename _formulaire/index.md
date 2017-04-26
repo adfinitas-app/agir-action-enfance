@@ -59,7 +59,7 @@ panneau_question:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
-  texte_html: '<div class="nps-popup" id="nps-popup"><div class="container"><div class="home-view"><p class="title">Recommanderiez-vous Sidaction &agrave; vos amis ?</p><div class="circle-list"><div class="circle"><a href="#" class="select">1</a></div><div class="circle"><a href="#" class="select">2</a></div><div class="circle"><a href="#" class="select">3</a></div><div class="circle"><a href="#" class="select">4</a></div><div class="circle"><a href="#" class="select">5</a></div><div class="circle"><a href="#" class="select">6</a></div><div class="circle"><a href="#" class="select">7</a></div><div class="circle"><a href="#" class="select">8</a></div><div class="circle"><a href="#" class="select">9</a></div><div class="circle"><a href="#" class="select">10</a></div></div><div class="indication-container"><p class="indication indication-1">Pas du tout</p><p class="indication indication-2">Oui, tout &agrave; fait</p></div></div><div class="thanks-view"><p class="title title-thanks">Merci</p></div><a href="#" id="close-nps" class="close-nps">❌</a></div></div><p>&nbsp;</p>'
+  texte_html: ''
   champs:
     - type: champ_libre_court
       nom_machine: lastname
@@ -101,7 +101,7 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: choix_multiple
-      nom_machine: optin
+      nom_machine: optinnps
       reponses:
         - valeur: Je souhaite recevoir les lettres d’information de la part de la Société de Saint-Vincent-de-Paul
       options:
