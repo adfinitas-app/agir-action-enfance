@@ -4,21 +4,21 @@ evenement_woopra: formulaire
 panneau_introduction:
   fond_image_path: /uploads/intro-background.png
   fond_color:
-  texte_html: "<p class='intro-title'>« La solitude est l’une des maladies  les plus répandues »</p><img class='pape' src='/uploads/pape.png' alt='Pape François'/><p class='pape-name'>Pape François</p><p class='description'>Aidez la Société de Saint-Vincent-de-Paul à adapter ses actions aux nouvelles formes de solitude et à leurs conséquences. Prenez quelques instants pour répondre à cette consultation personnelle. Merci</p><a class='button' href='#slide-0'>Je donne mon avis</a>"
+  texte_html: "<p class='intro-title'>« La solitude est l’une des maladies  les plus répandues\_»</p><img class='pape' src='/uploads/pape.png' alt='Pape François'/><p class='pape-name'>Pape François</p><p class='description'>Aidez la Société de Saint-Vincent-de-Paul à adapter ses actions aux nouvelles formes de solitude et à leurs conséquences. Prenez quelques instants pour répondre à cette consultation personnelle. Merci</p><a class='button' href='#slide-0'>Je donne mon avis</a>"
 panneau_question:
   fond_image_path:
   fond_color:
-  texte_html: 
+  texte_html:
   champs:
     - type: choix_unique
       nom_machine: question1
       reponses:
-        - valeur: Oui, j’y pense souvent, ou je la vis moi-même
-        - valeur: C’est une préoccupation, mais je n’y pense que de temps en temps
+        - valeur: 'Oui, j’y pense souvent, ou je la vis moi-même'
+        - valeur: 'C’est une préoccupation, mais je n’y pense que de temps en temps'
         - valeur: Non
       options:
         propriete_visiteur: false
-        label: La solitude est une préoccupation majeure pour 80% des français. L’est-elle aussi pour vous ?
+        label: "La solitude est une préoccupation majeure pour 80% des français. L’est-elle aussi pour vous\_?"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
@@ -28,12 +28,12 @@ panneau_question:
     - type: choix_unique
       nom_machine: question2
       reponses:
-        - valeur: Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.
-        - valeur: Oui, pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.
-        - valeur: Non, autour de moi, personne n’est confronté à la solitude.
+        - valeur: 'Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.'
+        - valeur: 'Oui, pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
+        - valeur: 'Non, autour de moi, personne n’est confronté à la solitude.'
       options:
         propriete_visiteur: false
-        label: Un sondage effectué en 2013 montre que la solitude a augmenté en France, touchant 5 millions de Français en 2013 contre 4 millions en 2010. Avez-vous constaté cette tendance ?
+        label: "Un sondage effectué en 2013 montre que la solitude a augmenté en France, touchant 5 millions de Français en 2013 contre 4 millions en 2010. Avez-vous constaté cette tendance\_?"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
@@ -43,13 +43,13 @@ panneau_question:
     - type: choix_multiple
       nom_machine: question3
       reponses:
-        - valeur: Visiter les personnes âgées, familles monoparentales, personnes hospitalisées et personnes sans logis…
+        - valeur: 'Visiter les personnes âgées, familles monoparentales, personnes hospitalisées et personnes sans logis…'
         - valeur: Organiser des repas et des rencontres où sont conviées les personnes seules
         - valeur: Proposer des séjours de vacances aux personnes âgées et aux familles pauvres et isolées
         - valeur: Chercher sans cesse des solutions innovantes pour faire face aux nouvelles situations de pauvreté
       options:
         propriete_visiteur: false
-        label: La Société de Saint-Vincent-de-Paul lutte contre toutes les formes de solitude au quotidien. Parmi les actions qu’elle mène dans ce domaine, lesquelles vous semblent particulièrement importantes ? (Plusieurs réponses possibles)
+        label: "La Société de Saint-Vincent-de-Paul lutte contre toutes les formes de solitude au quotidien. Parmi les actions qu’elle mène dans ce domaine, lesquelles vous semblent particulièrement importantes\_? (Plusieurs réponses possibles)"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
@@ -59,7 +59,7 @@ panneau_question:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
-  texte_html:
+  texte_html: '<div class="nps-popup" id="nps-popup"><div class="container"><div class="home-view"><p class="title">Recommanderiez-vous Sidaction &agrave; vos amis ?</p><div class="circle-list"><div class="circle"><a href="#" class="select">1</a></div><div class="circle"><a href="#" class="select">2</a></div><div class="circle"><a href="#" class="select">3</a></div><div class="circle"><a href="#" class="select">4</a></div><div class="circle"><a href="#" class="select">5</a></div><div class="circle"><a href="#" class="select">6</a></div><div class="circle"><a href="#" class="select">7</a></div><div class="circle"><a href="#" class="select">8</a></div><div class="circle"><a href="#" class="select">9</a></div><div class="circle"><a href="#" class="select">10</a></div></div><div class="indication-container"><p class="indication indication-1">Pas du tout</p><p class="indication indication-2">Oui, tout &agrave; fait</p></div></div><div class="thanks-view"><p class="title title-thanks">Merci</p></div><a href="#" id="close-nps" class="close-nps">❌</a></div></div><p>&nbsp;</p>'
   champs:
     - type: champ_libre_court
       nom_machine: lastname
@@ -67,8 +67,8 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
-        placeholder: Nom*
+        label:
+        placeholder: 'Nom*'
         requis: true
         message_erreur: vous devez remplir ce champ
         controle:
@@ -80,8 +80,8 @@ panneau_informations_personnelles:
         - valeur:
       options:
         propriete_visiteur: true
-        label: 
-        placeholder: Prénom*
+        label:
+        placeholder: 'Prénom*'
         requis: true
         message_erreur: Vous devez remplir ce champ
         controle:
@@ -108,7 +108,7 @@ panneau_informations_personnelles:
         propriete_visiteur: true
         label:
         placeholder:
-        requis: true
+        requis: false
         message_erreur:
         controle:
         fond_image_path:
@@ -118,8 +118,8 @@ options:
   page_de_remerciement_path: /merci.html
   largeur_champ: '100%'
   champs_caches_liste:
-    - nom: 
-      valeur: 
+    - nom:
+      valeur:
       propriete_visiteur: false
   meta:
     title: Questionnaire
