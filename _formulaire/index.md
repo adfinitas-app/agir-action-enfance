@@ -103,7 +103,7 @@ panneau_informations_personnelles:
     - type: choix_multiple
       nom_machine: optinnps
       reponses:
-        - valeur: Je souhaite recevoir les lettres d’information de la part de la Société de Saint-Vincent-de-Paul
+        - valeur: Je souhaite recevoir les lettres d’information de la Société de Saint-Vincent-de-Paul
       options:
         propriete_visiteur: true
         label:
