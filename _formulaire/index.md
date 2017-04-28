@@ -29,7 +29,7 @@ panneau_question:
       nom_machine: question2
       reponses:
         - valeur: 'Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.'
-        - valeur: 'Oui, pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
+        - valeur: 'Oui, elles ne sont pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
         - valeur: 'Non, autour de moi, personne n’est confronté à la solitude.'
       options:
         propriete_visiteur: false
