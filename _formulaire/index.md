@@ -29,7 +29,7 @@ panneau_question:
       nom_machine: question2
       reponses:
         - valeur: 'Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.'
-        - valeur: 'Oui, pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
+        - valeur: 'Oui, elles ne sont pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
         - valeur: 'Non, autour de moi, personne n’est confronté à la solitude.'
       options:
         propriete_visiteur: false
@@ -101,9 +101,9 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: choix_multiple
-      nom_machine: optin
+      nom_machine: optinnps
       reponses:
-        - valeur: Je souhaite recevoir les lettres d’information de la part de la Société de Saint-Vincent-de-Paul
+        - valeur: Je souhaite recevoir les lettres d’information de la Société de Saint-Vincent-de-Paul
       options:
         propriete_visiteur: true
         label:
