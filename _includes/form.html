@@ -1,140 +1,140 @@
 <div class="panneau-introduction"
-     style="
-     {% if page.panneau_introduction.fond_image_path != nill  and 
+style="
+{% if page.panneau_introduction.fond_image_path != nill  and 
 	page.panneau_introduction.fond_image_path != empty %}
-      background-image: url('{{ page.panneau_introduction.fond_image_path }}');
-     {% endif %}
-     {% if page.panneau_introduction.fond_color != nill and 
-     page.panneau_introduction.fond_color != empty %}
-     background-color: {{ page.panneau_introduction.fond_color }};
-     {% endif %}
-     "
+  background-image: url('{{ page.panneau_introduction.fond_image_path }}');
+  {% endif %}
+  {% if page.panneau_introduction.fond_color != nill and 
+  page.panneau_introduction.fond_color != empty %}
+  background-color: {{ page.panneau_introduction.fond_color }};
+  {% endif %}
+  "
   >
   {% if page.panneau_introduction.texte_html != nill and
-     page.panneau_introduction != empty %}
-    <div class="panneau-introduction-texte">
+  page.panneau_introduction != empty %}
+  <div class="panneau-introduction-texte">
+    <div class="row">
+     {% if page.options.largeur_champ == "50% centré" %}
+     <div class="large-6 medium-12 small-12 large-centered columns">
+       {% else %}
+       <div class="large-12 medium-12 small-12 columns">
+         {% endif %}
+         {{ page.panneau_introduction.texte_html }}
+       </div>
+     </div>
+   </div>
+   {% endif %}
+ </div>
+ <form class="adfinitas-cx" novalidate
+ data-source="{{ page.evenement_woopra }}"
+ data-success="{{ page.options.page_de_remerciement_path }}">
+ {% assign inputId=0 %}
+ {% assign lineId=0 %}
+ <div class="container-panneau_question"
+ style="
+ {% if page.panneau_question.fond_image_path != nill  and 
+   page.panneau_question.fond_image_path != empty %}
+   background-image: url('{{ page.panneau_question.fond_image_path }}');
+   {% endif %}
+   {% if page.panneau_question.fond_color != nill and 
+     page.panneau_question.fond_color != empty %}
+     background-color: {{ page.panneau_question.fond_color }};
+     {% endif %}
+     "
+     >
+     {% if page.panneau_question.texte_html != nill and
+     page.panneau_question != empty %}
+     <div class="panneau-question-texte">
       <div class="row">
-	{% if page.options.largeur_champ == "50% centré" %}
-	  <div class="large-6 medium-12 small-12 large-centered columns">
-	{% else %}
-	  <div class="large-12 medium-12 small-12 columns">
-	{% endif %}
-          {{ page.panneau_introduction.texte_html }}
-        </div>
-      </div>
-    </div>
-  {% endif %}
-</div>
-<form class="adfinitas-cx" novalidate
-			   data-source="{{ page.evenement_woopra }}"
-			   data-success="{{ page.options.page_de_remerciement_path }}">
-  {% assign inputId=0 %}
-  {% assign lineId=0 %}
-  <div class="container-panneau_question"
-       style="
-       {% if page.panneau_question.fond_image_path != nill  and 
-  	page.panneau_question.fond_image_path != empty %}
-        background-image: url('{{ page.panneau_question.fond_image_path }}');
-       {% endif %}
-       {% if page.panneau_question.fond_color != nill and 
-       page.panneau_question.fond_color != empty %}
-       background-color: {{ page.panneau_question.fond_color }};
-       {% endif %}
-       "
-    >
-    {% if page.panneau_question.texte_html != nill and
-       page.panneau_question != empty %}
-      <div class="panneau-question-texte">
-        <div class="row">
-	{% if page.options.largeur_champ == "50% centré" %}
-	  <div class="large-6 medium-12 small-12 large-centered columns">
-	{% else %}
-	  <div class="large-12 medium-12 small-12 columns">
-	{% endif %}
-            {{ page.panneau_question.texte_html }}
-          </div>
-        </div>
-      </div>
-    {% endif %}
-    {% include form-fields.html champs=page.panneau_question.champs %}
-  </div>
-  <div class="container-panneau_informations_personnelles"
-       style="
-       {% if page.panneau_informations_personnelles.fond_image_path != nill  and 
-  	page.panneau_informations_personnelles.fond_image_path != empty %}
-        background-image: url('{{ page.panneau_informations_personnelles.fond_image_path }}');
-       {% endif %}
-       {% if page.panneau_informations_personnelles.fond_color != nill and 
+       {% if page.options.largeur_champ == "50% centré" %}
+       <div class="large-6 medium-12 small-12 large-centered columns">
+         {% else %}
+         <div class="large-12 medium-12 small-12 columns">
+           {% endif %}
+           {{ page.panneau_question.texte_html }}
+         </div>
+       </div>
+     </div>
+     {% endif %}
+     {% include form-fields.html champs=page.panneau_question.champs %}
+   </div>
+   <div class="container-panneau_informations_personnelles"
+   style="
+   {% if page.panneau_informations_personnelles.fond_image_path != nill  and 
+     page.panneau_informations_personnelles.fond_image_path != empty %}
+     background-image: url('{{ page.panneau_informations_personnelles.fond_image_path }}');
+     {% endif %}
+     {% if page.panneau_informations_personnelles.fond_color != nill and 
        page.panneau_informations_personnelles.fond_color != empty %}
        background-color: {{ page.panneau_informations_personnelles.fond_color }};
        {% endif %}
        "
-    >
-  {% if page.panneau_informations_personnelles.texte_html != nill and
-     page.panneau_informations_personnelles != empty %}
-    <div class="panneau-informations_personnelles-texte">
-      <div class="row">
-	{% if page.options.largeur_champ == "50% centré" %}
-	  <div class="large-6 medium-12 small-12 large-centered columns">
-	{% else %}
-	  <div class="large-12 medium-12 small-12 columns">
-	{% endif %}
-          {{ page.panneau_informations_personnelles.texte_html }}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    <div id="slide-{{ lineId }}" class="input-container input-container-champ_libre_court">
-      <div class="row field-row">
-	{% if page.options.largeur_champ == "50% centré" %}
-	  <div class="large-6 medium-12 small-12 large-centered columns">
-	{% else %}
-	  <div class="large-12 medium-12 small-12 columns">
-	{% endif %}
-          <label class="label-champ_libre" for="input-{{ inputId }}">
-            Email *
-          </label>
-          <input id="input-{{ inputId }}"
-                 class="input-champ_libre check-email visitor_property"
-                 type="email"
-                 placeholder=""
-                 name="email"
-                 required
-          />
-          <p class="error-message">Vous devez indiquer votre email</p>
-        </div>
-      </div>
-    </div>
-    {% assign inputId=inputId | plus:1 %}
-    {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
-  </div>
-  <div class="hidden_fields" style="display: none;">
-    {% for champ in page.options.champs_caches_liste %}
-      <input id="input-{{ inputId }}"
-             type="hidden"
-             value="{{ champ.valeur }}"
-             {% assign inputClasses = site.array %}
-             {% assign inputClasses = inputClasses
-            	   | push: 'input-champ_cache ' %}
-             name="{{ champ.nom }}"
-             {% if champ.propriete_visiteur %}
-             {% assign inputClasses = inputClasses
-            	   | push: 'visitor_property' %}
+       >
+       {% if page.panneau_informations_personnelles.texte_html != nill and
+       page.panneau_informations_personnelles != empty %}
+       <div class="panneau-informations_personnelles-texte">
+        <div class="row">
+         {% if page.options.largeur_champ == "50% centré" %}
+         <div class="large-6 medium-12 small-12 large-centered columns">
+           {% else %}
+           <div class="large-12 medium-12 small-12 columns">
              {% endif %}
-             class="{{ inputClasses }}"
+             {{ page.panneau_informations_personnelles.texte_html }}
+           </div>
+         </div>
+       </div>
+       {% endif %}
+       <div id="slide-{{ lineId }}" class="input-container input-container-champ_libre_court">
+        <div class="row field-row">
+         {% if page.options.largeur_champ == "50% centré" %}
+         <div class="large-6 medium-12 small-12 large-centered columns">
+           {% else %}
+           <div class="large-12 medium-12 small-12 columns">
+             {% endif %}
+             <label class="label-champ_libre" for="input-{{ inputId }}">
+              Email *
+            </label>
+            <input id="input-{{ inputId }}"
+            class="input-champ_libre check-email visitor_property"
+            type="email"
+            placeholder=""
+            name="email"
+            required
+            />
+            <p class="error-message">Vous devez indiquer votre email</p>
+          </div>
+        </div>
+      </div>
+      {% assign inputId=inputId | plus:1 %}
+      {% include form-fields.html champs=page.panneau_informations_personnelles.champs %}
+    </div>
+    <div class="hidden_fields" style="display: none;">
+      {% for champ in page.options.champs_caches_liste %}
+      <input id="input-{{ inputId }}"
+      type="hidden"
+      value="{{ champ.valeur }}"
+      {% assign inputClasses = site.array %}
+      {% assign inputClasses = inputClasses
+      | push: 'input-champ_cache ' %}
+      name="{{ champ.nom }}"
+      {% if champ.propriete_visiteur %}
+      {% assign inputClasses = inputClasses
+      | push: 'visitor_property' %}
+      {% endif %}
+      class="{{ inputClasses }}"
       />
       {% assign inputId=inputId | plus:1 %}
-    {% endfor %}
-  </div>
-
-  <div class="row field-row">
-    {% if page.options.largeur_champ == "50% centré" %}
-      <div class="large-6 medium-12 small-12 large-centered columns">
-    {% else %}
-      <div class="large-12 medium-12 small-12 columns">
-    {% endif %}
-      <input type="submit" value="{{ page.options.bouton_de_soumission }}">
+      {% endfor %}
     </div>
-  </div>
 
-</form>
+    <div class="row field-row">
+      {% if page.options.largeur_champ == "50% centré" %}
+      <div class="large-6 medium-12 small-12 large-centered columns">
+        {% else %}
+        <div class="large-12 medium-12 small-12 columns">
+          {% endif %}
+          <input type="submit" value="{{ page.options.bouton_de_soumission }}">
+        </div>
+      </div>
+
+    </form>
