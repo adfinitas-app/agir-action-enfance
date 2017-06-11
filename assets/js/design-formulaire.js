@@ -17,7 +17,7 @@ function insertHeader() {
 	  <a target="_blank" href="http://www.ssvp.fr/">
 	    <img class='logo' src='/uploads/logo.png' alt='Logo' />
 	  </a>
-      	  <h2>Grande consultation <span class='smallest'>sur la solitude en France</span></h2>
+      	   <h2>donnez-nous votre avis :<br /><span class='smallest'>Comment se reconstruire après la maltraitance ?</span></h2>
       	</div>
       </div>
     </header>
@@ -28,31 +28,38 @@ function insertHeader() {
 function insertFooter() {
   footer = `
     <footer>
-      <div class='row'>
-        <div class='large-12 columns'>
-	  <a target="_blank" href="http://www.ssvp.fr/">
-	    <img class='logo' src='/uploads/logo-white.png' alt='Logo' />
-	  </a>
-	  <div class='links'>
-	    <a target="_blank" href='http://www.ssvp.fr'>www.ssvp.fr</a>
-	    - 
-	    <a target="_blank" href='http://www.ssvp.fr/mentions-legales/'>Mentions légales</a>
-	  </div>
-          <div class='social-links'>
-	    <a target='_blank' href='https://www.facebook.com/SocieteDeSaintVincentDePaulFrance/'>
-	      <img src='/uploads/fb.png'>
-	    </a>
-	    <a target='_blank' href='https://twitter.com/ssvpfrance'>
-	      <img src='/uploads/twitter.png'>
-	    </a>
-	    <a target='_blank' href='https://www.instagram.com/ssvpfrance/'>
-	      <img src='/uploads/instagram.png'>
-	    </a>
-	    <a target='_blank' href='https://www.youtube.com/channel/UCPorlvgCNj-CZE_c7p73Vrw'>
-	      <img src='/uploads/youtube.png'>
-	    </a>
-          </div>
-    </footer>
+  <div class='row'>
+    <div class='large-12 columns'>
+      <a target="_blank" href="http://www.actionenfance.org/">
+        <img class='logo' src='/uploads/logo.png' alt='Logo' />
+      </a>
+      <a target="_blank" href="http://www.donenconfiance.org/">
+        <img src='/uploads/don-en-confiance.png' alt='Don en confiance' />
+      </a>
+      <div class='links'>
+        <a target="_blank" href='http://www.actionenfance.org'>www.actionenfance.org</a>
+        - 
+        <a target="_blank" href='http://www.actionenfance.org/mentions-legales'>Mentions légales</a>
+        - 
+        <a target="_blank" href='http://www.actionenfance.org/nous-connaitre'>Crédits</a>
+      </div>
+      <div class='social-links'>
+        <a target='_blank' href='https://www.facebook.com/ActionEnfance/'>
+          <img src='/uploads/fb.png'>
+        </a>
+        <a target='_blank' href='https://twitter.com/action_enfance?lang=fr'>
+          <img src='/uploads/twitter1.png'>
+        </a>
+        <a target='_blank' href='https://www.instagram.com/action_enfance/'>
+          <img src='/uploads/instagram.png'>
+        </a>
+        <a target='_blank' href='https://www.youtube.com/user/ACTIONENFANCE'>
+          <img src='/uploads/youtube.png'>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
   `;
   $('form.adfinitas-cx').append(footer);
 }
@@ -63,10 +70,10 @@ function insertQuestionHeader() {
       <div class='row'>
         <div class='large-12 columns'>
           <img class='logo' src='/uploads/logo.png' alt='Logo' />
-	  <h2>Grande consultation <span class='smallest'>sur la solitude en France</span></h2>
+	  <h2>donnez-nous votre avis :<br /><span class='smallest'>Comment se reconstruire après la maltraitance ?</span></h2>
           <div class='question-number'>
             <span class='position'>1</span>
-            <span class='total'>/3</span>
+            <span class='total'><span class="separator">/</span>3</span>
           </div>
         </div>
       </div>
@@ -172,7 +179,7 @@ $(document).on('ready', function() {
   insertFooter();
   insertQuestionHeader();
   insertQuestionFooter();
-  insertAnswerField();
+  //insertAnswerField();
   smoothScroll();
   insertSpecialButtons();
   infosPart();

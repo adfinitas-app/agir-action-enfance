@@ -1,10 +1,11 @@
 ---
-permalink: /grandeconsultation/
+permalink: /questionnaire/
 evenement_woopra: formulaire
 panneau_introduction:
   fond_image_path: /uploads/intro-background.jpg
   fond_color:
   texte_html: "<p class='intro-title'>Aider des enfants à se reconstruire après la maltraitance : telle est la mission d’ACTION ENFANCE depuis près de 60 ans.<br /><br />Comptant parmi les rares structures à accueillir ensemble, dans des Villages d’Enfants, les frères et sœurs retirés de leur famille sur décision du Juge des Enfants, elle souhaite recueillir votre avis.<br /><br />Merci de l’aider en répondant à 3 questions. </p>"
+  bouton-avis: 'Je donne mon avis'
 panneau_question:
   fond_image_path:
   fond_color:
@@ -13,43 +14,47 @@ panneau_question:
     - type: choix_unique
       nom_machine: question1
       reponses:
-        - valeur: 'Oui, j’y pense souvent, ou je la vis moi-même'
-        - valeur: 'C’est une préoccupation, mais je n’y pense que de temps en temps'
-        - valeur: Non
+        - valeur: 'Oui, je ne savais pas qu’en France les enfants confiés à l’Aide Sociale à l’Enfance étaient si nombreux. '
+        - valeur: 'Non, je connaissais ce chiffre'
       options:
         propriete_visiteur: false
-        label: "La solitude est une préoccupation majeure pour 80% des français. L’est-elle aussi pour vous\_?"
+        label: "Près de 150 000 enfants sont confiés chaque année à l’Aide Sociale à l’Enfance en raison de maltraitance, de problèmes sociaux et éducatifs. Êtes-vous surpris(e) par ce chiffre\_?"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
         controle:
-        fond_image_path: /uploads/question-1-bg.jpg
+        fond_image_path:
         fond_color:
     - type: choix_unique
       nom_machine: question2
       reponses:
-        - valeur: 'Oui, il y a dans mon entourage, mon voisinage… des personnes qui sont très seules.'
-        - valeur: 'Oui, elles ne sont pas dans mon entourage proche, mais je croise souvent des personnes qui me semblent souffrir de solitude.'
-        - valeur: 'Non, autour de moi, personne n’est confronté à la solitude.'
+        - valeur: 'Je pense que la préservation des liens fraternels est essentielle pour aider ces enfants à surmonter le drame qu’ils ont vécu. '
+        - valeur: 'Je ne pense pas que les liens fraternels jouent un rôle indispensable dans la reconstruction de ces enfants. '
       options:
         propriete_visiteur: false
-        label: "Un sondage effectué en 2013 montre que la solitude a augmenté en France, touchant 5 millions de Français en 2013 contre 4 millions en 2010. Avez-vous constaté cette tendance\_?"
+        label: "ACTION ENFANCE accueille les frères et sœurs dans ses 11 Villages d’Enfants et leur offre ainsi un cadre de vie stable, de type familial, leur permettant de grandir ensemble. Que pensez-vous de cette mission\_?"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
         controle:
-        fond_image_path: /uploads/question-2-bg.png
+        fond_image_path:
         fond_color:
-    - type: choix_multiple
+    - type: choix_unique
       nom_machine: question3
       reponses:
-        - valeur: 'Visiter les personnes âgées, familles monoparentales, personnes hospitalisées et personnes sans logis…'
-        - valeur: Organiser des repas et des rencontres où sont conviées les personnes seules
-        - valeur: Proposer des séjours de vacances aux personnes âgées et aux familles pauvres et isolées
-        - valeur: Chercher sans cesse des solutions innovantes pour faire face aux nouvelles situations de pauvreté
+        - valeur: '1'
+        - valeur: '2'
+        - valeur: '3'
+        - valeur: '4'
+        - valeur: '5'
+        - valeur: '6'
+        - valeur: '7'
+        - valeur: '8'
+        - valeur: '9'
+        - valeur: '10'
       options:
         propriete_visiteur: false
-        label: "La Société de Saint-Vincent-de-Paul lutte contre toutes les formes de solitude au quotidien. Parmi les actions qu’elle mène dans ce domaine, lesquelles vous semblent particulièrement importantes\_? (Plusieurs réponses possibles)"
+        label: "ACTION ENFANCE fait partie des acteurs majeurs de la protection de l’enfance en France. Seriez-vous prêt(e) à parler de sa mission autour de vous pour inviter votre entourage à la soutenir\_? (en mettant une note de 1 à 10)"
         placeholder:
         requis: true
         message_erreur: Vous devez choisir
@@ -103,7 +108,7 @@ panneau_informations_personnelles:
     - type: choix_multiple
       nom_machine: optinnps
       reponses:
-        - valeur: Je souhaite recevoir les lettres d’information de la Société de Saint-Vincent-de-Paul
+        - valeur: Je souhaite recevoir toute l’actualité d’ACTION ENFANCE
       options:
         propriete_visiteur: true
         label:

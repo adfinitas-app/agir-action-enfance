@@ -63,33 +63,57 @@ header, .question-header {
   h2 {
     font-size: 25px;
     display: inline-block;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-top: 15px;
+    margin-left :20px;
+  }
+  h2 .smallest {
+    text-transform: none;
   }
   .question-number {
-    height: 120px;
-    padding-top: 10px;
+  margin-top: 10px;
+    height: 100px;
+    width: 100px;
+    padding-top: 17px;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 13px;
     display: inline-block;
     float: right;
-    background-color: #2a6b9b;
+    background-color: #3c2451;
     color: white;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 42px;
+    border-radius: 50%;
     .position {
-      font-size: 60px;
+      font-size: 42px;
+    }
+    .separator {
+      font-weight: normal;
+      font-size: 30px;
     }
   }
+  
 }
-
+.btn-custom {
+  margin-top: 40px;
+    background-color: #12a8ca;
+    padding: 20px 40px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 30px;
+  }
 .question-footer {
   text-align: center;
-  background-color: #30cedc;
+  background-color: #3c2451;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .button, input[type=submit] {
-  background-color: #30cedc;
-  border-radius: 3px;
+margin-top: 70px;
+  background-color: #12a8ca;
+  border-radius: 30px;
   text-transform: uppercase;
   font-weight: bold;
   padding: 20px 45px;
@@ -137,12 +161,12 @@ header, .question-header {
 
 .container-panneau_question .input-container  {
   p.label-choix_unique, p.label-choix_multiple {
-    color: #2a6b9b;
+    color: #3c2451;
     @media screen and (max-width: 39.9375em) {
       font-size: 26px;
       margin-top: 20px;
     }
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
     margin-bottom: 40px;
     .source {
@@ -170,26 +194,23 @@ header, .question-header {
   }
 }
 
-#slide-1 {
-  p.label-choix_unique, label {
-    color: white;
-  }
-}
-
 footer {
-  padding-top: 20px;
-  background-color: #31353f;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background-color: #12a8ca;
   .logo {
-    max-height: 100px;
+    max-height: 50px;
   }
   .links {
-    padding-top: 30px;
+  padding-top: 15px;
     &, a, a:hover {
       color: white;
     }
   }
+  * {
+    vertical-align: middle;
+  }
   .social-links {
-    padding-top: 25px;
   }
   .logo, .links, .social-links {
     display: inline-block;
@@ -218,18 +239,18 @@ input[type=radio], input[type=checkbox] {
 input[type=radio] + label .radio-checkbox,
 input[type=checkbox] + label .radio-checkbox {
   display:inline-block;
-  margin-top: 10px;
-  margin-right: 15px;
+  margin-top: 4px;
+  margin-right: 11px;
   vertical-align: top;
-  width:23px;
-  height:23px;
-  background:url("/uploads/radio-1.png") left top no-repeat;
+  width:29px;
+  height:29px;
+  background:url("/uploads/radio-1.jpg") left top no-repeat;
   cursor:pointer;
 }
 
 input[type=checkbox]:checked + label .radio-checkbox,
 input[type=radio]:checked + label .radio-checkbox {
-  background-position: -23px top !important;
+  background-position: -29px top !important;
 }
 
 .label-container {
@@ -255,7 +276,7 @@ input[type=radio]:checked + label .radio-checkbox {
   font-weight: 500;
 }
 
-.reduced-width, #slide-6 .row, #slide-6 + .field-row {
+.reduced-width, #slide-6 + .field-row {
   width: 100%;
   @media screen and (min-width: 40em) {
     padding-left: 150px;
@@ -274,6 +295,28 @@ input[type=radio]:checked + label .radio-checkbox {
 
 #slide-6 {
   margin-top: 30px;
+  width: 100%;
+  padding-left: 300px;
+   @media screen and (max-width: 640px) {
+    padding-left: 0px;
+  }
+}
+#slide-2 {
+  .reponse-container-choix_multiple {
+  margin-top: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline-block;
+    width: 103px;
+  }
+  .columns {
+  padding-left: 0;
+  padding-right: 0;
+  }
+  .label-container {
+    width: auto;
+    margin-left: 7px;
+  }
 }
 
 .intro-infos-perso {
@@ -290,9 +333,8 @@ input[type=radio]:checked + label .radio-checkbox {
 
 textarea, input[type=text], input[type=email] {
   &, &:focus {
-    background: transparent;
+    background: #3c2451;
     border-radius: 3px;
-    border-color: #30cedc;
     resize: none;
     margin-top: 10px;
     margin-bottom: 0;
@@ -300,7 +342,7 @@ textarea, input[type=text], input[type=email] {
     height: auto;
     padding: 15px;
     &, &::placeholder {
-      color: #2a6b9b;
+      color: white;
       opacity: 1;
       font-size: 21px;
     }
@@ -331,8 +373,6 @@ section.merci, section.don {
 }
 
 section.merci {
-  background-image: url("/uploads/intro-background.png");
-  background-size: cover;
   text-align: center;
   .arrow {
     padding-top: 40px;
@@ -342,9 +382,10 @@ section.merci {
     padding-bottom: 20px;
   }
   &, h2 {
-    color: white;
+    color: #3c2451;
   }
   h2 {
+  color: #12a8ca;
     text-transform: uppercase;
     font-size: 50px;
     @media screen and (max-width: 39.9375em) {
