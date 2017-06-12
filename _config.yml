@@ -1,10 +1,10 @@
 array: []
 version: 3.2.1
 woopra_config:
-  domain: "ssvp.fr"
-  cookie_domain: ".ssvp.fr"
+  domain: "actionenfance.org"
+  cookie_domain: ".actionenfance.org"
 form-to-db_config:
-  schema: "ssvp"
+  schema: "actionenfance"
   envoi_base_de_donnée: true
   message_erreur: "Une erreur est survenue, veuillez envoyer un mail à lghionna@adfinitas.fr"
 controles:

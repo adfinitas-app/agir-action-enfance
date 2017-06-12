@@ -14,7 +14,7 @@ function insertHeader() {
     <header>
       <div class='row'>
 	<div class='large-12 columns'>
-	  <a target="_blank" href="http://www.ssvp.fr/">
+	  <a target="_blank" href="http://www.actionenfance.org/">
 	    <img class='logo' src='/uploads/logo.png' alt='Logo' />
 	  </a>
       	   <h2>donnez-nous votre avis :<br /><span class='smallest'>Comment se reconstruire après la maltraitance ?</span></h2>
@@ -117,6 +117,19 @@ function smoothScroll() {
     }
   });
 }
+function    scrollTo(next){
+    if ($(next).length != 0)
+    {
+        $('html, body').stop().animate({
+            scrollTop: $(next).offset().top + 1
+        }, 700, 'swing');
+        return false;
+    }
+};
+
+$('.panneau-introduction-texte button').click( function() {
+  scrollTo($('#slide-0'));
+});
 
 function insertAnswerField() {
   field = `
@@ -165,7 +178,6 @@ function infosPart() {
 
 function changeLabel() {
   $('p.label-choix_multiple, p.label-choix_unique').each(function(idx) {
-    console.log($(this).text());
     if ($(this).text().slice(-1) == '*') {
       $(this).text($(this).text().slice(0, -1))
     }
@@ -174,7 +186,6 @@ function changeLabel() {
 
 $(document).on('ready', function() {
   changeLabel();
-  //$('#slide-0 p.label-choix_unique').append('<span class="source">* Source : chiffre publié par la SSVP sur FB</span>');
   insertHeader();
   insertFooter();
   insertQuestionHeader();
@@ -183,14 +194,4 @@ $(document).on('ready', function() {
   smoothScroll();
   insertSpecialButtons();
   infosPart();
-  //$('.container-panneau_question label, .container-panneau_question input').on('click',
-    //function() {
-      //id = $(this).closest('.input-container').attr('id').slice('slide-'.length);
-      //id = parseInt(id) + 1;
-      //target = $('#slide-' + id);
-      //$('html, body').animate({
-	//scrollTop: target.offset().top
-      //}, 1000);
-    //}
-  //);
 });

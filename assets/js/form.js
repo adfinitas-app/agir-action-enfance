@@ -45,58 +45,6 @@ function calculScoring(jqForm) {
   return Math.round((moyenne / i).toFixed(1));
 }
 
-function submitForm(jqForm) {
-  var FormData = getFields(jqForm, "input:not([type=submit]):not(.no-send), select:not(.no-send), textarea:not(.no-send)");
-  woopra.track("validation", {
-    url: document.location.href,
-    title: document.title,
-    category: "validationCONSU17",
-    action: "clic",
-  });
-  /*
-  woopra.track("inscription", {
-    url: document.URL,
-    title: document.title,
-    origine: jqForm.data("source"),
-    optin: "non" // Champ "Optin Woopra" oui/non ?
-  });
-  */
-  var visitorProperties = getFields(jqForm, "input:not([type=submit]):not(.no-send).visitor_property, select.visitor_property, textarea.visitor_property");
-  if (visitorProperties['firstname'] && visitorProperties['lastname']) {
-    visitorProperties['name'] = visitorProperties['firstname'] + ' ' + visitorProperties['lastname'];
-  }
-  visitorProperties['nps'] = calculScoring(jqForm);
-  if (typeof(woopra) != "undefined") {
-    woopra.identify(visitorProperties);
-    woopra.track('adfinitas-' + jqForm.data("source"), FormData);
-  }
-  var now = new Date();
-  var dbData = {
-    "schema": "{{ site.form-to-db_config.schema }}",
-    "db": {
-      "signin_date": now.toString(),
-      "event_woopra": pureField(jqForm.data("source"))
-    }
-  }
-
-  for (var attrname in FormData) {
-    dbData.db[attrname] = pureField(FormData[attrname]);
-  }
-  var userData = getFields(jqForm, ".container-panneau_informations_personnelles input:not([type=submit]):not(.no-send), .container-panneau_informations_personnelles select, .container-panneau_informations_personnelles textarea, .hidden_fields input");
-  formattedUserData = [];
-  for (var attrname in userData) {
-    formattedUserData.push({
-      name: attrname,
-      value: userData[attrname]
-    });
-  }
-  var encodedParams = $.param(userData);
-  var success = function() {
-    window.location = jqForm.data("success") + "?" + encodedParams;
-  };
-  makeCorsRequest(dbData, success);
-}
-
 // Pre-filled inputs from query parameter in URL.
 // Example : https://example.com?name=test&email=test@test.com
 // will fill the field name and email

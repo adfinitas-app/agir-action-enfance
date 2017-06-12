@@ -2,6 +2,17 @@
 layout: blank
 ---
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1);
+    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+}
+return "";
+}
+
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -19,7 +30,7 @@ function createCORSRequest(method, url) {
 }
 
 function makeCorsRequest(data, success) {
-  var url = 'https://form-to-db.herokuapp.com/';
+  var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/0396de57-2d19-40b5-b60d-41cda9a93ea6/webhook/36a77892-771a-4376-8e99-58a6dc8e3106';
   var body = JSON.stringify(data);
 
   var xhr = createCORSRequest('POST', url);

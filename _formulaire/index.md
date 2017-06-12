@@ -59,13 +59,27 @@ panneau_question:
         requis: true
         message_erreur: Vous devez choisir
         controle:
-        fond_image_path: /uploads/question-3-bg.jpg
+        fond_image_path: 
         fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
   texte_html: ''
   champs:
+    - type: choix_multiple
+      nom_machine: civility
+      reponses:
+        - valeur: Madame
+        - valeur: Monsieur
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder:
+        requis: true
+        message_erreur: Vous devez remplir ce champ
+        controle: civility
+        fond_image_path:
+        fond_color:
     - type: champ_libre_court
       nom_machine: lastname
       reponses:
