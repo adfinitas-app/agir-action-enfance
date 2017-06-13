@@ -1,5 +1,5 @@
 ---
-permalink: /questionnaire/
+permalink: /
 evenement_woopra: formulaire
 panneau_introduction:
   fond_image_path: /uploads/intro-background.jpg
@@ -66,7 +66,7 @@ panneau_informations_personnelles:
   fond_color:
   texte_html: ''
   champs:
-    - type: choix_multiple
+    - type: choix_unique
       nom_machine: civility
       reponses:
         - valeur: Madame
@@ -81,19 +81,6 @@ panneau_informations_personnelles:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
-      nom_machine: lastname
-      reponses:
-        - valeur:
-      options:
-        propriete_visiteur: true
-        label:
-        placeholder: 'Nom*'
-        requis: true
-        message_erreur: vous devez remplir ce champ
-        controle:
-        fond_image_path:
-        fond_color:
-    - type: champ_libre_court
       nom_machine: firstname
       reponses:
         - valeur:
@@ -103,6 +90,19 @@ panneau_informations_personnelles:
         placeholder: 'Prénom*'
         requis: true
         message_erreur: Vous devez remplir ce champ
+        controle:
+        fond_image_path:
+        fond_color:     
+    - type: champ_libre_court
+      nom_machine: lastname
+      reponses:
+        - valeur:
+      options:
+        propriete_visiteur: true
+        label:
+        placeholder: 'Nom*'
+        requis: true
+        message_erreur: vous devez remplir ce champ
         controle:
         fond_image_path:
         fond_color:
@@ -122,7 +122,7 @@ panneau_informations_personnelles:
     - type: choix_multiple
       nom_machine: optinnps
       reponses:
-        - valeur: Je souhaite recevoir toute l’actualité d’ACTION ENFANCE
+        - valeur: En répondant au questionnaire, vous acceptez de recevoir des emails de la part de la Fondation Action Enfance. Vous pouvez vous désincrire à tout moment.
       options:
         propriete_visiteur: true
         label:

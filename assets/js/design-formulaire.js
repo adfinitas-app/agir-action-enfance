@@ -84,6 +84,13 @@ function insertQuestionHeader() {
     $(this).html(index + 1);
   });
 }
+$("input").click( function() {
+  var parent = $(this).parent().parent().parent().parent().parent();
+  if (parent.nextAll('.input-container-choix_unique').length == 0)
+    scrollTo(parent.parent().nextAll('.container-panneau_informations_personnelles'));
+  else
+    scrollTo(parent.nextAll('.input-container-choix_unique').first());
+})
 
 function insertQuestionFooter() {
   questionFooter = `
@@ -158,9 +165,13 @@ function infosPart() {
       </div>
     </div>
     <div class='row reduced-width'>
-      <div class='medium-6 columns lastname-target'>
+    <div class='medium-12 columns civility-target'>
       </div>
-      <div class='medium-6 columns firstname-target'>
+    </div>
+    <div class='row reduced-width'>
+    <div class='medium-6 columns firstname-target'>
+      </div>
+      <div class='medium-6 columns lastname-target'>
       </div>
     </div>
     <div class='row reduced-width'>
@@ -171,9 +182,10 @@ function infosPart() {
     </div>
     `);
   $('input[name=email]').closest('.input-container').detach().appendTo('.email-target');
-  $('input[name=firstname]').closest('.input-container').detach().appendTo('.firstname-target');
   $('input[name=lastname]').closest('.input-container').detach().appendTo('.lastname-target');
+  $('input[name=firstname]').closest('.input-container').detach().appendTo('.firstname-target');
   $('input[name=telephone]').closest('.input-container').detach().appendTo('.phone-target');
+  $('input[name=civility]').closest('.input-container').detach().appendTo('.civility-target');
 }
 
 function changeLabel() {
