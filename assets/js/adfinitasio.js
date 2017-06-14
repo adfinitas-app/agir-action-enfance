@@ -140,5 +140,5 @@ function submitForm(jqForm) {
   
   console.log(data);
   makeCorsRequest(data);
- // window.location = jqForm.data("success");
+ window.location = jqForm.data("success");
 }
