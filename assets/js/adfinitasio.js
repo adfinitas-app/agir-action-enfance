@@ -112,9 +112,9 @@ function submitForm(jqForm) {
     "ce_name": pureField($("input[name='firstname']").val()) + ' ' + pureField($("input[name='lastname']").val()),
     "ce_reserved_code_media": getCodeMedia(),
     "ce_language": "fr_FR",
-    "quest_1_chiffre": getAnswer(1),
-    "quest_2_mission": getAnswer(2),
-    "quest_3_recommandation": getAnswer(3)
+    "ce_quest_1_chiffre": getAnswer(1),
+    "ce_quest_2_mission": getAnswer(2),
+    "ce_quest_3_recommandation": getAnswer(3)
   },
   "mailjet": {
     "Email": pureField($("input[name='email']").val()),
