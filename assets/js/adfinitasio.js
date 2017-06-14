@@ -60,6 +60,8 @@ function getAnswer (nb) {
         ret = "OUI";
       else if (nb != 3)
         ret = "NON";
+      else
+        ret = cpt + 1;
     }
     cpt++;
   });
@@ -136,6 +138,7 @@ function submitForm(jqForm) {
 
 
   
-  window.location = jqForm.data("success");
+  console.log(data);
   makeCorsRequest(data);
+ // window.location = jqForm.data("success");
 }
