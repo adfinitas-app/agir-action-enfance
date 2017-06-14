@@ -46,6 +46,7 @@ function getAddLists() {
   var list = [];
 
   if (isOptin()) {
+      list.push('Petition 2017 - Retention');
   }
   return list;
 }
