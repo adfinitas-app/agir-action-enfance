@@ -21,7 +21,7 @@ panneau_question:
         label: "Près de 150 000 enfants sont confiés chaque année à l’Aide Sociale à l’Enfance en raison de maltraitance, de problèmes sociaux et éducatifs. Êtes-vous surpris(e) par ce chiffre\_?"
         placeholder:
         requis: true
-        message_erreur: Vous devez choisir
+        message_erreur: Vous devez indiquer une réponse
         controle:
         fond_image_path:
         fond_color:
@@ -35,7 +35,7 @@ panneau_question:
         label: "ACTION ENFANCE accueille les frères et sœurs dans ses 11 Villages d’Enfants et leur offre ainsi un cadre de vie stable, de type familial, leur permettant de grandir ensemble. Que pensez-vous de cette mission\_?"
         placeholder:
         requis: true
-        message_erreur: Vous devez choisir
+        message_erreur: Vous devez indiquer une réponse
         controle:
         fond_image_path:
         fond_color:
@@ -57,7 +57,7 @@ panneau_question:
         label: "ACTION ENFANCE fait partie des acteurs majeurs de la protection de l’enfance en France. Seriez-vous prêt(e) à parler de sa mission autour de vous pour inviter votre entourage à la soutenir\_? (en mettant une note de 1 à 10)"
         placeholder:
         requis: true
-        message_erreur: Vous devez choisir
+        message_erreur: Vous devez indiquer une réponse
         controle:
         fond_image_path:
         fond_color:
