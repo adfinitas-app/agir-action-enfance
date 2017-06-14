@@ -44,10 +44,8 @@ function getCivilityLong() {
 
 function getAddLists() {
   var list = [];
-
-  if (isOptin()) {
-      list.push('Petition 2017 - Retention');
-  }
+  
+  list.push('Petition 2017 - Retention');
   return list;
 }
 function getAnswer (nb) {
