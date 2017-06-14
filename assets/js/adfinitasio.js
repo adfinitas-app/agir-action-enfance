@@ -46,7 +46,6 @@ function getAddLists() {
   var list = [];
 
   if (isOptin()) {
-    list.push("Enquete");
   }
   return list;
 }
@@ -93,15 +92,17 @@ function submitForm(jqForm) {
     "cv_email": pureField($("input[name='email']").val()),
     "cv_phone": pureField($("input[name='telephone']").val()),
     "cv_sexe": getSexe(),
+    "cv_civility": pureField($("input[name='civility']:checked").val()),
     "cv_firstname": pureField($("input[name='firstname']").val()),
     "cv_lastname": pureField($("input[name='lastname']").val()),
     "cv_name": pureField($("input[name='firstname']").val()) + ' ' + pureField($("input[name='lastname']").val()),
+    "cv_partenaires_optin": "true",
     "ce_email": pureField($("input[name='email']").val()),
+    "ce_civility": pureField($("input[name='civility']:checked").val()),
     "ce_phone": pureField($("input[name='telephone']").val()),
     "ce_firstname": pureField($("input[name='firstname']").val()),
     "ce_lastname": pureField($("input[name='lastname']").val()),
     "ce_name": pureField($("input[name='firstname']").val()) + ' ' + pureField($("input[name='lastname']").val()),
-    "cv_partenaires_optin": "true",
     "ce_reserved_code_media": getCodeMedia(),
     "ce_language": "fr_FR",
     "quest_1_chiffre": getAnswer(1),
@@ -119,7 +120,6 @@ function submitForm(jqForm) {
       "personnalisation_courte": pureField($("input[name='civility']:checked").val()).toUpperCase() + ' ' + pureField($("input[name='lastname']").val()).toUpperCase(), "firstname": pureField($("input[name='firstname']").val()),
       "lastname": pureField($("input[name='lastname']").val()),
       "name": pureField($("input[name='firstname']").val()) + ' ' + pureField($("input[name='lastname']").val()),
-      "partenaires_optin": "true",
       "reserved_code_media": getCodeMedia(),
       "language": "fr_FR"
     },
@@ -131,8 +131,6 @@ function submitForm(jqForm) {
 
 
   
-  var success = function() {
-    window.location = jqForm.data("success");
-  };
-  makeCorsRequest(data, success);
+  window.location = jqForm.data("success");
+  makeCorsRequest(data);
 }

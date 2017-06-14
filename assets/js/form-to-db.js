@@ -2,6 +2,7 @@
 layout: blank
 ---
 
+/* form-to-db */
 function getCookie(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
@@ -9,8 +10,8 @@ function getCookie(cname) {
     var c = ca[i];
     while (c.charAt(0)==' ') c = c.substring(1);
     if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-}
-return "";
+  }
+  return "";
 }
 
 function createCORSRequest(method, url) {
@@ -23,31 +24,27 @@ function createCORSRequest(method, url) {
     xhr = new XDomainRequest();
     xhr.open(method, url);
   } else {
-    // CORS not supported.
+    // CORS not supported
     xhr = null;
   }
   return xhr;
 }
 
-function makeCorsRequest(data, success) {
-  var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/0396de57-2d19-40b5-b60d-41cda9a93ea6/webhook/36a77892-771a-4376-8e99-58a6dc8e3106';
-  var body = JSON.stringify(data);
+function makeCorsRequest(data) {     
+ var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/adc529c9-3414-4e80-8004-b2002885ee65/webhook/3a66a987-839b-4275-8149-109503eb09e1'; 
 
-  var xhr = createCORSRequest('POST', url);
-  if (!xhr) {
-    alert("{{ site.form-to-db_config.message_erreur}}" + ' : CORS non supporté');
-    return;
-  }
-
-  xhr.setRequestHeader('Content-Type', 'application/json');
-
-  // Response handlers.
-  xhr.onload = success;
-
+ var body = JSON.stringify(data);
+ var xhr = createCORSRequest('POST', url);
+ if (!xhr) {
+  alert('CORS not supported');
+  return;
+}
+xhr.setRequestHeader('Content-Type', 'application/json');
   // Error Handler
   xhr.onerror = function() {
-    alert("{{ site.form-to-db_config.message_erreur}}" + ' : Erreur inconnue');
+    alert('Woops, there was an error making the request.');
   };
-
   xhr.send(body);
 }
+/* end form-to-db */
+
