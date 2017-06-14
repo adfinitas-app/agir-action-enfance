@@ -5,7 +5,7 @@ panneau_introduction:
   fond_image_path: /uploads/intro-background.jpg
   fond_color:
   texte_html: "<p class='intro-title'>Aider des enfants à se reconstruire après la maltraitance : telle est la mission d’ACTION ENFANCE depuis près de 60 ans.<br /><br />Comptant parmi les rares structures à accueillir ensemble, dans des Villages d’Enfants, les frères et sœurs retirés de leur famille sur décision du Juge des Enfants, elle souhaite recueillir votre avis.<br /><br />Merci de l’aider en répondant à 3 questions. </p>"
-  bouton-avis: 'Je donne mon avis'
+  bouton-avis: Je donne mon avis
 panneau_question:
   fond_image_path:
   fond_color:
@@ -14,7 +14,7 @@ panneau_question:
     - type: choix_unique
       nom_machine: question1
       reponses:
-        - valeur: 'Oui, je ne savais pas qu’en France les enfants confiés à l’Aide Sociale à l’Enfance étaient si nombreux. '
+        - valeur: 'Oui, je ne savais pas qu’en France les enfants confiés à l’Aide Sociale à l’Enfance étaient si nombreux.'
         - valeur: 'Non, je connaissais ce chiffre'
       options:
         propriete_visiteur: false
@@ -28,8 +28,8 @@ panneau_question:
     - type: choix_unique
       nom_machine: question2
       reponses:
-        - valeur: 'Je pense que la préservation des liens fraternels est essentielle pour aider ces enfants à surmonter le drame qu’ils ont vécu. '
-        - valeur: 'Je ne pense pas que les liens fraternels jouent un rôle indispensable dans la reconstruction de ces enfants. '
+        - valeur: Je pense que la préservation des liens fraternels est essentielle pour aider ces enfants à surmonter le drame qu’ils ont vécu.
+        - valeur: Je ne pense pas que les liens fraternels jouent un rôle indispensable dans la reconstruction de ces enfants.
       options:
         propriete_visiteur: false
         label: "ACTION ENFANCE accueille les frères et sœurs dans ses 11 Villages d’Enfants et leur offre ainsi un cadre de vie stable, de type familial, leur permettant de grandir ensemble. Que pensez-vous de cette mission\_?"
@@ -59,12 +59,12 @@ panneau_question:
         requis: true
         message_erreur: Vous devez choisir
         controle:
-        fond_image_path: 
+        fond_image_path:
         fond_color:
 panneau_informations_personnelles:
   fond_image_path:
   fond_color:
-  texte_html: ''
+  texte_html:
   champs:
     - type: choix_unique
       nom_machine: civility
@@ -77,7 +77,7 @@ panneau_informations_personnelles:
         placeholder:
         requis: true
         message_erreur: Vous devez remplir ce champ
-        controle: civility
+        controle:
         fond_image_path:
         fond_color:
     - type: champ_libre_court
@@ -92,7 +92,7 @@ panneau_informations_personnelles:
         message_erreur: Vous devez remplir ce champ
         controle:
         fond_image_path:
-        fond_color:     
+        fond_color:
     - type: champ_libre_court
       nom_machine: lastname
       reponses:
@@ -122,7 +122,7 @@ panneau_informations_personnelles:
     - type: choix_multiple
       nom_machine: optinnps
       reponses:
-        - valeur: En répondant au questionnaire, vous acceptez de recevoir des emails de la part de la Fondation Action Enfance. Vous pouvez vous désincrire à tout moment.
+        - valeur: 'En répondant au questionnaire, vous acceptez de recevoir des emails de la part de la Fondation Action Enfance. Vous pouvez vous désincrire à tout moment.'
       options:
         propriete_visiteur: true
         label:
@@ -141,8 +141,8 @@ options:
       valeur:
       propriete_visiteur: false
   meta:
-    title: Questionnaire
-    description:
+    title: 'ACTION ENFANCE - DONNEZ-NOUS VOTRE AVIS : Comment se reconstruire après la maltraitance ?'
+    description: 'Aider des enfants à se reconstruire après la maltraitance : telle est la mission d’ACTION ENFANCE depuis près de 60 ans.'
 _comments:
   nom: Obligatoire et unique. Description courte du champ
   texte: Ce champ peut etre vide
