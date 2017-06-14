@@ -122,7 +122,7 @@ panneau_informations_personnelles:
     - type: choix_multiple
       nom_machine: optinnps
       reponses:
-        - valeur: 'En répondant au questionnaire, vous acceptez de recevoir des emails de la part de la Fondation Action Enfance. Vous pouvez vous désincrire à tout moment.'
+        - valeur: "En répondant au questionnaire, vous acceptez de recevoir des emails de la part d'ACTION ENFANCE. Vous pouvez vous désinscrire à tout moment."
       options:
         propriete_visiteur: true
         label:
