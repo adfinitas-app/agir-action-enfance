@@ -52,10 +52,15 @@ function getAddLists() {
 function getAnswer (nb) {
   var question = "question" + nb;
   var cpt = 0;
-  var ret = 0;;
+  var ret = "";
   $("input[name=" + question + "]").each( function() {
     if ($(this).is(":checked"))
-      ret = cpt + 1;
+    {
+      if (cpt == 0 && nb != 3)
+        ret = "OUI";
+      else if (nb != 3)
+        ret = "NON";
+    }
     cpt++;
   });
   return (ret);
