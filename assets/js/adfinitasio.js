@@ -137,8 +137,8 @@ function submitForm(jqForm) {
 
 
   
-  if (makeCorsRequest(data))
-    window.location.href = '/merci.html';
+  makeCorsRequest(data);
+    //window.location.href = '/merci.html';
   //console.log(data);
   
 
