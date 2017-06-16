@@ -45,5 +45,6 @@ xhr.setRequestHeader('Content-Type', 'application/json');
     alert('Woops, there was an error making the request.');
   };
   xhr.send(body);
+  return (true)
 }
 /* end form-to-db */
