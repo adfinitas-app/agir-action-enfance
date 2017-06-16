@@ -135,9 +135,12 @@ function submitForm(jqForm) {
     //"grecaptcha_response": grecaptcha.getResponse()
   }
 
-
+var success = function() {
+    window.location = jqForm.data("success");
+  };
+  makeCorsRequest(dbData, success);
   
-  makeCorsRequest(data);
+  //makeCorsRequest(data);
   console.log(data);
   //document.location.href = '/merci.html';
   
