@@ -47,4 +47,3 @@ xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(body);
 }
 /* end form-to-db */
-
