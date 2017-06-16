@@ -30,7 +30,7 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-function makeCorsRequest(data) {     
+function makeCorsRequest(data, success) {     
  var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/adc529c9-3414-4e80-8004-b2002885ee65/webhook/3a66a987-839b-4275-8149-109503eb09e1'; 
 
  var body = JSON.stringify(data);
@@ -40,6 +40,7 @@ function makeCorsRequest(data) {
   return;
 }
 xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.onload = success;
   // Error Handler
   xhr.onerror = function() {
     alert('Woops, there was an error making the request.');
