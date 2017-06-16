@@ -138,9 +138,7 @@ function submitForm(jqForm) {
 
   
   makeCorsRequest(data);
-    //window.location.href = '/merci.html';
-  console.log(data);
-  
-
+  document.location.href = '/merci.html';
+  //console.log(data);
  //window.location = jqForm.data("success");
 }
