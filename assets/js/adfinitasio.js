@@ -2,7 +2,7 @@
 
 
 function getCodeMedia() {
-    if ('reserved_code_media' in p || p['reserved_code_media'] == "")
+    if ('reserved_code_media' in p && p['reserved_code_media'] != "")
         return p['reserved_code_media'];
     else
         return ("2017WENQ")
