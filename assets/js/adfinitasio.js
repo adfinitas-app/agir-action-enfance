@@ -3,7 +3,7 @@
 
 function getCodeMedia() {
   if (typeof(p['reserved_code_media']) == 'undefined') {
-    return '2017WENQ'
+    return ''
   } else {
     return p['reserved_code_media']
   }
