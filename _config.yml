@@ -6,7 +6,7 @@ woopra_config:
 form-to-db_config:
   schema: "actionenfance"
   envoi_base_de_donnée: true
-  message_erreur: "Une erreur est survenue, veuillez envoyer un mail à lghionna@adfinitas.fr"
+  message_erreur: "Une erreur est survenue"
 controles:
   - telephone
 types:
