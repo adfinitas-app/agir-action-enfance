@@ -16,22 +16,19 @@ loadScript("https://www.adfinitas.fr/cdn/lib/adfinitracks.min.js", function() {
 adfinitracks.Reveal.ready(function(){
   var client = new adfinitracks.Reveal({
       projectId: '592fcbd154532c46e9be47ad',
-      writeKey: 'D98080B49F73412AB9CD80EAE4CEEC32E4B67DE456047B491612903546925BA3'
+      writeKey: '51FF2240B01B8150E6F65E70484EB3FBCEDC78B0BD8CDC5FA2E9111888DB1569'
   });
   var p = adfinitracks.extractUrlParams();
   var eenc = "";
   var mbzid = ""
   if ("eenc" in p){eenc = p["eenc"].toLowerCase();}
   if ("mbzid" in p){mbzid = p["mbzid"];}
-  console.log("eenc : "+eenc);
-  console.log("mbzid : "+mbzid)
   client.recordEvent('pageview', {
       title		: document.title,
       url     : document.location.href,
       user		: {"uuid": adfinitracks.getUniqueId(),
                    "md5": eenc,
                    "id_mesopmindbaz": mbzid},
-      organization : "actionenfance.org",
       device	: adfinitracks.getDevice()
   });
   setTimeout(function(){
@@ -41,7 +38,6 @@ adfinitracks.Reveal.ready(function(){
       user    : {"uuid": adfinitracks.getUniqueId(),
                    "md5": eenc,
                    "id_mesopmindbaz": mbzid},
-      organization : "actionenfance.org",
       device  : adfinitracks.getDevice(),
       duration : 30
     })
