@@ -1,5 +1,5 @@
 
-
+var p = adfinitracks.extractUrlParams();
 
 function getCodeMedia() {
     if ('reserved_code_media' in p && p['reserved_code_media'] != "")
@@ -143,7 +143,6 @@ var success = function() {
     projectId: '592fcbd154532c46e9be47ad',
     writeKey: '51FF2240B01B8150E6F65E70484EB3FBCEDC78B0BD8CDC5FA2E9111888DB1569'
   });
-  var p = adfinitracks.extractUrlParams();
   var eenc = "";
   var mbzid = ""
   if ("eenc" in p){eenc = p["eenc"].toLowerCase();}
