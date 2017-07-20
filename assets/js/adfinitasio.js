@@ -1,6 +1,3 @@
-
-var p = adfinitracks.extractUrlParams();
-
 function getCodeMedia() {
     if ('reserved_code_media' in p && p['reserved_code_media'] != "")
         return p['reserved_code_media'];
