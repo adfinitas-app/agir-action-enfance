@@ -151,7 +151,7 @@ var success = function() {
                      "md5": eenc,
                      "id_mesopmindbaz": mbzid},
           organization : "actionenfance.org",
-          reserved_code_media : code_media,
+          reserved_code_media : getCodeMedia(),
           device  : adfinitracks.getDevice(),
           answers : {"quest_1_chiffre": getAnswer(1),
                      "quest_2_mission": getAnswer(2),
