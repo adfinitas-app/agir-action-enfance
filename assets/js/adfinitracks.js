@@ -23,6 +23,8 @@ adfinitracks.Reveal.ready(function(){
   var mbzid = ""
   if ("eenc" in p){eenc = p["eenc"].toLowerCase();}
   if ("mbzid" in p){mbzid = p["mbzid"];}
+  console.log("eenc : "+eenc);
+  console.log("mbzid : "+mbzid)
   client.recordEvent('pageview', {
       title		: document.title,
       url     : document.location.href,
