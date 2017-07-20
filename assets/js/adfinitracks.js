@@ -54,6 +54,6 @@ adfinitracks.Reveal.ready(function(){
   eenc ? woopra.identify({"md5":eenc}) : false;
       woopra.identify({"adfuuid":adfinitracks.getUniqueId()});
 	  woopra.track();
-      adfinitracks.trackAudience("A2KHO6RS7FBHRBRODRCVDU", "NMGKWCSJMRGD5BV6YGVRVM");
+//      adfinitracks.trackAudience("A2KHO6RS7FBHRBRODRCVDU", "NMGKWCSJMRGD5BV6YGVRVM");
     });
   });
