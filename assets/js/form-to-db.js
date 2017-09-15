@@ -31,7 +31,7 @@ function createCORSRequest(method, url) {
 }
 
 function makeCorsRequest(data, success) {     
- var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/adc529c9-3414-4e80-8004-b2002885ee65/webhook/3a66a987-839b-4275-8149-109503eb09e1'; 
+ var url = 'https://adfinitas-io.herokuapp.com/api/v1/organization/0396de57-2d19-40b5-b60d-41cda9a93ea6/webhook/36a77892-771a-4376-8e99-58a6dc8e3106'; 
 
  var body = JSON.stringify(data);
  var xhr = createCORSRequest('POST', url);
